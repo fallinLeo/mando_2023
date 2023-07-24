@@ -1,0 +1,23 @@
+[0.012s] Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs': /home/leo/.local/bin/cmake --build /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs -- -j12 -l12
+[0.043s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.060s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.060s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.150s] Traceback (most recent call last):
+[0.150s]   File "/opt/ros/foxy/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>
+[0.150s]     from ament_package.templates import get_environment_hook_template_path
+[0.150s] ModuleNotFoundError: No module named 'ament_package'
+[0.160s] [31mCMake Error at /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):
+[0.160s]   execute_process(/usr/bin/python3
+[0.160s]   /opt/ros/foxy/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py
+[0.160s]   /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/ament_cmake_package_templates/templates.cmake)
+[0.160s]   returned error code 1
+[0.161s] Call Stack (most recent call first):
+[0.161s]   /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)
+[0.161s]   /opt/ros/foxy/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)
+[0.161s]   /opt/ros/foxy/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)
+[0.161s]   CMakeLists.txt:6 (find_package)
+[0.161s] 
+[0.161s] [0m
+[0.161s] -- Configuring incomplete, errors occurred!
+[0.162s] make: *** [Makefile:935: cmake_check_build_system] Error 1
+[0.168s] Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs' returned '2': /home/leo/.local/bin/cmake --build /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs -- -j12 -l12
