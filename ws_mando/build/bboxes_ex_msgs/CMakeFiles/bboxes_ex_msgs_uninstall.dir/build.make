@@ -53,10 +53,10 @@ RM = /home/leo/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leo/ws_mando/bbox_ex_msgs
+CMAKE_SOURCE_DIR = /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leo/ws_mando/build/bboxes_ex_msgs
+CMAKE_BINARY_DIR = /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs
 
 # Utility rule file for bboxes_ex_msgs_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/bboxes_ex_msgs_uninstall.dir/compiler_depend.make
 include CMakeFiles/bboxes_ex_msgs_uninstall.dir/progress.make
 
 CMakeFiles/bboxes_ex_msgs_uninstall:
-	/home/leo/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -P /home/leo/ws_mando/build/bboxes_ex_msgs/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/home/leo/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -P /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 bboxes_ex_msgs_uninstall: CMakeFiles/bboxes_ex_msgs_uninstall
 bboxes_ex_msgs_uninstall: CMakeFiles/bboxes_ex_msgs_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/bboxes_ex_msgs_uninstall.dir/clean:
 .PHONY : CMakeFiles/bboxes_ex_msgs_uninstall.dir/clean
 
 CMakeFiles/bboxes_ex_msgs_uninstall.dir/depend:
-	cd /home/leo/ws_mando/build/bboxes_ex_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leo/ws_mando/bbox_ex_msgs /home/leo/ws_mando/bbox_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs/CMakeFiles/bboxes_ex_msgs_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/CMakeFiles/bboxes_ex_msgs_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bboxes_ex_msgs_uninstall.dir/depend
 

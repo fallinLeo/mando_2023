@@ -1,0 +1,181 @@
+[0.015s] Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs
+[0.056s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.090s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.090s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.263s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.337s] -- Found builtin_interfaces: 1.0.0 (/opt/ros/foxy/share/builtin_interfaces/cmake)
+[0.387s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.401s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.496s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.528s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.623s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.664s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[0.687s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[0.723s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.879s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[1.064s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.122s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.148s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[1.151s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[1.181s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.5") 
+[1.181s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.182s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[1.182s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[1.202s] -- Found PythonExtra: .so  
+[1.361s] -- Configuring done (1.3s)
+[1.418s] -- Generating done (0.0s)
+[1.421s] -- Build files have been written to: /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs
+[1.430s] Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs
+[1.432s] Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake --build /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs -- -j12 -l12
+[1.471s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.474s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.707s] [  5%] Built target bboxes_ex_msgs__cpp
+[1.712s] [  7%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.712s] [ 10%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.713s] [ 12%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.725s] [ 15%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__rosidl_generator_c.dir/rosidl_generator_c/bboxes_ex_msgs/msg/detail/bounding_box__functions.c.o[0m
+[1.725s] [ 17%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__rosidl_generator_c.dir/rosidl_generator_c/bboxes_ex_msgs/msg/detail/bounding_boxes__functions.c.o[0m
+[1.811s] [ 20%] [32m[1mLinking C shared library libbboxes_ex_msgs__rosidl_generator_c.so[0m
+[1.849s] [ 20%] Built target bboxes_ex_msgs__rosidl_generator_c
+[1.854s] [ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.855s] [ 23%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.967s] [ 30%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support.cpp.o[0m
+[1.967s] [ 28%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bboxes_ex_msgs/msg/detail/bounding_box__type_support.cpp.o[0m
+[1.981s] [ 33%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bboxes_ex_msgs/msg/bounding_box__type_support.cpp.o[0m
+[1.981s] [ 35%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bboxes_ex_msgs/msg/bounding_boxes__type_support.cpp.o[0m
+[1.991s] [ 41%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bboxes_ex_msgs/msg/detail/dds_fastrtps/bounding_box__type_support.cpp.o[0m
+[1.991s] [ 41%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bboxes_ex_msgs/msg/detail/dds_fastrtps/bounding_boxes__type_support.cpp.o[0m
+[2.140s] [ 43%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bboxes_ex_msgs/msg/detail/bounding_box__type_support.c.o[0m
+[2.141s] [ 46%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support.c.o[0m
+[2.143s] [ 48%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/bboxes_ex_msgs/msg/bounding_box__type_support.cpp.o[0m
+[2.144s] [ 51%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/bboxes_ex_msgs/msg/bounding_boxes__type_support.cpp.o[0m
+[2.184s] [ 53%] [32m[1mLinking CXX shared library libbboxes_ex_msgs__rosidl_typesupport_c.so[0m
+[2.192s] [ 56%] [32m[1mLinking C shared library libbboxes_ex_msgs__rosidl_typesupport_introspection_c.so[0m
+[2.216s] [ 56%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_c
+[2.219s] [ 56%] Built target bboxes_ex_msgs__rosidl_typesupport_c
+[2.390s] [ 58%] [32m[1mLinking CXX shared library libbboxes_ex_msgs__rosidl_typesupport_cpp.so[0m
+[2.392s] [ 61%] [32m[1mLinking CXX shared library libbboxes_ex_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[2.423s] [ 61%] Built target bboxes_ex_msgs__rosidl_typesupport_cpp
+[2.455s] [ 61%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_cpp
+[2.562s] [ 64%] [32m[1mLinking CXX shared library libbboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.671s] [ 64%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp
+[2.675s] [ 66%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.878s] [ 69%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bboxes_ex_msgs/msg/detail/bounding_box__type_support_c.cpp.o[0m
+[2.878s] [ 71%] [32mBuilding CXX object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support_c.cpp.o[0m
+[3.174s] [ 74%] [32m[1mLinking CXX shared library libbboxes_ex_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[3.234s] [ 74%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_c
+[3.243s] [ 74%] Built target bboxes_ex_msgs
+[3.252s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.765s] [ 76%] Built target bboxes_ex_msgs__py
+[3.772s] [ 79%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__python.dir/rosidl_generator_py/bboxes_ex_msgs/msg/_bounding_box_s.c.o[0m
+[3.772s] [ 82%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__python.dir/rosidl_generator_py/bboxes_ex_msgs/msg/_bounding_boxes_s.c.o[0m
+[3.892s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/bboxes_ex_msgs/libbboxes_ex_msgs__python.so[0m
+[3.922s] [ 84%] Built target bboxes_ex_msgs__python
+[3.931s] [ 87%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/bboxes_ex_msgs/_bboxes_ex_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.931s] [ 89%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/bboxes_ex_msgs/_bboxes_ex_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.932s] [ 92%] [32mBuilding C object CMakeFiles/bboxes_ex_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/bboxes_ex_msgs/_bboxes_ex_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[4.004s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[4.005s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[4.006s] [100%] [32m[1mLinking CXX shared library rosidl_generator_py/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[4.032s] [100%] Built target bboxes_ex_msgs__rosidl_typesupport_c__pyext
+[4.033s] [100%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_c__pyext
+[4.061s] [100%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_c__pyext
+[4.069s] Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake --build /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs -- -j12 -l12
+[4.186s] Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake --install /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs
+[4.219s] -- Install configuration: ""
+[4.219s] -- Execute custom install script
+[4.220s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/ament_index/resource_index/rosidl_interfaces/bboxes_ex_msgs
+[4.223s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/bounding_box.h
+[4.225s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/bounding_boxes.h
+[4.227s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__functions.h
+[4.230s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__struct.h
+[4.232s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__type_support.h
+[4.235s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__functions.h
+[4.237s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__struct.h
+[4.240s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support.h
+[4.242s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_generator_c__visibility_control.h
+[4.244s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/library_path.sh
+[4.247s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/library_path.dsv
+[4.250s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_fastrtps_c.h
+[4.252s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_fastrtps_c.h
+[4.255s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.257s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_fastrtps_c.so
+[4.260s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_fastrtps_cpp.hpp
+[4.262s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_fastrtps_cpp.hpp
+[4.264s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.266s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp.so
+[4.269s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_introspection_c.h
+[4.271s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_introspection_c.h
+[4.273s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.275s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/bounding_box.hpp
+[4.277s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/bounding_boxes.hpp
+[4.279s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__builder.hpp
+[4.281s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__struct.hpp
+[4.284s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__traits.hpp
+[4.286s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__type_support.hpp
+[4.288s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__builder.hpp
+[4.291s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__struct.hpp
+[4.293s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__traits.hpp
+[4.295s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support.hpp
+[4.297s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[4.299s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_introspection_cpp.hpp
+[4.301s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_introspection_cpp.hpp
+[4.303s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/pythonpath.sh
+[4.306s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/pythonpath.dsv
+[4.308s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/__init__.py
+[4.310s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/msg/__init__.py
+[4.312s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/msg/_bounding_box.py
+[4.314s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/msg/_bounding_boxes.py
+[4.316s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[4.319s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[4.321s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[4.323s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__python.so
+[4.325s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBox.idl
+[4.327s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBoxes.idl
+[4.329s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBox.msg
+[4.332s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBoxes.msg
+[4.334s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/ament_index/resource_index/package_run_dependencies/bboxes_ex_msgs
+[4.336s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/ament_index/resource_index/parent_prefix_path/bboxes_ex_msgs
+[4.339s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/ament_prefix_path.sh
+[4.341s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/ament_prefix_path.dsv
+[4.343s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/path.sh
+[4.345s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/path.dsv
+[4.347s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.bash
+[4.349s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.sh
+[4.352s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.zsh
+[4.354s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.dsv
+[4.356s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.dsv
+[4.358s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/ament_index/resource_index/packages/bboxes_ex_msgs
+[4.360s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake-extras.cmake
+[4.363s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[4.365s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[4.367s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[4.369s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[4.371s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[4.373s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[4.375s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgsConfig.cmake
+[4.378s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgsConfig-version.cmake
+[4.380s] -- Symlinking: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.xml
+[4.382s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_generator_c.so
+[4.383s] -- Set runtime path of "/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_generator_c.so" to ""
+[4.383s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_introspection_c.so
+[4.383s] -- Set runtime path of "/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_introspection_c.so" to ""
+[4.383s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_c.so
+[4.383s] -- Set runtime path of "/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_c.so" to ""
+[4.383s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_introspection_cpp.so
+[4.384s] -- Set runtime path of "/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[4.384s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_cpp.so
+[4.384s] -- Set runtime path of "/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_cpp.so" to ""
+[4.413s] Compiling '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/__init__.py'...
+[4.416s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_generator_cExport.cmake
+[4.416s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_generator_cExport-noconfig.cmake
+[4.416s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cExport.cmake
+[4.417s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[4.417s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cExport.cmake
+[4.417s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[4.417s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_generator_cppExport.cmake
+[4.417s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[4.417s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[4.417s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cppExport.cmake
+[4.418s] -- Installing: /home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[4.423s] Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake --install /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs

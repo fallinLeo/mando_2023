@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DRCUTILS_ENABLE_FAULT_INJECTION -DROS_PACKAGE_NAME=\"bboxes_ex_msgs\" -Dbboxes_ex_msgs__rosidl_typesupport_c__pyext_EXPORTS
 
-C_INCLUDES = -I/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_generator_c -I/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_generator_py -I/usr/include/python3.8 -I/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_typesupport_c -isystem /opt/ros/foxy/include
+C_INCLUDES = -I/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_generator_c -I/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_generator_py -I/usr/include/python3.8 -I/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_typesupport_c -isystem /opt/ros/foxy/include
 
 C_FLAGS = -fPIC -Wall -Wextra
 

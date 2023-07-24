@@ -1,0 +1,46 @@
+[0.000000] (-) TimerEvent: {}
+[0.000180] (bboxes_ex_msgs) JobQueued: {'identifier': 'bboxes_ex_msgs', 'dependencies': OrderedDict()}
+[0.000602] (yolov5_ros) JobQueued: {'identifier': 'yolov5_ros', 'dependencies': OrderedDict([('bboxes_ex_msgs', '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs')])}
+[0.000972] (bboxes_ex_msgs) JobStarted: {'identifier': 'bboxes_ex_msgs'}
+[0.008424] (bboxes_ex_msgs) JobProgress: {'identifier': 'bboxes_ex_msgs', 'progress': 'cmake'}
+[0.008501] (bboxes_ex_msgs) Command: {'cmd': ['/home/leo/.local/bin/cmake', '/home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs'], 'cwd': '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'leo'), ('LC_TIME', 'ko_KR.UTF-8'), ('SSH_AGENT_PID', '1672'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('HOME', '/home/leo'), ('DESKTOP_SESSION', 'ubuntu'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('MANAGERPID', '1490'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=a1084bf6cdd2fbdd08359d2364bdfd8a'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/home/leo/gcamp_ros2_ws'), ('IM_CONFIG_PHASE', '1'), ('LOGNAME', 'leo'), ('JOURNAL_STREAM', '8:47637'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'leo'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('WINDOWPATH', '2'), ('PATH', '/home/leo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/leo-XPS-15-7590:@/tmp/.ICE-unix/1710,unix/leo-XPS-15-7590:/tmp/.ICE-unix/1710'), ('INVOCATION_ID', 'e4960486bfaa4024998a46edaca4b485'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/2bd2b9da_c5e8_4902_95b8_6a550c8dbda5'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.435'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=a1084bf6cdd2fbdd08359d2364bdfd8a'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003')]), 'shell': False}
+[0.099984] (-) TimerEvent: {}
+[0.200872] (-) TimerEvent: {}
+[0.253951] (bboxes_ex_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.301009] (-) TimerEvent: {}
+[0.401476] (-) TimerEvent: {}
+[0.435539] (bboxes_ex_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.456620] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.501576] (-) TimerEvent: {}
+[0.512789] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.524022] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.524730] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.525528] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.530499] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.595556] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.601668] (-) TimerEvent: {}
+[0.606219] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.606530] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.607002] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.619584] (bboxes_ex_msgs) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:6 (find_package):\n'}
+[0.619768] (bboxes_ex_msgs) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.619838] (bboxes_ex_msgs) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.619896] (bboxes_ex_msgs) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.619952] (bboxes_ex_msgs) StderrLine: {'line': b'\n'}
+[0.620007] (bboxes_ex_msgs) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.620061] (bboxes_ex_msgs) StderrLine: {'line': b'  any of the following names:\n'}
+[0.620115] (bboxes_ex_msgs) StderrLine: {'line': b'\n'}
+[0.620168] (bboxes_ex_msgs) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.620221] (bboxes_ex_msgs) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.620274] (bboxes_ex_msgs) StderrLine: {'line': b'\n'}
+[0.620326] (bboxes_ex_msgs) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.620379] (bboxes_ex_msgs) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.620432] (bboxes_ex_msgs) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.620486] (bboxes_ex_msgs) StderrLine: {'line': b'  has been installed.\n'}
+[0.620538] (bboxes_ex_msgs) StderrLine: {'line': b'\n'}
+[0.620591] (bboxes_ex_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[0.620644] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.625014] (bboxes_ex_msgs) CommandEnded: {'returncode': 1}
+[0.666411] (bboxes_ex_msgs) JobEnded: {'identifier': 'bboxes_ex_msgs', 'rc': 1}
+[0.677519] (yolov5_ros) JobSkipped: {'identifier': 'yolov5_ros'}
+[0.677646] (-) EventReactorShutdown: {}

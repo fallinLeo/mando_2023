@@ -1,1 +1,1 @@
-/home/leo/ws_mando/src/yolov5_ros/./launch/yolov5s_simple.launch.py
+/home/leo/Documents/GitHub/mando_2023/ws_mando/YOLOv5-ROS/yolov5_ros/./launch/yolov5s_simple.launch.py

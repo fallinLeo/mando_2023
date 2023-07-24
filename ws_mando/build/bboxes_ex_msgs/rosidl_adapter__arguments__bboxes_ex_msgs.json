@@ -1,7 +1,7 @@
 {
   "package_name": "bboxes_ex_msgs",
   "non_idl_tuples": [
-    "/home/leo/ws_mando/bbox_ex_msgs:msg/BoundingBox.msg",
-    "/home/leo/ws_mando/bbox_ex_msgs:msg/BoundingBoxes.msg"
+    "/home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs:msg/BoundingBox.msg",
+    "/home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs:msg/BoundingBoxes.msg"
   ]
 }

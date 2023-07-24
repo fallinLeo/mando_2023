@@ -1,4 +1,0 @@
-Invoking command in '/home/leo/ws_mando/build/bboxes_ex_msgs': /home/leo/.local/bin/cmake --build /home/leo/ws_mando/build/bboxes_ex_msgs -- -j12 -l12
-Invoked command in '/home/leo/ws_mando/build/bboxes_ex_msgs' returned '0': /home/leo/.local/bin/cmake --build /home/leo/ws_mando/build/bboxes_ex_msgs -- -j12 -l12
-Invoking command in '/home/leo/ws_mando/build/bboxes_ex_msgs': /home/leo/.local/bin/cmake --install /home/leo/ws_mando/build/bboxes_ex_msgs
-Invoked command in '/home/leo/ws_mando/build/bboxes_ex_msgs' returned '0': /home/leo/.local/bin/cmake --install /home/leo/ws_mando/build/bboxes_ex_msgs

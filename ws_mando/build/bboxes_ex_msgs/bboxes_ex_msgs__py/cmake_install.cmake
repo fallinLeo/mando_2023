@@ -1,8 +1,8 @@
-# Install script for directory: /home/leo/ws_mando/build/bboxes_ex_msgs/bboxes_ex_msgs__py
+# Install script for directory: /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/bboxes_ex_msgs__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/leo/ws_mando/install/bboxes_ex_msgs")
+  set(CMAKE_INSTALL_PREFIX "/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

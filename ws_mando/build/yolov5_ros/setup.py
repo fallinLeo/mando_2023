@@ -1,1 +1,1 @@
-/home/leo/ws_mando/src/yolov5_ros/setup.py
+/home/leo/Documents/GitHub/mando_2023/ws_mando/YOLOv5-ROS/yolov5_ros/setup.py

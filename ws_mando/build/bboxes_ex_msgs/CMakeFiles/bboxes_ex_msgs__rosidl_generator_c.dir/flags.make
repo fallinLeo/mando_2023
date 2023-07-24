@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DRCUTILS_ENABLE_FAULT_INJECTION -DROS_PACKAGE_NAME=\"bboxes_ex_msgs\" -Dbboxes_ex_msgs__rosidl_generator_c_EXPORTS
 
-C_INCLUDES = -I/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_generator_c -isystem /opt/ros/foxy/include
+C_INCLUDES = -I/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_generator_c -isystem /opt/ros/foxy/include
 
 C_FLAGS = -std=gnu11 -fPIC -Wall
 

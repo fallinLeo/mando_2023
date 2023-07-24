@@ -1,0 +1,213 @@
+[0.293s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.293s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f7896e67160>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=12, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f7896e67160>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f7896daa130>)
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.323s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/leo/Documents/GitHub/mando_2023/ws_mando'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extensions ['ignore', 'ignore_ament_install']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extension 'ignore'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extension 'ignore_ament_install'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extensions ['colcon_pkg']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extension 'colcon_pkg'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extensions ['colcon_meta']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extension 'colcon_meta'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extensions ['ros']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extension 'ros'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extensions ['cmake', 'python']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extension 'cmake'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extension 'python'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extensions ['python_setup_py']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS) by extension 'python_setup_py'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extension 'ignore'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extension 'ignore_ament_install'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extensions ['colcon_pkg']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extension 'colcon_pkg'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extensions ['colcon_meta']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extension 'colcon_meta'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extensions ['ros']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(YOLOv5-ROS/yolov5_ros) by extension 'ros'
+[0.337s] DEBUG:colcon.colcon_core.package_identification:Package 'YOLOv5-ROS/yolov5_ros' with type 'ros.ament_python' and name 'yolov5_ros'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extension 'ignore'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extension 'ignore_ament_install'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extensions ['colcon_pkg']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extension 'colcon_pkg'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extensions ['colcon_meta']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extension 'colcon_meta'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extensions ['ros']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(bbox_ex_msgs) by extension 'ros'
+[0.338s] DEBUG:colcon.colcon_core.package_identification:Package 'bbox_ex_msgs' with type 'ros.ament_cmake' and name 'bboxes_ex_msgs'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.339s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.339s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.339s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.339s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.339s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.358s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.358s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.361s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 14 installed packages in /home/leo/gcamp_ros2_ws/install
+[0.362s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 309 installed packages in /opt/ros/foxy
+[0.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_args' from command line to 'None'
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_target' from command line to 'None'
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.460s] Level 5:colcon.colcon_core.verb:set package 'bboxes_ex_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.460s] DEBUG:colcon.colcon_core.verb:Building package 'bboxes_ex_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs', 'merge_install': False, 'path': '/home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs', 'symlink_install': True, 'test_result_base': None}
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_args' from command line to 'None'
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_target' from command line to 'None'
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.461s] Level 5:colcon.colcon_core.verb:set package 'yolov5_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.461s] DEBUG:colcon.colcon_core.verb:Building package 'yolov5_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros', 'merge_install': False, 'path': '/home/leo/Documents/GitHub/mando_2023/ws_mando/YOLOv5-ROS/yolov5_ros', 'symlink_install': True, 'test_result_base': None}
+[0.461s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.464s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.465s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs' with build type 'ament_cmake'
+[0.465s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs'
+[0.469s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.469s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.469s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.480s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs
+[1.895s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs
+[1.898s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake --build /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs -- -j12 -l12
+[4.534s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake --build /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs -- -j12 -l12
+[4.652s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake --install /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs
+[4.887s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bboxes_ex_msgs)
+[4.889s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/leo/gcamp_ros2_ws/install/test_robot_localization:/home/leo/gcamp_ros2_ws/install/py_topic_pkg:/home/leo/gcamp_ros2_ws/install/py_service_pkg:/home/leo/gcamp_ros2_ws/install/py_first_pkg:/home/leo/gcamp_ros2_ws/install/py_action_pkg:/opt/ros/foxy /home/leo/.local/bin/cmake --install /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs
+[4.892s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs' for CMake module files
+[4.893s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs' for CMake config files
+[4.894s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'cmake_prefix_path')
+[4.895s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.ps1'
+[4.896s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.dsv'
+[4.896s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.sh'
+[4.897s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib'
+[4.897s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'ld_library_path_lib')
+[4.898s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.ps1'
+[4.898s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.dsv'
+[4.898s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.sh'
+[4.899s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/bin'
+[4.899s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/pkgconfig/bboxes_ex_msgs.pc'
+[4.899s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages'
+[4.899s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'pythonpath')
+[4.900s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/pythonpath.ps1'
+[4.901s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/pythonpath.dsv'
+[4.901s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/pythonpath.sh'
+[4.901s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/bin'
+[4.903s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.ps1'
+[4.903s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.dsv'
+[4.904s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.sh'
+[4.904s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.bash'
+[4.905s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.zsh'
+[4.906s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/colcon-core/packages/bboxes_ex_msgs)
+[4.988s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bboxes_ex_msgs)
+[4.990s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs' for CMake module files
+[4.991s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs' for CMake config files
+[4.992s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'cmake_prefix_path')
+[4.993s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.ps1'
+[4.994s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.dsv'
+[4.994s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/cmake_prefix_path.sh'
+[4.995s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib'
+[4.995s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'ld_library_path_lib')
+[4.996s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.ps1'
+[4.997s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.dsv'
+[4.997s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/ld_library_path_lib.sh'
+[4.997s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/bin'
+[4.997s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/pkgconfig/bboxes_ex_msgs.pc'
+[4.998s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages'
+[4.998s] Level 1:colcon.colcon_core.shell:create_environment_hook('bboxes_ex_msgs', 'pythonpath')
+[4.999s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/pythonpath.ps1'
+[5.000s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/pythonpath.dsv'
+[5.000s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/hook/pythonpath.sh'
+[5.000s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/bin'
+[5.002s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.ps1'
+[5.003s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.dsv'
+[5.003s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.sh'
+[5.004s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.bash'
+[5.004s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.zsh'
+[5.004s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/share/colcon-core/packages/bboxes_ex_msgs)
+[5.005s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/leo/Documents/GitHub/mando_2023/ws_mando/YOLOv5-ROS/yolov5_ros' with build type 'ament_python'
+[5.005s] Level 1:colcon.colcon_core.shell:create_environment_hook('yolov5_ros', 'ament_prefix_path')
+[5.006s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/hook/ament_prefix_path.ps1'
+[5.007s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/hook/ament_prefix_path.dsv'
+[5.007s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/hook/ament_prefix_path.sh'
+[5.009s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.009s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.218s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/leo/Documents/GitHub/mando_2023/ws_mando/YOLOv5-ROS/yolov5_ros'
+[5.220s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.220s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.873s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros': AMENT_PREFIX_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/prefix_override:/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/python3.8/site-packages:/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/build --no-deps install_data
+[6.505s] Level 1:colcon.colcon_core.shell:create_environment_hook('yolov5_ros', 'pythonpath_develop')
+[6.506s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/share/yolov5_ros/hook/pythonpath_develop.ps1'
+[6.507s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros' returned '0': AMENT_PREFIX_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/prefix_override:/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/python3.8/site-packages:/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/build --no-deps install_data
+[6.507s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/share/yolov5_ros/hook/pythonpath_develop.dsv'
+[6.507s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/share/yolov5_ros/hook/pythonpath_develop.sh'
+[6.509s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros' for CMake module files
+[6.510s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros' for CMake config files
+[6.510s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib'
+[6.510s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/bin'
+[6.510s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/pkgconfig/yolov5_ros.pc'
+[6.510s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/python3.8/site-packages'
+[6.510s] Level 1:colcon.colcon_core.shell:create_environment_hook('yolov5_ros', 'pythonpath')
+[6.512s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/hook/pythonpath.ps1'
+[6.512s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/hook/pythonpath.dsv'
+[6.512s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/hook/pythonpath.sh'
+[6.513s] Level 1:colcon.colcon_core.environment:checking '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/bin'
+[6.513s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(yolov5_ros)
+[6.514s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/package.ps1'
+[6.514s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/package.dsv'
+[6.515s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/package.sh'
+[6.515s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/package.bash'
+[6.515s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros/package.zsh'
+[6.515s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/colcon-core/packages/yolov5_ros)
+[6.516s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[6.516s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[6.516s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[6.516s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[6.521s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[6.521s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[6.521s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[6.535s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[6.537s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/local_setup.ps1'
+[6.538s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/_local_setup_util_ps1.py'
+[6.539s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/setup.ps1'
+[6.541s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/local_setup.sh'
+[6.542s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/_local_setup_util_sh.py'
+[6.542s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/setup.sh'
+[6.544s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/local_setup.bash'
+[6.545s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/setup.bash'
+[6.547s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/local_setup.zsh'
+[6.547s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/leo/Documents/GitHub/mando_2023/ws_mando/install/setup.zsh'

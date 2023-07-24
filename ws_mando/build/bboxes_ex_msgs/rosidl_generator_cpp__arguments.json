@@ -1,10 +1,10 @@
 {
   "package_name": "bboxes_ex_msgs",
-  "output_dir": "/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_generator_cpp/bboxes_ex_msgs",
+  "output_dir": "/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_generator_cpp/bboxes_ex_msgs",
   "template_dir": "/opt/ros/foxy/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
-    "/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_adapter/bboxes_ex_msgs:msg/BoundingBox.idl",
-    "/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_adapter/bboxes_ex_msgs:msg/BoundingBoxes.idl"
+    "/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_adapter/bboxes_ex_msgs:msg/BoundingBox.idl",
+    "/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_adapter/bboxes_ex_msgs:msg/BoundingBoxes.idl"
   ],
   "ros_interface_dependencies": [
     "builtin_interfaces:/opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl",
@@ -60,8 +60,8 @@
     "/opt/ros/foxy/share/rosidl_generator_cpp/cmake/../resource/srv__struct.hpp.em",
     "/opt/ros/foxy/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
     "/opt/ros/foxy/share/rosidl_generator_cpp/cmake/../resource/srv__type_support.hpp.em",
-    "/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_adapter/bboxes_ex_msgs/msg/BoundingBox.idl",
-    "/home/leo/ws_mando/build/bboxes_ex_msgs/rosidl_adapter/bboxes_ex_msgs/msg/BoundingBoxes.idl",
+    "/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_adapter/bboxes_ex_msgs/msg/BoundingBox.idl",
+    "/home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/rosidl_adapter/bboxes_ex_msgs/msg/BoundingBoxes.idl",
     "/opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl",
     "/opt/ros/foxy/share/builtin_interfaces/msg/Time.idl",
     "/opt/ros/foxy/share/std_msgs/msg/Bool.idl",

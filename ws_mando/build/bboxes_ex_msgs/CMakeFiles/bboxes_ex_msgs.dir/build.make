@@ -53,10 +53,10 @@ RM = /home/leo/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leo/ws_mando/bbox_ex_msgs
+CMAKE_SOURCE_DIR = /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leo/ws_mando/build/bboxes_ex_msgs
+CMAKE_BINARY_DIR = /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs
 
 # Utility rule file for bboxes_ex_msgs.
 
@@ -66,8 +66,8 @@ include CMakeFiles/bboxes_ex_msgs.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/bboxes_ex_msgs.dir/progress.make
 
-CMakeFiles/bboxes_ex_msgs: /home/leo/ws_mando/bbox_ex_msgs/msg/BoundingBox.msg
-CMakeFiles/bboxes_ex_msgs: /home/leo/ws_mando/bbox_ex_msgs/msg/BoundingBoxes.msg
+CMakeFiles/bboxes_ex_msgs: /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs/msg/BoundingBox.msg
+CMakeFiles/bboxes_ex_msgs: /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs/msg/BoundingBoxes.msg
 CMakeFiles/bboxes_ex_msgs: /opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl
 CMakeFiles/bboxes_ex_msgs: /opt/ros/foxy/share/builtin_interfaces/msg/Time.idl
 CMakeFiles/bboxes_ex_msgs: /opt/ros/foxy/share/std_msgs/msg/Bool.idl
@@ -114,6 +114,6 @@ CMakeFiles/bboxes_ex_msgs.dir/clean:
 .PHONY : CMakeFiles/bboxes_ex_msgs.dir/clean
 
 CMakeFiles/bboxes_ex_msgs.dir/depend:
-	cd /home/leo/ws_mando/build/bboxes_ex_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leo/ws_mando/bbox_ex_msgs /home/leo/ws_mando/bbox_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs/CMakeFiles/bboxes_ex_msgs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/CMakeFiles/bboxes_ex_msgs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bboxes_ex_msgs.dir/depend
 

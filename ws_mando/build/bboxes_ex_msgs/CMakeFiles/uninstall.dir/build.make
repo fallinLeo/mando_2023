@@ -53,10 +53,10 @@ RM = /home/leo/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leo/ws_mando/bbox_ex_msgs
+CMAKE_SOURCE_DIR = /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leo/ws_mando/build/bboxes_ex_msgs
+CMAKE_BINARY_DIR = /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/leo/ws_mando/build/bboxes_ex_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leo/ws_mando/bbox_ex_msgs /home/leo/ws_mando/bbox_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs /home/leo/ws_mando/build/bboxes_ex_msgs/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/bbox_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs /home/leo/Documents/GitHub/mando_2023/ws_mando/build/bboxes_ex_msgs/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 
