@@ -1,0 +1,58 @@
+[0.674s] Invoking command in '/home/leo/ws_mando/build/yolov5_ros': AMENT_PREFIX_PATH=/home/leo/ws_mando/install/bboxes_ex_msgs CMAKE_PREFIX_PATH=/home/leo/ws_mando/install/bboxes_ex_msgs LD_LIBRARY_PATH=/home/leo/ws_mando/install/bboxes_ex_msgs/lib PYTHONPATH=/home/leo/ws_mando/build/yolov5_ros/prefix_override:/home/leo/ws_mando/install/yolov5_ros/lib/python3.8/site-packages:/home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages /usr/bin/python3 setup.py develop --editable --build-directory /home/leo/ws_mando/build/yolov5_ros/build --no-deps install_data
+[0.784s] /home/leo/.local/lib/python3.8/site-packages/setuptools/dist.py:745: SetuptoolsDeprecationWarning: Invalid dash-separated options
+[0.784s] !!
+[0.784s] 
+[0.784s]         ********************************************************************************
+[0.784s]         Usage of dash-separated 'script-dir' will not be supported in future
+[0.784s]         versions. Please use the underscore name 'script_dir' instead.
+[0.784s] 
+[0.784s]         By 2023-Sep-26, you need to update your project and remove deprecated calls
+[0.784s]         or your builds will no longer be supported.
+[0.784s] 
+[0.785s]         See https://setuptools.pypa.io/en/latest/userguide/declarative_config.html for details.
+[0.785s]         ********************************************************************************
+[0.785s] 
+[0.785s] !!
+[0.785s]   opt = self.warn_dash_deprecation(opt, section)
+[0.936s] running develop
+[0.936s] /home/leo/.local/lib/python3.8/site-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[0.936s] !!
+[0.936s] 
+[0.936s]         ********************************************************************************
+[0.936s]         Please avoid running ``setup.py`` and ``easy_install``.
+[0.936s]         Instead, use pypa/build, pypa/installer or other
+[0.936s]         standards-based tools.
+[0.937s] 
+[0.937s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[0.937s]         ********************************************************************************
+[0.937s] 
+[0.937s] !!
+[0.937s]   easy_install.initialize_options(self)
+[0.960s] /home/leo/.local/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[0.960s] !!
+[0.960s] 
+[0.960s]         ********************************************************************************
+[0.960s]         Please avoid running ``setup.py`` directly.
+[0.960s]         Instead, use pypa/build, pypa/installer or other
+[0.960s]         standards-based tools.
+[0.960s] 
+[0.960s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[0.960s]         ********************************************************************************
+[0.960s] 
+[0.960s] !!
+[0.961s]   self.initialize_options()
+[1.100s] running egg_info
+[1.112s] writing yolov5_ros.egg-info/PKG-INFO
+[1.112s] writing dependency_links to yolov5_ros.egg-info/dependency_links.txt
+[1.116s] writing entry points to yolov5_ros.egg-info/entry_points.txt
+[1.116s] writing requirements to yolov5_ros.egg-info/requires.txt
+[1.116s] writing top-level names to yolov5_ros.egg-info/top_level.txt
+[1.141s] reading manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+[1.142s] writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+[1.191s] running build_ext
+[1.191s] Creating /home/leo/ws_mando/install/yolov5_ros/lib/python3.8/site-packages/yolov5-ros.egg-link (link to .)
+[1.192s] Installing yolov5_ros script to /home/leo/ws_mando/install/yolov5_ros/lib/yolov5_ros
+[1.192s] 
+[1.192s] Installed /home/leo/ws_mando/build/yolov5_ros
+[1.192s] running install_data
+[1.218s] Invoked command in '/home/leo/ws_mando/build/yolov5_ros' returned '0': AMENT_PREFIX_PATH=/home/leo/ws_mando/install/bboxes_ex_msgs CMAKE_PREFIX_PATH=/home/leo/ws_mando/install/bboxes_ex_msgs LD_LIBRARY_PATH=/home/leo/ws_mando/install/bboxes_ex_msgs/lib PYTHONPATH=/home/leo/ws_mando/build/yolov5_ros/prefix_override:/home/leo/ws_mando/install/yolov5_ros/lib/python3.8/site-packages:/home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages /usr/bin/python3 setup.py develop --editable --build-directory /home/leo/ws_mando/build/yolov5_ros/build --no-deps install_data

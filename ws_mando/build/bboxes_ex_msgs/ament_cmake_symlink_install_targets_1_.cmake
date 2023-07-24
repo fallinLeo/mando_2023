@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/leo/ws_mando/build/bboxes_ex_msgs/libbboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp.so" "TARGETS" "bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

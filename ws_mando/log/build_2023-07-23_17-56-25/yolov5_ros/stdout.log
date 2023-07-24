@@ -1,0 +1,23 @@
+running develop
+running egg_info
+creating yolov5_ros.egg-info
+writing yolov5_ros.egg-info/PKG-INFO
+writing dependency_links to yolov5_ros.egg-info/dependency_links.txt
+writing entry points to yolov5_ros.egg-info/entry_points.txt
+writing requirements to yolov5_ros.egg-info/requires.txt
+writing top-level names to yolov5_ros.egg-info/top_level.txt
+writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+reading manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/leo/ws_mando/install/yolov5_ros/lib/python3.8/site-packages/yolov5-ros.egg-link (link to .)
+Installing yolov5_ros script to /home/leo/ws_mando/install/yolov5_ros/lib/yolov5_ros
+
+Installed /home/leo/ws_mando/build/yolov5_ros
+running install_data
+creating /home/leo/ws_mando/install/yolov5_ros/share/ament_index
+creating /home/leo/ws_mando/install/yolov5_ros/share/ament_index/resource_index
+creating /home/leo/ws_mando/install/yolov5_ros/share/ament_index/resource_index/packages
+copying resource/yolov5_ros -> /home/leo/ws_mando/install/yolov5_ros/share/ament_index/resource_index/packages
+copying package.xml -> /home/leo/ws_mando/install/yolov5_ros/share/yolov5_ros
+copying ./launch/yolov5s_simple.launch.py -> /home/leo/ws_mando/install/yolov5_ros/share/yolov5_ros

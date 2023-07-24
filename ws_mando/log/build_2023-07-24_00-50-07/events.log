@@ -1,0 +1,196 @@
+[0.000000] (-) TimerEvent: {}
+[0.000345] (bboxes_ex_msgs) JobQueued: {'identifier': 'bboxes_ex_msgs', 'dependencies': OrderedDict()}
+[0.000375] (yolov5_ros) JobQueued: {'identifier': 'yolov5_ros', 'dependencies': OrderedDict([('bboxes_ex_msgs', '/home/leo/ws_mando/install/bboxes_ex_msgs')])}
+[0.000732] (bboxes_ex_msgs) JobStarted: {'identifier': 'bboxes_ex_msgs'}
+[0.014664] (bboxes_ex_msgs) JobProgress: {'identifier': 'bboxes_ex_msgs', 'progress': 'cmake'}
+[0.015917] (bboxes_ex_msgs) JobProgress: {'identifier': 'bboxes_ex_msgs', 'progress': 'build'}
+[0.016864] (bboxes_ex_msgs) Command: {'cmd': ['/home/leo/.local/bin/cmake', '--build', '/home/leo/ws_mando/build/bboxes_ex_msgs', '--', '-j12', '-l12'], 'cwd': '/home/leo/ws_mando/build/bboxes_ex_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'leo'), ('LC_TIME', 'ko_KR.UTF-8'), ('SSH_AGENT_PID', '1727'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('HOME', '/home/leo'), ('OLDPWD', '/home/leo'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('MANAGERPID', '1539'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '2206'), ('_colcon_cd_root', '/home/leo/gcamp_ros2_ws'), ('IM_CONFIG_PHASE', '1'), ('LOGNAME', 'leo'), ('JOURNAL_STREAM', '8:46695'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'leo'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('WINDOWPATH', '2'), ('PATH', '/home/leo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/leo-XPS-15-7590:@/tmp/.ICE-unix/1765,unix/leo-XPS-15-7590:/tmp/.ICE-unix/1765'), ('INVOCATION_ID', '524d8a67532d46b6824b3bf904dc750a'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:43ac32b6-71a9-4e88-9792-75277e374d43'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/leo/ws_mando/build/bboxes_ex_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003')]), 'shell': False}
+[0.100063] (-) TimerEvent: {}
+[0.161032] (bboxes_ex_msgs) StdoutLine: {'line': b'[  2%] Built target bboxes_ex_msgs__cpp\n'}
+[0.186706] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 12%] Built target bboxes_ex_msgs__rosidl_generator_c\n'}
+[0.194184] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 23%] Built target bboxes_ex_msgs__rosidl_typesupport_cpp\n'}
+[0.194533] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 33%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_cpp\n'}
+[0.195316] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 43%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[0.200127] (-) TimerEvent: {}
+[0.204713] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 53%] Built target bboxes_ex_msgs__rosidl_typesupport_c\n'}
+[0.205679] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 64%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_c\n'}
+[0.213680] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 74%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_c\n'}
+[0.224843] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 74%] Built target bboxes_ex_msgs\n'}
+[0.238881] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 76%] Built target bboxes_ex_msgs__py\n'}
+[0.263325] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 84%] Built target bboxes_ex_msgs__python\n'}
+[0.294694] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 89%] Built target bboxes_ex_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.297185] (bboxes_ex_msgs) StdoutLine: {'line': b'[ 94%] Built target bboxes_ex_msgs__rosidl_typesupport_c__pyext\n'}
+[0.297898] (bboxes_ex_msgs) StdoutLine: {'line': b'[100%] Built target bboxes_ex_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[0.300345] (-) TimerEvent: {}
+[0.319171] (bboxes_ex_msgs) CommandEnded: {'returncode': 0}
+[0.400495] (-) TimerEvent: {}
+[0.403736] (bboxes_ex_msgs) JobProgress: {'identifier': 'bboxes_ex_msgs', 'progress': 'install'}
+[0.431453] (bboxes_ex_msgs) Command: {'cmd': ['/home/leo/.local/bin/cmake', '--install', '/home/leo/ws_mando/build/bboxes_ex_msgs'], 'cwd': '/home/leo/ws_mando/build/bboxes_ex_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'leo'), ('LC_TIME', 'ko_KR.UTF-8'), ('SSH_AGENT_PID', '1727'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('HOME', '/home/leo'), ('OLDPWD', '/home/leo'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('MANAGERPID', '1539'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '2206'), ('_colcon_cd_root', '/home/leo/gcamp_ros2_ws'), ('IM_CONFIG_PHASE', '1'), ('LOGNAME', 'leo'), ('JOURNAL_STREAM', '8:46695'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'leo'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('WINDOWPATH', '2'), ('PATH', '/home/leo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/leo-XPS-15-7590:@/tmp/.ICE-unix/1765,unix/leo-XPS-15-7590:/tmp/.ICE-unix/1765'), ('INVOCATION_ID', '524d8a67532d46b6824b3bf904dc750a'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:43ac32b6-71a9-4e88-9792-75277e374d43'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/leo/ws_mando/build/bboxes_ex_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003')]), 'shell': False}
+[0.454030] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.455585] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.457303] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/ament_index/resource_index/rosidl_interfaces/bboxes_ex_msgs\n'}
+[0.460035] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/bounding_box.h\n'}
+[0.460390] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/bounding_boxes.h\n'}
+[0.461080] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__functions.h\n'}
+[0.461488] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__struct.h\n'}
+[0.461906] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__type_support.h\n'}
+[0.462318] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__functions.h\n'}
+[0.462701] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__struct.h\n'}
+[0.463064] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support.h\n'}
+[0.463384] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.464357] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/library_path.sh\n'}
+[0.464849] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/library_path.dsv\n'}
+[0.465543] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_fastrtps_c.h\n'}
+[0.465825] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_fastrtps_c.h\n'}
+[0.466097] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.466963] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[0.467698] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.468091] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.468491] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.469563] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.470292] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_introspection_c.h\n'}
+[0.470588] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_introspection_c.h\n'}
+[0.470882] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.471677] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/bounding_box.hpp\n'}
+[0.471991] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/bounding_boxes.hpp\n'}
+[0.472298] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__builder.hpp\n'}
+[0.472634] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__struct.hpp\n'}
+[0.472971] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__traits.hpp\n'}
+[0.473293] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__type_support.hpp\n'}
+[0.473572] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__builder.hpp\n'}
+[0.473825] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__struct.hpp\n'}
+[0.474076] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__traits.hpp\n'}
+[0.474370] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__type_support.hpp\n'}
+[0.474664] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[0.475251] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_box__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.475648] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/include/bboxes_ex_msgs/msg/detail/bounding_boxes__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.476058] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/pythonpath.sh\n'}
+[0.476510] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/pythonpath.dsv\n'}
+[0.477379] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/__init__.py\n'}
+[0.478097] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/msg/__init__.py\n'}
+[0.478398] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/msg/_bounding_box.py\n'}
+[0.478695] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/msg/_bounding_boxes.py\n'}
+[0.479275] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.480027] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.480781] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages/bboxes_ex_msgs/bboxes_ex_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.481404] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__python.so\n'}
+[0.481843] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBox.idl\n'}
+[0.482146] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBoxes.idl\n'}
+[0.482305] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBox.msg\n'}
+[0.482466] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/msg/BoundingBoxes.msg\n'}
+[0.482895] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/ament_index/resource_index/package_run_dependencies/bboxes_ex_msgs\n'}
+[0.483350] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/ament_index/resource_index/parent_prefix_path/bboxes_ex_msgs\n'}
+[0.483777] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/ament_prefix_path.sh\n'}
+[0.484218] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/ament_prefix_path.dsv\n'}
+[0.484668] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/path.sh\n'}
+[0.485066] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/environment/path.dsv\n'}
+[0.485435] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.bash\n'}
+[0.485718] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.sh\n'}
+[0.486010] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.zsh\n'}
+[0.486299] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/local_setup.dsv\n'}
+[0.486475] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Symlinking: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.dsv\n'}
+[0.489054] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/ament_index/resource_index/packages/bboxes_ex_msgs\n'}
+[0.489500] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[0.489800] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.490084] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.490405] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.490768] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.491165] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.491598] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.492037] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgsConfig.cmake\n'}
+[0.492273] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgsConfig-version.cmake\n'}
+[0.492522] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/package.xml\n'}
+[0.493612] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_generator_c.so\n'}
+[0.494621] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_introspection_c.so\n'}
+[0.495311] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_c.so\n'}
+[0.496332] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[0.497339] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/lib/libbboxes_ex_msgs__rosidl_typesupport_cpp.so\n'}
+[0.500569] (-) TimerEvent: {}
+[0.524985] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_generator_cExport.cmake\n'}
+[0.525097] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.525691] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.525892] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.526441] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cExport.cmake\n'}
+[0.526520] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.527014] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_generator_cppExport.cmake\n'}
+[0.527728] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.527961] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.528587] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[0.528861] (bboxes_ex_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/leo/ws_mando/install/bboxes_ex_msgs/share/bboxes_ex_msgs/cmake/bboxes_ex_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.534197] (bboxes_ex_msgs) CommandEnded: {'returncode': 0}
+[0.600696] (-) TimerEvent: {}
+[0.637032] (bboxes_ex_msgs) JobEnded: {'identifier': 'bboxes_ex_msgs', 'rc': 0}
+[0.637348] (yolov5_ros) JobStarted: {'identifier': 'yolov5_ros'}
+[0.700863] (-) TimerEvent: {}
+[0.801219] (-) TimerEvent: {}
+[0.901514] (-) TimerEvent: {}
+[1.001824] (-) TimerEvent: {}
+[1.102075] (-) TimerEvent: {}
+[1.202353] (-) TimerEvent: {}
+[1.302608] (-) TimerEvent: {}
+[1.334531] (yolov5_ros) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--editable', '--build-directory', '/home/leo/ws_mando/build/yolov5_ros/build', '--no-deps', 'install_data'], 'cwd': '/home/leo/ws_mando/build/yolov5_ros', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'leo', 'LC_TIME': 'ko_KR.UTF-8', 'SSH_AGENT_PID': '1727', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/leo/ws_mando/install/bboxes_ex_msgs/lib', 'HOME': '/home/leo', 'OLDPWD': '/home/leo', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'ko_KR.UTF-8', 'MANAGERPID': '1539', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '2206', '_colcon_cd_root': '/home/leo/gcamp_ros2_ws', 'IM_CONFIG_PHASE': '1', 'LOGNAME': 'leo', 'JOURNAL_STREAM': '8:46695', '_': '/usr/bin/colcon', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'leo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/leo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/leo-XPS-15-7590:@/tmp/.ICE-unix/1765,unix/leo-XPS-15-7590:/tmp/.ICE-unix/1765', 'INVOCATION_ID': '524d8a67532d46b6824b3bf904dc750a', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ko_KR.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/leo/ws_mando/install/bboxes_ex_msgs', 'SHELL': '/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:43ac32b6-71a9-4e88-9792-75277e374d43', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/leo/ws_mando/build/yolov5_ros', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'LC_NUMERIC': 'ko_KR.UTF-8', 'PYTHONPATH': '/home/leo/ws_mando/build/yolov5_ros/prefix_override:/home/leo/ws_mando/install/yolov5_ros/lib/python3.8/site-packages:/home/leo/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/leo/ws_mando/install/bboxes_ex_msgs'}, 'shell': False}
+[1.402741] (-) TimerEvent: {}
+[1.434728] (yolov5_ros) StderrLine: {'line': b'/home/leo/.local/lib/python3.8/site-packages/setuptools/dist.py:745: SetuptoolsDeprecationWarning: Invalid dash-separated options\n'}
+[1.434872] (yolov5_ros) StderrLine: {'line': b'!!\n'}
+[1.434931] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.434983] (yolov5_ros) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.435034] (yolov5_ros) StderrLine: {'line': b"        Usage of dash-separated 'script-dir' will not be supported in future\n"}
+[1.435083] (yolov5_ros) StderrLine: {'line': b"        versions. Please use the underscore name 'script_dir' instead.\n"}
+[1.435139] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.435188] (yolov5_ros) StderrLine: {'line': b'        By 2023-Sep-26, you need to update your project and remove deprecated calls\n'}
+[1.435237] (yolov5_ros) StderrLine: {'line': b'        or your builds will no longer be supported.\n'}
+[1.435285] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.435333] (yolov5_ros) StderrLine: {'line': b'        See https://setuptools.pypa.io/en/latest/userguide/declarative_config.html for details.\n'}
+[1.435383] (yolov5_ros) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.435432] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.435480] (yolov5_ros) StderrLine: {'line': b'!!\n'}
+[1.435527] (yolov5_ros) StderrLine: {'line': b'  opt = self.warn_dash_deprecation(opt, section)\n'}
+[1.502853] (-) TimerEvent: {}
+[1.563965] (yolov5_ros) StdoutLine: {'line': b'running develop\n'}
+[1.564589] (yolov5_ros) StderrLine: {'line': b'/home/leo/.local/lib/python3.8/site-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.\n'}
+[1.564669] (yolov5_ros) StderrLine: {'line': b'!!\n'}
+[1.564724] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.564774] (yolov5_ros) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.564823] (yolov5_ros) StderrLine: {'line': b'        Please avoid running ``setup.py`` and ``easy_install``.\n'}
+[1.564871] (yolov5_ros) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[1.564918] (yolov5_ros) StderrLine: {'line': b'        standards-based tools.\n'}
+[1.564964] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.565011] (yolov5_ros) StderrLine: {'line': b'        See https://github.com/pypa/setuptools/issues/917 for details.\n'}
+[1.565057] (yolov5_ros) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.565104] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.565151] (yolov5_ros) StderrLine: {'line': b'!!\n'}
+[1.565198] (yolov5_ros) StderrLine: {'line': b'  easy_install.initialize_options(self)\n'}
+[1.585199] (yolov5_ros) StderrLine: {'line': b'/home/leo/.local/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[1.585279] (yolov5_ros) StderrLine: {'line': b'!!\n'}
+[1.585333] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.585385] (yolov5_ros) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.585435] (yolov5_ros) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[1.585484] (yolov5_ros) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[1.585531] (yolov5_ros) StderrLine: {'line': b'        standards-based tools.\n'}
+[1.585579] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.585630] (yolov5_ros) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[1.585680] (yolov5_ros) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.585729] (yolov5_ros) StderrLine: {'line': b'\n'}
+[1.585777] (yolov5_ros) StderrLine: {'line': b'!!\n'}
+[1.585824] (yolov5_ros) StderrLine: {'line': b'  self.initialize_options()\n'}
+[1.602955] (-) TimerEvent: {}
+[1.703141] (yolov5_ros) StdoutLine: {'line': b'running egg_info\n'}
+[1.703248] (-) TimerEvent: {}
+[1.712818] (yolov5_ros) StdoutLine: {'line': b'writing yolov5_ros.egg-info/PKG-INFO\n'}
+[1.713130] (yolov5_ros) StdoutLine: {'line': b'writing dependency_links to yolov5_ros.egg-info/dependency_links.txt\n'}
+[1.713615] (yolov5_ros) StdoutLine: {'line': b'writing entry points to yolov5_ros.egg-info/entry_points.txt\n'}
+[1.713858] (yolov5_ros) StdoutLine: {'line': b'writing requirements to yolov5_ros.egg-info/requires.txt\n'}
+[1.714210] (yolov5_ros) StdoutLine: {'line': b'writing top-level names to yolov5_ros.egg-info/top_level.txt\n'}
+[1.738977] (yolov5_ros) StdoutLine: {'line': b"reading manifest file 'yolov5_ros.egg-info/SOURCES.txt'\n"}
+[1.740276] (yolov5_ros) StdoutLine: {'line': b"writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'\n"}
+[1.780935] (yolov5_ros) StdoutLine: {'line': b'running build_ext\n'}
+[1.781096] (yolov5_ros) StdoutLine: {'line': b'Creating /home/leo/ws_mando/install/yolov5_ros/lib/python3.8/site-packages/yolov5-ros.egg-link (link to .)\n'}
+[1.781781] (yolov5_ros) StdoutLine: {'line': b'Installing yolov5_ros script to /home/leo/ws_mando/install/yolov5_ros/lib/yolov5_ros\n'}
+[1.782023] (yolov5_ros) StdoutLine: {'line': b'\n'}
+[1.782283] (yolov5_ros) StdoutLine: {'line': b'Installed /home/leo/ws_mando/build/yolov5_ros\n'}
+[1.782426] (yolov5_ros) StdoutLine: {'line': b'running install_data\n'}
+[1.783180] (yolov5_ros) StdoutLine: {'line': b'copying ./launch/yolov5s_simple.launch.py -> /home/leo/ws_mando/install/yolov5_ros/share/yolov5_ros\n'}
+[1.804215] (yolov5_ros) CommandEnded: {'returncode': 0}
+[1.804515] (-) TimerEvent: {}
+[1.814649] (yolov5_ros) JobEnded: {'identifier': 'yolov5_ros', 'rc': 0}
+[1.815431] (-) EventReactorShutdown: {}

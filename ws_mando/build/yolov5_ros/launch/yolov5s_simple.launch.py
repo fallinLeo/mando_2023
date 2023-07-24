@@ -1,0 +1,1 @@
+/home/leo/ws_mando/src/yolov5_ros/./launch/yolov5s_simple.launch.py
