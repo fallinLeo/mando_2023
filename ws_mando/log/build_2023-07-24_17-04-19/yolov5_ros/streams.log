@@ -1,0 +1,58 @@
+[1.089s] Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros': AMENT_PREFIX_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/prefix_override:/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/python3.8/site-packages:/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/build --no-deps install_data
+[1.254s] /home/leo/.local/lib/python3.8/site-packages/setuptools/dist.py:745: SetuptoolsDeprecationWarning: Invalid dash-separated options
+[1.254s] !!
+[1.255s] 
+[1.255s]         ********************************************************************************
+[1.255s]         Usage of dash-separated 'script-dir' will not be supported in future
+[1.255s]         versions. Please use the underscore name 'script_dir' instead.
+[1.255s] 
+[1.255s]         By 2023-Sep-26, you need to update your project and remove deprecated calls
+[1.255s]         or your builds will no longer be supported.
+[1.255s] 
+[1.255s]         See https://setuptools.pypa.io/en/latest/userguide/declarative_config.html for details.
+[1.255s]         ********************************************************************************
+[1.255s] 
+[1.255s] !!
+[1.256s]   opt = self.warn_dash_deprecation(opt, section)
+[1.493s] running develop
+[1.493s] /home/leo/.local/lib/python3.8/site-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[1.493s] !!
+[1.493s] 
+[1.493s]         ********************************************************************************
+[1.493s]         Please avoid running ``setup.py`` and ``easy_install``.
+[1.493s]         Instead, use pypa/build, pypa/installer or other
+[1.493s]         standards-based tools.
+[1.493s] 
+[1.494s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[1.494s]         ********************************************************************************
+[1.494s] 
+[1.494s] !!
+[1.494s]   easy_install.initialize_options(self)
+[1.534s] /home/leo/.local/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[1.534s] !!
+[1.534s] 
+[1.534s]         ********************************************************************************
+[1.534s]         Please avoid running ``setup.py`` directly.
+[1.534s]         Instead, use pypa/build, pypa/installer or other
+[1.534s]         standards-based tools.
+[1.534s] 
+[1.535s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[1.535s]         ********************************************************************************
+[1.535s] 
+[1.535s] !!
+[1.535s]   self.initialize_options()
+[1.755s] running egg_info
+[1.775s] writing yolov5_ros.egg-info/PKG-INFO
+[1.775s] writing dependency_links to yolov5_ros.egg-info/dependency_links.txt
+[1.779s] writing entry points to yolov5_ros.egg-info/entry_points.txt
+[1.779s] writing requirements to yolov5_ros.egg-info/requires.txt
+[1.779s] writing top-level names to yolov5_ros.egg-info/top_level.txt
+[1.821s] reading manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+[1.822s] writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+[1.889s] running build_ext
+[1.889s] Creating /home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/python3.8/site-packages/yolov5-ros.egg-link (link to .)
+[1.890s] Installing yolov5_ros script to /home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/yolov5_ros
+[1.890s] 
+[1.890s] Installed /home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros
+[1.891s] running install_data
+[1.932s] Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros' returned '0': AMENT_PREFIX_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/prefix_override:/home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/python3.8/site-packages:/home/leo/Documents/GitHub/mando_2023/ws_mando/install/bboxes_ex_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros/build --no-deps install_data

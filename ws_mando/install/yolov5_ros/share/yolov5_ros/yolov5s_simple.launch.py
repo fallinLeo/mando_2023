@@ -19,7 +19,9 @@ def generate_launch_description():
         parameters=[
             {"view_img":True},
         ],
-
+        remappings=[("/yolov5/image_raw","/image_detect")],
+        arguments=["--weights","home/leo/yolo/yolov5/runs/train/hansome_results/weights/best.pt"],
+        
     )
 
     rqt_graph = launch_ros.actions.Node(

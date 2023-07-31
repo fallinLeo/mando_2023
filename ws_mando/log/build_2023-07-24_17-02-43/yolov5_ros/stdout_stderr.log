@@ -1,0 +1,57 @@
+/home/leo/.local/lib/python3.8/site-packages/setuptools/dist.py:745: SetuptoolsDeprecationWarning: Invalid dash-separated options
+!!
+
+        ********************************************************************************
+        Usage of dash-separated 'script-dir' will not be supported in future
+        versions. Please use the underscore name 'script_dir' instead.
+
+        By 2023-Sep-26, you need to update your project and remove deprecated calls
+        or your builds will no longer be supported.
+
+        See https://setuptools.pypa.io/en/latest/userguide/declarative_config.html for details.
+        ********************************************************************************
+
+!!
+  opt = self.warn_dash_deprecation(opt, section)
+running develop
+/home/leo/.local/lib/python3.8/site-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` and ``easy_install``.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://github.com/pypa/setuptools/issues/917 for details.
+        ********************************************************************************
+
+!!
+  easy_install.initialize_options(self)
+/home/leo/.local/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+running egg_info
+writing yolov5_ros.egg-info/PKG-INFO
+writing dependency_links to yolov5_ros.egg-info/dependency_links.txt
+writing entry points to yolov5_ros.egg-info/entry_points.txt
+writing requirements to yolov5_ros.egg-info/requires.txt
+writing top-level names to yolov5_ros.egg-info/top_level.txt
+reading manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+writing manifest file 'yolov5_ros.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/python3.8/site-packages/yolov5-ros.egg-link (link to .)
+Installing yolov5_ros script to /home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/lib/yolov5_ros
+
+Installed /home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros
+running install_data
+copying ./launch/yolov5s_simple.launch.py -> /home/leo/Documents/GitHub/mando_2023/ws_mando/install/yolov5_ros/share/yolov5_ros
