@@ -43,8 +43,9 @@ MotorPIDController steer_PID_controller(MOTOR3_PWM, MOTOR3_ENA, MOTOR3_ENB);
 
 //=================bluetooth============================
 #include <SoftwareSerial.h>
-SoftwareSerial mySerial(2,3);
+SoftwareSerial mySerial(11,12);
 void bluetoothcheck(char);
+char st;
 void steer_motor_control(int);
 void front_motor_control(int);
 void rear_motor_control(int);
@@ -89,6 +90,7 @@ void loop() {
   // Serial.print("steer_r = "); Serial.print(steer_r);
   // Serial.print("steer_y_m = "); Serial.print(steer_y_m);
   // Serial.print("steer_y_m_lpf  = "); Serial.println(steer_y_m_lpf);
+  st = mySerial.read();
   bluetoothcheck(st);
   // ROS
   data.data = steer_y_m; // 아두이노 상에서 float을 Float32 메세지 형식인 ~~.data에 대입하는
@@ -103,7 +105,7 @@ void bluetoothcheck(char st)
 {
   if(mySerial.available()>0)
   {
-    st = mySerial.read();
+    
     //forward();
     if(st=='S')
     {
