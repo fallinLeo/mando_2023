@@ -152,6 +152,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/leo/Documents/GitHub/mando_2023/ws_mando/build/rosserial/rosserial_embeddedlinux/cmake_install.cmake")
   include("/home/leo/Documents/GitHub/mando_2023/ws_mando/build/rosserial/rosserial_test/cmake_install.cmake")
   include("/home/leo/Documents/GitHub/mando_2023/ws_mando/build/rosserial/rosserial_windows/cmake_install.cmake")
+  include("/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_pytorch_ros/cmake_install.cmake")
 
 endif()
 
