@@ -443,6 +443,18 @@ catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
 
+//Value Computed by CMake
+detection_msgs_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/detection_msgs
+
+//The directory containing a CMake configuration file for detection_msgs.
+detection_msgs_DIR:PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/detection_msgs/cmake
+
+//Value Computed by CMake
+detection_msgs_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+detection_msgs_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/detection_msgs
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/noetic/share/gencpp/cmake
 
@@ -727,13 +739,13 @@ topic_tools_DIR:PATH=/opt/ros/noetic/share/topic_tools/cmake
 xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
 
 //Value Computed by CMake
-yolov5_pytorch_ros_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_pytorch_ros
+yolov5_ros_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros
 
 //Value Computed by CMake
-yolov5_pytorch_ros_IS_TOP_LEVEL:STATIC=OFF
+yolov5_ros_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-yolov5_pytorch_ros_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/yolov5_pytorch_ros
+yolov5_ros_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/yolov5_ros
 
 
 ########################
@@ -883,7 +895,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=22
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -1,0 +1,5 @@
+Symlinking /home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib/yolov5_ros/cmake.lock
+Symlinking /home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib/yolov5_ros/detect.py
+Symlinking /home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib/pkgconfig/yolov5_ros.pc
+Symlinking /home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/yolov5_ros/cmake/yolov5_rosConfig.cmake
+Symlinking /home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/yolov5_ros/cmake/yolov5_rosConfig-version.cmake
