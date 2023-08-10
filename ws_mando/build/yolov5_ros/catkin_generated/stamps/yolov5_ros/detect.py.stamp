@@ -48,8 +48,7 @@ class Yolov5Detector:
         # Initialize weights 
         weights = rospy.get_param("~weights")
         # Initialize model
-        #self.device = select_device(str(rospy.get_param("~device","")))
-        self.device = select_device('cpu') ##cuda오류 수정부분
+        self.device = select_device(str(rospy.get_param("~device","")))
         self.model = DetectMultiBackend(weights, device=self.device, dnn=rospy.get_param("~dnn"), data=rospy.get_param("~data"))
         self.stride, self.names, self.pt, self.jit, self.onnx, self.engine = (
             self.model.stride,

@@ -1,0 +1,8 @@
+prefix=/home/leo/Documents/GitHub/mando_2023/ws_mando/install
+
+Name: yolodetect
+Description: Description of yolodetect
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

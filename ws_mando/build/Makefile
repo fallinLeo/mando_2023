@@ -298,7 +298,7 @@ _catkin_empty_exported_target: cmake_check_build_system
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build.make rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build
+	$(MAKE) $(MAKESILENT) -f camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/build.make camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
@@ -1485,6 +1485,149 @@ rosserial_server_udp_socket_node/fast:
 .PHONY : rosserial_server_udp_socket_node/fast
 
 #=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_cpp
+
+# Build rule for target.
+sensor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_eus
+
+# Build rule for target.
+sensor_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_lisp
+
+# Build rule for target.
+sensor_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_nodejs
+
+# Build rule for target.
+sensor_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_py
+
+# Build rule for target.
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_lisp
+
+# Build rule for target.
+geometry_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_nodejs
+
+# Build rule for target.
+geometry_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_py
+
+# Build rule for target.
+geometry_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named jpeg_streamer
+
+# Build rule for target.
+jpeg_streamer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 jpeg_streamer
+.PHONY : jpeg_streamer
+
+# fast build rule for target.
+jpeg_streamer/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/build
+.PHONY : jpeg_streamer/fast
+
+#=============================================================================
 # Target rules for targets named rosserial_test_rosserial_lib
 
 # Build rule for target.
@@ -1654,71 +1797,6 @@ _run_tests_rosserial_test_rostest_test_rosserial_python_socket.test/fast:
 .PHONY : _run_tests_rosserial_test_rostest_test_rosserial_python_socket.test/fast
 
 #=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_cpp
-
-# Build rule for target.
-geometry_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_eus
-
-# Build rule for target.
-geometry_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_lisp
-
-# Build rule for target.
-geometry_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_nodejs
-
-# Build rule for target.
-geometry_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_py
-
-# Build rule for target.
-geometry_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-#=============================================================================
 # Target rules for targets named nav_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -1849,69 +1927,173 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_cpp
+# Target rules for targets named nodelet_generate_messages_cpp
 
 # Build rule for target.
-sensor_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
-.PHONY : sensor_msgs_generate_messages_cpp
+nodelet_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nodelet_generate_messages_cpp
+.PHONY : nodelet_generate_messages_cpp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
+nodelet_generate_messages_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build
+.PHONY : nodelet_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_eus
+# Target rules for targets named nodelet_generate_messages_eus
 
 # Build rule for target.
-sensor_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
-.PHONY : sensor_msgs_generate_messages_eus
+nodelet_generate_messages_eus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nodelet_generate_messages_eus
+.PHONY : nodelet_generate_messages_eus
 
 # fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+nodelet_generate_messages_eus/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build
+.PHONY : nodelet_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_lisp
+# Target rules for targets named nodelet_generate_messages_lisp
 
 # Build rule for target.
-sensor_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
-.PHONY : sensor_msgs_generate_messages_lisp
+nodelet_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nodelet_generate_messages_lisp
+.PHONY : nodelet_generate_messages_lisp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
+nodelet_generate_messages_lisp/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build
+.PHONY : nodelet_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_nodejs
+# Target rules for targets named nodelet_generate_messages_nodejs
 
 # Build rule for target.
-sensor_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
-.PHONY : sensor_msgs_generate_messages_nodejs
+nodelet_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nodelet_generate_messages_nodejs
+.PHONY : nodelet_generate_messages_nodejs
 
 # fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
+nodelet_generate_messages_nodejs/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
+.PHONY : nodelet_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_py
+# Target rules for targets named nodelet_generate_messages_py
 
 # Build rule for target.
-sensor_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
-.PHONY : sensor_msgs_generate_messages_py
+nodelet_generate_messages_py: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nodelet_generate_messages_py
+.PHONY : nodelet_generate_messages_py
 
 # fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+nodelet_generate_messages_py/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/build
+.PHONY : nodelet_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_cpp
+
+# Build rule for target.
+bond_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bond_generate_messages_cpp
+.PHONY : bond_generate_messages_cpp
+
+# fast build rule for target.
+bond_generate_messages_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/build
+.PHONY : bond_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_eus
+
+# Build rule for target.
+bond_generate_messages_eus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bond_generate_messages_eus
+.PHONY : bond_generate_messages_eus
+
+# fast build rule for target.
+bond_generate_messages_eus/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/build
+.PHONY : bond_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_lisp
+
+# Build rule for target.
+bond_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bond_generate_messages_lisp
+.PHONY : bond_generate_messages_lisp
+
+# fast build rule for target.
+bond_generate_messages_lisp/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/build
+.PHONY : bond_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_nodejs
+
+# Build rule for target.
+bond_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bond_generate_messages_nodejs
+.PHONY : bond_generate_messages_nodejs
+
+# fast build rule for target.
+bond_generate_messages_nodejs/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build
+.PHONY : bond_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named bond_generate_messages_py
+
+# Build rule for target.
+bond_generate_messages_py: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bond_generate_messages_py
+.PHONY : bond_generate_messages_py
+
+# fast build rule for target.
+bond_generate_messages_py/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/build
+.PHONY : bond_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named nodelet_uvc_camera
+
+# Build rule for target.
+nodelet_uvc_camera: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nodelet_uvc_camera
+.PHONY : nodelet_uvc_camera
+
+# fast build rule for target.
+nodelet_uvc_camera/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build
+.PHONY : nodelet_uvc_camera/fast
+
+#=============================================================================
+# Target rules for targets named uvc_camera_node
+
+# Build rule for target.
+uvc_camera_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uvc_camera_node
+.PHONY : uvc_camera_node
+
+# fast build rule for target.
+uvc_camera_node/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build
+.PHONY : uvc_camera_node/fast
+
+#=============================================================================
+# Target rules for targets named uvc_stereo_node
+
+# Build rule for target.
+uvc_stereo_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uvc_stereo_node
+.PHONY : uvc_stereo_node
+
+# fast build rule for target.
+uvc_stereo_node/fast:
+	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build
+.PHONY : uvc_stereo_node/fast
 
 # Help Target
 help:
@@ -1951,6 +2133,11 @@ help:
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... bond_generate_messages_cpp"
+	@echo "... bond_generate_messages_eus"
+	@echo "... bond_generate_messages_lisp"
+	@echo "... bond_generate_messages_nodejs"
+	@echo "... bond_generate_messages_py"
 	@echo "... clean_test_results"
 	@echo "... clean_test_results_rosserial_client"
 	@echo "... clean_test_results_rosserial_test"
@@ -1977,6 +2164,11 @@ help:
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... nav_msgs_generate_messages_py"
+	@echo "... nodelet_generate_messages_cpp"
+	@echo "... nodelet_generate_messages_eus"
+	@echo "... nodelet_generate_messages_lisp"
+	@echo "... nodelet_generate_messages_nodejs"
+	@echo "... nodelet_generate_messages_py"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
@@ -2053,6 +2245,8 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... jpeg_streamer"
+	@echo "... nodelet_uvc_camera"
 	@echo "... rosserial_server_lookup"
 	@echo "... rosserial_server_serial_node"
 	@echo "... rosserial_server_socket_node"
@@ -2060,6 +2254,8 @@ help:
 	@echo "... rosserial_test_publish_subscribe"
 	@echo "... subscriber_test"
 	@echo "... time_test"
+	@echo "... uvc_camera_node"
+	@echo "... uvc_stereo_node"
 .PHONY : help
 
 

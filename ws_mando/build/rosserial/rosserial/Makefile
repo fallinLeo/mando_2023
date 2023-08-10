@@ -171,20 +171,6 @@ depend:
 	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build.make rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -198,7 +184,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... _catkin_empty_exported_target"
 .PHONY : help
 
 

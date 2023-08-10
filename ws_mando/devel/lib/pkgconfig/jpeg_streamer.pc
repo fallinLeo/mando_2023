@@ -1,0 +1,8 @@
+prefix=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel
+
+Name: jpeg_streamer
+Description: Description of jpeg_streamer
+Version: 0.2.7
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
