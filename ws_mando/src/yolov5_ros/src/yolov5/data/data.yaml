@@ -1,0 +1,5 @@
+train: /home/leo/yolo/yolov5/data/traffic_redgreenyellow/train/images
+val: /home/leo/yolo/yolov5/data/traffic_redgreenyellow/valid/images
+
+nc: 5
+names: ['green','red','straightleft','yellow','background']
