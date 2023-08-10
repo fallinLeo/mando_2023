@@ -172,6 +172,76 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
 	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 .PHONY : rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
@@ -311,6 +381,76 @@ actionlib_msgs_generate_messages_py/fast:
 	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -329,11 +469,21 @@ help:
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... nav_msgs_generate_messages_cpp"
 	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... nav_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_py"
 .PHONY : help
 
 

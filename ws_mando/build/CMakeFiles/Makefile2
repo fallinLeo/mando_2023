@@ -64,7 +64,6 @@ CMAKE_BINARY_DIR = /home/leo/Documents/GitHub/mando_2023/ws_mando/build
 
 # The main recursive "all" target.
 all: gtest/all
-all: camera_umd/camera_umd/all
 all: rosserial/rosserial/all
 all: rosserial/rosserial_arduino/all
 all: rosserial/rosserial_chibios/all
@@ -79,17 +78,15 @@ all: rosserial/rosserial_client/all
 all: detection_msgs/all
 all: telecop_pkg/all
 all: rosserial/rosserial_server/all
-all: camera_umd/jpeg_streamer/all
 all: rosserial/rosserial_embeddedlinux/all
 all: rosserial/rosserial_test/all
 all: rosserial/rosserial_windows/all
-all: camera_umd/uvc_camera/all
+all: usb_cam/all
 all: yolov5_ros/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
-preinstall: camera_umd/camera_umd/preinstall
 preinstall: rosserial/rosserial/preinstall
 preinstall: rosserial/rosserial_arduino/preinstall
 preinstall: rosserial/rosserial_chibios/preinstall
@@ -104,11 +101,10 @@ preinstall: rosserial/rosserial_client/preinstall
 preinstall: detection_msgs/preinstall
 preinstall: telecop_pkg/preinstall
 preinstall: rosserial/rosserial_server/preinstall
-preinstall: camera_umd/jpeg_streamer/preinstall
 preinstall: rosserial/rosserial_embeddedlinux/preinstall
 preinstall: rosserial/rosserial_test/preinstall
 preinstall: rosserial/rosserial_windows/preinstall
-preinstall: camera_umd/uvc_camera/preinstall
+preinstall: usb_cam/preinstall
 preinstall: yolov5_ros/preinstall
 .PHONY : preinstall
 
@@ -119,7 +115,6 @@ clean: CMakeFiles/run_tests.dir/clean
 clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/doxygen.dir/clean
 clean: gtest/clean
-clean: camera_umd/camera_umd/clean
 clean: rosserial/rosserial/clean
 clean: rosserial/rosserial_arduino/clean
 clean: rosserial/rosserial_chibios/clean
@@ -134,82 +129,12 @@ clean: rosserial/rosserial_client/clean
 clean: detection_msgs/clean
 clean: telecop_pkg/clean
 clean: rosserial/rosserial_server/clean
-clean: camera_umd/jpeg_streamer/clean
 clean: rosserial/rosserial_embeddedlinux/clean
 clean: rosserial/rosserial_test/clean
 clean: rosserial/rosserial_windows/clean
-clean: camera_umd/uvc_camera/clean
+clean: usb_cam/clean
 clean: yolov5_ros/clean
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory camera_umd/camera_umd
-
-# Recursive "all" directory target.
-camera_umd/camera_umd/all:
-.PHONY : camera_umd/camera_umd/all
-
-# Recursive "preinstall" directory target.
-camera_umd/camera_umd/preinstall:
-.PHONY : camera_umd/camera_umd/preinstall
-
-# Recursive "clean" directory target.
-camera_umd/camera_umd/clean: camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : camera_umd/camera_umd/clean
-
-#=============================================================================
-# Directory level rules for directory camera_umd/jpeg_streamer
-
-# Recursive "all" directory target.
-camera_umd/jpeg_streamer/all: camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/all
-.PHONY : camera_umd/jpeg_streamer/all
-
-# Recursive "preinstall" directory target.
-camera_umd/jpeg_streamer/preinstall:
-.PHONY : camera_umd/jpeg_streamer/preinstall
-
-# Recursive "clean" directory target.
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
-camera_umd/jpeg_streamer/clean: camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/clean
-.PHONY : camera_umd/jpeg_streamer/clean
-
-#=============================================================================
-# Directory level rules for directory camera_umd/uvc_camera
-
-# Recursive "all" directory target.
-camera_umd/uvc_camera/all: camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/all
-camera_umd/uvc_camera/all: camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/all
-camera_umd/uvc_camera/all: camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/all
-.PHONY : camera_umd/uvc_camera/all
-
-# Recursive "preinstall" directory target.
-camera_umd/uvc_camera/preinstall:
-.PHONY : camera_umd/uvc_camera/preinstall
-
-# Recursive "clean" directory target.
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/clean
-camera_umd/uvc_camera/clean: camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/clean
-.PHONY : camera_umd/uvc_camera/clean
 
 #=============================================================================
 # Directory level rules for directory detection_msgs
@@ -303,7 +228,7 @@ rosserial/rosserial/preinstall:
 .PHONY : rosserial/rosserial/preinstall
 
 # Recursive "clean" directory target.
-rosserial/rosserial/clean:
+rosserial/rosserial/clean: rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : rosserial/rosserial/clean
 
 #=============================================================================
@@ -571,6 +496,11 @@ rosserial/rosserial_windows/preinstall:
 .PHONY : rosserial/rosserial_windows/preinstall
 
 # Recursive "clean" directory target.
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/clean
 rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_eus.dir/clean
 rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_lisp.dir/clean
@@ -581,6 +511,11 @@ rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/action
 rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/clean
 rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
 rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+rosserial/rosserial_windows/clean: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 .PHONY : rosserial/rosserial_windows/clean
 
 #=============================================================================
@@ -621,6 +556,30 @@ telecop_pkg/clean: telecop_pkg/CMakeFiles/rosgraph_msgs_generate_messages_lisp.d
 telecop_pkg/clean: telecop_pkg/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 telecop_pkg/clean: telecop_pkg/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 .PHONY : telecop_pkg/clean
+
+#=============================================================================
+# Directory level rules for directory usb_cam
+
+# Recursive "all" directory target.
+usb_cam/all: usb_cam/CMakeFiles/v4l_driver.dir/all
+usb_cam/all: usb_cam/CMakeFiles/usb_cam.dir/all
+usb_cam/all: usb_cam/CMakeFiles/usb_cam_node.dir/all
+.PHONY : usb_cam/all
+
+# Recursive "preinstall" directory target.
+usb_cam/preinstall:
+.PHONY : usb_cam/preinstall
+
+# Recursive "clean" directory target.
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/v4l_driver.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/usb_cam.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
+.PHONY : usb_cam/clean
 
 #=============================================================================
 # Directory level rules for directory yolov5_ros
@@ -877,30 +836,30 @@ gtest/googletest/CMakeFiles/gtest_main.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir
+# Target rules for target rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir
 
 # All Build rule for target.
-camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/build.make camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/build.make camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/build
+rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build.make rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build.make rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/all
+.PHONY : rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-_catkin_empty_exported_target: camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/rule
+_catkin_empty_exported_target: rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule
 .PHONY : _catkin_empty_exported_target
 
 # clean rule for target.
-camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/build.make camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : camera_umd/camera_umd/CMakeFiles/_catkin_empty_exported_target.dir/clean
+rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build.make rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Target rules for target rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir
@@ -992,7 +951,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.d
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=31,32 "Built target rosserial_arduino_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=23,24 "Built target rosserial_arduino_generate_messages_cpp"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1045,7 +1004,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.d
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=33,34,35 "Built target rosserial_arduino_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=25,26,27 "Built target rosserial_arduino_generate_messages_eus"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1098,7 +1057,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=36,37 "Built target rosserial_arduino_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=28,29 "Built target rosserial_arduino_generate_messages_lisp"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1151,7 +1110,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodej
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=38,39 "Built target rosserial_arduino_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=30,31 "Built target rosserial_arduino_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1204,7 +1163,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.di
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=40,41,42,43 "Built target rosserial_arduino_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=32,33,34,35 "Built target rosserial_arduino_generate_messages_py"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1339,7 +1298,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=44,45 "Built target rosserial_mbed_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=36,37 "Built target rosserial_mbed_generate_messages_cpp"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1392,7 +1351,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/all
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=46,47,48 "Built target rosserial_mbed_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=38,39,40 "Built target rosserial_mbed_generate_messages_eus"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1445,7 +1404,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/al
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=49,50 "Built target rosserial_mbed_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=41,42 "Built target rosserial_mbed_generate_messages_lisp"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1498,7 +1457,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=51,52 "Built target rosserial_mbed_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=43,44 "Built target rosserial_mbed_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1551,7 +1510,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/all:
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=53,54,55,56 "Built target rosserial_mbed_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=45,46,47,48 "Built target rosserial_mbed_generate_messages_py"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1713,7 +1672,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestParam.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=57,58,59 "Built target rosserial_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=49,50,51 "Built target rosserial_msgs_generate_messages_cpp"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1767,7 +1726,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestParam.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=60,61,62,63 "Built target rosserial_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=52,53,54,55 "Built target rosserial_msgs_generate_messages_eus"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1821,7 +1780,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/al
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestParam.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=64,65,66 "Built target rosserial_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=56,57,58 "Built target rosserial_msgs_generate_messages_lisp"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1875,7 +1834,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestParam.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=67,68,69 "Built target rosserial_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=59,60,61 "Built target rosserial_msgs_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1929,7 +1888,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all:
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestParam.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=70,71,72,73,74 "Built target rosserial_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=62,63,64,65,66 "Built target rosserial_msgs_generate_messages_py"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2195,7 +2154,7 @@ rosserial/rosserial_client/CMakeFiles/clean_test_results_rosserial_client.dir/cl
 rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=86,87 "Built target subscriber_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=78,79 "Built target subscriber_test"
 .PHONY : rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2275,7 +2234,7 @@ rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscrib
 rosserial/rosserial_client/CMakeFiles/time_test.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_client/CMakeFiles/time_test.dir/build.make rosserial/rosserial_client/CMakeFiles/time_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_client/CMakeFiles/time_test.dir/build.make rosserial/rosserial_client/CMakeFiles/time_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=88,89,90,91 "Built target time_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=80,81,82,83 "Built target time_test"
 .PHONY : rosserial/rosserial_client/CMakeFiles/time_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3227,7 +3186,7 @@ rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_py.dir/clean
 rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/all:
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=75,76 "Built target rosserial_server_lookup"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=67,68 "Built target rosserial_server_lookup"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3278,7 +3237,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all: ross
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all: rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=77,78 "Built target rosserial_server_serial_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=69,70 "Built target rosserial_server_serial_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3329,7 +3288,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all: ross
 rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all: rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=79,80 "Built target rosserial_server_socket_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=71,72 "Built target rosserial_server_socket_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3380,7 +3339,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all: 
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all: rosserial/rosserial_server/CMakeFiles/rosserial_server_lookup.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=81,82 "Built target rosserial_server_udp_socket_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=73,74 "Built target rosserial_server_udp_socket_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3398,292 +3357,6 @@ rosserial_server_udp_socket_node: rosserial/rosserial_server/CMakeFiles/rosseria
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/clean:
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/clean
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : sensor_msgs_generate_messages_eus
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : sensor_msgs_generate_messages_py
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : geometry_msgs_generate_messages_eus
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_lisp"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_py"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : geometry_msgs_generate_messages_py
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir
-
-# All Build rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=23,24,25 "Built target jpeg_streamer"
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/rule
-
-# Convenience name for target.
-jpeg_streamer: camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/rule
-.PHONY : jpeg_streamer
-
-# clean rule for target.
-camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/build.make camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/clean
-.PHONY : camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/clean
 
 #=============================================================================
 # Target rules for target rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir
@@ -3716,7 +3389,7 @@ rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all: rosser
 rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_py.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=85 "Built target rosserial_test_rosserial_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=77 "Built target rosserial_test_rosserial_lib"
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3744,7 +3417,7 @@ rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all: ro
 rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all: rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/depend
 	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=83,84 "Built target rosserial_test_publish_subscribe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=75,76 "Built target rosserial_test_publish_subscribe"
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4057,6 +3730,136 @@ rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosse
 .PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_python_socket.test.dir/clean
 
 #=============================================================================
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# clean rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : geometry_msgs_generate_messages_eus
+
+# clean rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_lisp"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# clean rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# clean rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_py"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : geometry_msgs_generate_messages_py
+
+# clean rule for target.
+rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
 # Target rules for target rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
@@ -4317,342 +4120,343 @@ rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/c
 .PHONY : rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target nodelet_generate_messages_cpp"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/all
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule: cmake_check_build_system
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-nodelet_generate_messages_cpp: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-.PHONY : nodelet_generate_messages_cpp
+sensor_msgs_generate_messages_cpp: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : sensor_msgs_generate_messages_cpp
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/clean
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target nodelet_generate_messages_eus"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/all
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/rule: cmake_check_build_system
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-nodelet_generate_messages_eus: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-.PHONY : nodelet_generate_messages_eus
+sensor_msgs_generate_messages_eus: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : sensor_msgs_generate_messages_eus
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/clean
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target nodelet_generate_messages_lisp"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/all
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/rule: cmake_check_build_system
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-nodelet_generate_messages_lisp: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-.PHONY : nodelet_generate_messages_lisp
+sensor_msgs_generate_messages_lisp: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : sensor_msgs_generate_messages_lisp
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/clean
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target nodelet_generate_messages_nodejs"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/all
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule: cmake_check_build_system
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-nodelet_generate_messages_nodejs: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-.PHONY : nodelet_generate_messages_nodejs
+sensor_msgs_generate_messages_nodejs: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : sensor_msgs_generate_messages_nodejs
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/clean
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir
+# Target rules for target rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target nodelet_generate_messages_py"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/all
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/rule: cmake_check_build_system
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/rule
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-nodelet_generate_messages_py: camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/rule
-.PHONY : nodelet_generate_messages_py
+sensor_msgs_generate_messages_py: rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : sensor_msgs_generate_messages_py
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/clean
+rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : rosserial/rosserial_windows/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target bond_generate_messages_cpp"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/all
+usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/all:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_cpp"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/rule: cmake_check_build_system
+usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/rule
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-bond_generate_messages_cpp: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/rule
-.PHONY : bond_generate_messages_cpp
+std_srvs_generate_messages_cpp: usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : std_srvs_generate_messages_cpp
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/clean
+usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target bond_generate_messages_eus"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/all
+usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/all:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/depend
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_eus"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/rule: cmake_check_build_system
+usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/rule
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-bond_generate_messages_eus: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/rule
-.PHONY : bond_generate_messages_eus
+std_srvs_generate_messages_eus: usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+.PHONY : std_srvs_generate_messages_eus
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/clean
+usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target bond_generate_messages_lisp"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/all
+usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/all:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/depend
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_lisp"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/rule: cmake_check_build_system
+usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/rule
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-bond_generate_messages_lisp: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/rule
-.PHONY : bond_generate_messages_lisp
+std_srvs_generate_messages_lisp: usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+.PHONY : std_srvs_generate_messages_lisp
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/clean
+usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target bond_generate_messages_nodejs"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/all
+usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/depend
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_nodejs"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/rule: cmake_check_build_system
+usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-bond_generate_messages_nodejs: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-.PHONY : bond_generate_messages_nodejs
+std_srvs_generate_messages_nodejs: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+.PHONY : std_srvs_generate_messages_nodejs
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/clean
+usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target bond_generate_messages_py"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/all
+usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/all:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/depend
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_py"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/rule: cmake_check_build_system
+usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/rule
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-bond_generate_messages_py: camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/rule
-.PHONY : bond_generate_messages_py
+std_srvs_generate_messages_py: usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+.PHONY : std_srvs_generate_messages_py
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/build.make camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/clean
+usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir
+# Target rules for target usb_cam/CMakeFiles/v4l_driver.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=26,27,28,29,30 "Built target nodelet_uvc_camera"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/all
+usb_cam/CMakeFiles/v4l_driver.dir/all:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/v4l_driver.dir/build.make usb_cam/CMakeFiles/v4l_driver.dir/depend
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/v4l_driver.dir/build.make usb_cam/CMakeFiles/v4l_driver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=88,89,90,91 "Built target v4l_driver"
+.PHONY : usb_cam/CMakeFiles/v4l_driver.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/rule
-
-# Convenience name for target.
-nodelet_uvc_camera: camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/rule
-.PHONY : nodelet_uvc_camera
-
-# clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build.make camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/clean
-
-#=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir
-
-# All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=92,93,94,95 "Built target uvc_camera_node"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/all
-
-# Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/rule: cmake_check_build_system
+usb_cam/CMakeFiles/v4l_driver.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/v4l_driver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/rule
+.PHONY : usb_cam/CMakeFiles/v4l_driver.dir/rule
 
 # Convenience name for target.
-uvc_camera_node: camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/rule
-.PHONY : uvc_camera_node
+v4l_driver: usb_cam/CMakeFiles/v4l_driver.dir/rule
+.PHONY : v4l_driver
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/clean
+usb_cam/CMakeFiles/v4l_driver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/v4l_driver.dir/build.make usb_cam/CMakeFiles/v4l_driver.dir/clean
+.PHONY : usb_cam/CMakeFiles/v4l_driver.dir/clean
 
 #=============================================================================
-# Target rules for target camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir
+# Target rules for target usb_cam/CMakeFiles/usb_cam.dir
 
 # All Build rule for target.
-camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/all:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/depend
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=96,97,98,99 "Built target uvc_stereo_node"
-.PHONY : camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/all
+usb_cam/CMakeFiles/usb_cam.dir/all: usb_cam/CMakeFiles/v4l_driver.dir/all
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/depend
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=84,85 "Built target usb_cam"
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/all
 
 # Build rule for subdir invocation for target.
-camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/all
+usb_cam/CMakeFiles/usb_cam.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/usb_cam.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
-.PHONY : camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/rule
 
 # Convenience name for target.
-uvc_stereo_node: camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule
-.PHONY : uvc_stereo_node
+usb_cam: usb_cam/CMakeFiles/usb_cam.dir/rule
+.PHONY : usb_cam
 
 # clean rule for target.
-camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/clean:
-	$(MAKE) $(MAKESILENT) -f camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/clean
-.PHONY : camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/clean
+usb_cam/CMakeFiles/usb_cam.dir/clean:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/clean
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/clean
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/usb_cam_node.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/v4l_driver.dir/all
+usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles --progress-num=86,87 "Built target usb_cam_node"
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/usb_cam_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/usb_cam_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/Documents/GitHub/mando_2023/ws_mando/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/rule
+
+# Convenience name for target.
+usb_cam_node: usb_cam/CMakeFiles/usb_cam_node.dir/rule
+.PHONY : usb_cam_node
+
+# clean rule for target.
+usb_cam/CMakeFiles/usb_cam_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/clean
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
