@@ -11,6 +11,8 @@ import os
 import sys
 from rostopic import get_topic_type
 
+from std_msgs.msg import Int32
+from std_msgs.msg import String
 from sensor_msgs.msg import Image, CompressedImage
 from detection_msgs.msg import BoundingBox, BoundingBoxes
 
@@ -34,6 +36,44 @@ from utils.plots import Annotator, colors
 from utils.torch_utils import select_device
 from utils.augmentations import letterbox
 
+# def class_check(msg):
+#     # Initialize variables to keep track of most frequent class and its count
+#     checked_pub = rospy.Publisher('/frequent_check!',String ,queue_size=10)
+    
+#     class_count = {}
+#     most_frequent_class = None
+#     max_count =0
+    
+#     # Iterate through bounding boxes in the message
+#     for bbox in msg.bounding_boxes:
+#         # Check if probability is greater than 70%
+#         if bbox.probability > 0.7:
+#             # Update class count
+#             if bbox.Class in class_count:
+#                 class_count[bbox.Class] += 1
+#             else:
+#                 class_count[bbox.Class] = 1
+            
+#             # Update most frequent class and max count
+#             if class_count[bbox.Class] > max_count:
+#                 max_count = class_count[bbox.Class]
+#                 most_frequent_class = bbox.Class
+#                 checked_pub.publish("checked!")
+    
+#     # Check if a most frequent class is found
+#     if most_frequent_class is not None:
+#         # Create a new BoundingBoxes message with only the most frequent class
+#         filtered_msg = Int32()
+#         for bbox in msg.bounding_boxes:
+#             if bbox.Class == most_frequent_class:
+#                 filtered_msg.data = bbox.Class
+#                 return filtered_msg
+#     else :
+#         return 100
+        
+        
+    
+
 
 @torch.no_grad()
 class Yolov5Detector:
@@ -48,8 +88,8 @@ class Yolov5Detector:
         # Initialize weights 
         weights = rospy.get_param("~weights")
         # Initialize model
-        self.device = select_device(str(rospy.get_param("~device","")))
-        self.model = DetectMultiBackend(weights, device=self.device, dnn=rospy.get_param("~dnn"), data=rospy.get_param("~data"))
+        self.device = select_device(str(rospy.get_param("~device","")))#select_device("")
+        self.model = DetectMultiBackend(weights, device=self.device, dnn=rospy.get_param("~dnn"),data=rospy.get_param("~data"))#dnn='true', data='data/data.yaml'
         self.stride, self.names, self.pt, self.jit, self.onnx, self.engine = (
             self.model.stride,
             self.model.names,
@@ -61,6 +101,7 @@ class Yolov5Detector:
 
         # Setting inference size
         self.img_size = [rospy.get_param("~inference_size_w", 640), rospy.get_param("~inference_size_h",480)]
+        #self.img_size = [640,640]
         self.img_size = check_img_size(self.img_size, s=self.stride)
 
         # Half
@@ -76,6 +117,7 @@ class Yolov5Detector:
         
         # Initialize subscriber to Image/CompressedImage topic
         input_image_type, input_image_topic, _ = get_topic_type(rospy.get_param("~input_image_topic"), blocking = True)
+        #input_image_type, input_image_topic, _ = get_topic_type('/sensor_msgs/Image', blocking = True)
         self.compressed_input = input_image_type == "sensor_msgs/CompressedImage"
 
         if self.compressed_input:
@@ -86,17 +128,24 @@ class Yolov5Detector:
             self.image_sub = rospy.Subscriber(
                 input_image_topic, Image, self.callback, queue_size=1
             )
+        #self.image_sub=rospy.Subscriber('/usb_cam/image_raw',Image,self.callback,queue_size=1)
 
         # Initialize prediction publisher
-        self.pred_pub = rospy.Publisher(
-            rospy.get_param("~output_topic"), BoundingBoxes, queue_size=10
+        self.pred_pub = rospy.Publisher(rospy.get_param("~output_topic"), BoundingBoxes, queue_size=5
+            #'/yolov5_detected', BoundingBoxes, queue_size=10
         )
+        
+        #class_publish 영욱
+        #self.class_pub = rospy.Publisher('/filtered_class',Int32, queue_size=10)
+
         # Initialize image publisher
         self.publish_image = rospy.get_param("~publish_image")
+        #self.publish_image = 'true'
         if self.publish_image:
             self.image_pub = rospy.Publisher(
-                rospy.get_param("~output_image_topic"), Image, queue_size=10
+                '/detected_image', Image, queue_size=10
             )
+        
         
         # Initialize CV_Bridge
         self.bridge = CvBridge()
@@ -104,10 +153,10 @@ class Yolov5Detector:
     def callback(self, data):
         """adapted from yolov5/detect.py"""
         # print(data.header)
-        if self.compressed_input:
-            im = self.bridge.compressed_imgmsg_to_cv2(data, desired_encoding="bgr8")
-        else:
-            im = self.bridge.imgmsg_to_cv2(data, desired_encoding="bgr8")
+        # if self.compressed_input:
+        #     im = self.bridge.compressed_imgmsg_to_cv2(data, desired_encoding="bgr8")
+        # else:
+        im = self.bridge.imgmsg_to_cv2(data, desired_encoding="bgr8")
         
         im, im0 = self.preprocess(im)
         # print(im.shape)
@@ -151,14 +200,20 @@ class Yolov5Detector:
                 bounding_box.ymin = int(xyxy[1])
                 bounding_box.xmax = int(xyxy[2])
                 bounding_box.ymax = int(xyxy[3])
+                
+                
+                #class name publish
+                # pub=Int32()
+                # pub.data = c
+                # self.class_pub.publish(pub)
 
-                bounding_boxes.bounding_boxes.append(bounding_box)
+                # bounding_boxes.bounding_boxes.append(bounding_box)
 
                 # Annotate the image
                 if self.publish_image or self.view_image:  # Add bbox to image
                       # integer class
                     label = f"{self.names[c]} {conf:.2f}"
-                    annotator.box_label(xyxy, label, color=colors(c, True))       
+                    annotator.box_label(xyxy, label, color=colors(c, True)) 
 
                 
                 ### POPULATE THE DETECTION MESSAGE HERE
@@ -167,6 +222,9 @@ class Yolov5Detector:
             im0 = annotator.result()
 
         # Publish prediction
+        # pub=Int32()
+        # pub.data = class_check(bounding_boxes)
+        # self.class_pub.publish(pub)
         self.pred_pub.publish(bounding_boxes)
 
         # Publish & visualize images
@@ -188,6 +246,7 @@ class Yolov5Detector:
         img = np.ascontiguousarray(img)
 
         return img, img0 
+    
 
 
 if __name__ == "__main__":
