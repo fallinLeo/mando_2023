@@ -1,0 +1,8 @@
+prefix=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel
+
+Name: detection_msgs
+Description: Description of detection_msgs
+Version: 0.0.0
+Cflags: -I/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime

@@ -1,0 +1,8 @@
+prefix=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel
+
+Name: rtcm_msgs
+Description: Description of rtcm_msgs
+Version: 1.1.6
+Cflags: -I/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime std_msgs

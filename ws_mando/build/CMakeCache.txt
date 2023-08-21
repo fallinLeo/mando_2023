@@ -26,6 +26,8 @@ Boost_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
 
+Boost_REGEX_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
+
 Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 
 Boost_THREAD_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
@@ -365,6 +367,15 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests3
 
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/opencv4
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
 
@@ -401,6 +412,10 @@ SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 //Name of the computer/site where compile is being run
 SITE:STRING=leo-XPS-15-7590
 
+//Suppresses Boost >= 1.68 deprecation warning message for global
+// placeholders in boost::bind instantiation
+SUPPRESS_BIND_GLOBAL_PLACEHOLDERS:BOOL=ON
+
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
 
@@ -425,11 +440,20 @@ _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/noetic/share/actionlib_msgs/cmake
 
+//The directory containing a CMake configuration file for bond.
+bond_DIR:PATH=/opt/ros/noetic/share/bond/cmake
+
+//The directory containing a CMake configuration file for bondcpp.
+bondcpp_DIR:PATH=/opt/ros/noetic/share/bondcpp/cmake
+
 //The directory containing a CMake configuration file for boost_atomic.
 boost_atomic_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0
 
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0
+
+//The directory containing a CMake configuration file for boost_regex.
+boost_regex_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0
 
 //The directory containing a CMake configuration file for boost_system.
 boost_system_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0
@@ -437,11 +461,50 @@ boost_system_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0
 //The directory containing a CMake configuration file for boost_thread.
 boost_thread_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0
 
+//The directory containing a CMake configuration file for camera_calibration_parsers.
+camera_calibration_parsers_DIR:PATH=/opt/ros/noetic/share/camera_calibration_parsers/cmake
+
+//The directory containing a CMake configuration file for camera_info_manager.
+camera_info_manager_DIR:PATH=/opt/ros/noetic/share/camera_info_manager/cmake
+
+//Value Computed by CMake
+camera_umd_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/camera_umd/camera_umd
+
+//Value Computed by CMake
+camera_umd_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+camera_umd_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/camera_umd/camera_umd
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/noetic/share/class_loader/cmake
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
+
+//The directory containing a CMake configuration file for cv_bridge.
+cv_bridge_DIR:PATH=/opt/ros/noetic/share/cv_bridge/cmake
+
+//Value Computed by CMake
+detection_msgs_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/detection_msgs
+
+//The directory containing a CMake configuration file for detection_msgs.
+detection_msgs_DIR:PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/detection_msgs/cmake
+
+//Value Computed by CMake
+detection_msgs_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+detection_msgs_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/detection_msgs
+
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/noetic/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/noetic/share/diagnostic_updater/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/noetic/share/gencpp/cmake
@@ -519,8 +582,23 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
+//The directory containing a CMake configuration file for image_transport.
+image_transport_DIR:PATH=/opt/ros/noetic/share/image_transport/cmake
+
+//Value Computed by CMake
+jpeg_streamer_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/camera_umd/jpeg_streamer
+
+//Value Computed by CMake
+jpeg_streamer_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+jpeg_streamer_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/camera_umd/jpeg_streamer
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/noetic/lib/librostime.so
+
+//The directory containing a CMake configuration file for message_filters.
+message_filters_DIR:PATH=/opt/ros/noetic/share/message_filters/cmake
 
 //The directory containing a CMake configuration file for message_generation.
 message_generation_DIR:PATH=/opt/ros/noetic/share/message_generation/cmake
@@ -530,6 +608,39 @@ message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/noetic/share/nav_msgs/cmake
+
+//The directory containing a CMake configuration file for nodelet.
+nodelet_DIR:PATH=/opt/ros/noetic/share/nodelet/cmake
+
+//Dependencies for the target
+nodelet_uvc_camera_LIB_DEPENDS:STATIC=general;Boost::thread;general;Boost::system;general;v4l2;general;/opt/ros/noetic/lib/libcamera_info_manager.so;general;/opt/ros/noetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+ntrip_ros_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/ublox_f9p/ntrip_ros
+
+//Value Computed by CMake
+ntrip_ros_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ntrip_ros_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/ublox_f9p/ntrip_ros
+
+//Path to a library.
+pkgcfg_lib_avcodec_avcodec:FILEPATH=/usr/lib/x86_64-linux-gnu/libavcodec.so
+
+//Path to a library.
+pkgcfg_lib_avutil_avutil:FILEPATH=/usr/lib/x86_64-linux-gnu/libavutil.so
+
+//Path to a library.
+pkgcfg_lib_swscale_swscale:FILEPATH=/usr/lib/x86_64-linux-gnu/libswscale.so
+
+//Path to a library.
+pkgcfg_lib_video4linux_v4l2:FILEPATH=/usr/lib/x86_64-linux-gnu/libv4l2.so
+
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/noetic/share/pluginlib/cmake
+
+//The directory containing a CMake configuration file for ros_environment.
+ros_environment_DIR:PATH=/opt/ros/noetic/share/ros_environment/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/noetic/share/rosconsole/cmake
@@ -545,6 +656,12 @@ roscpp_traits_DIR:PATH=/opt/ros/noetic/share/roscpp_traits/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/noetic/share/rosgraph_msgs/cmake
+
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/noetic/share/roslib/cmake
+
+//The directory containing a CMake configuration file for rospack.
+rospack_DIR:PATH=/opt/ros/noetic/share/rospack/cmake
 
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/noetic/share/rospy/cmake
@@ -705,11 +822,26 @@ rostest_DIR:PATH=/opt/ros/noetic/share/rostest/cmake
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
 
+//Value Computed by CMake
+rtcm_msgs_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/ublox_f9p/rtcm_msgs
+
+//Value Computed by CMake
+rtcm_msgs_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+rtcm_msgs_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/ublox_f9p/rtcm_msgs
+
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
 
+//The directory containing a CMake configuration file for smclib.
+smclib_DIR:PATH=/opt/ros/noetic/share/smclib/cmake
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
+
+//The directory containing a CMake configuration file for std_srvs.
+std_srvs_DIR:PATH=/opt/ros/noetic/share/std_srvs/cmake
 
 //Value Computed by CMake
 telecop_pkg_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/telecop_pkg
@@ -723,17 +855,98 @@ telecop_pkg_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/noetic/share/topic_tools/cmake
 
+//Value Computed by CMake
+ublox_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/ublox_f9p/ublox
+
+//Value Computed by CMake
+ublox_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ublox_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/ublox_f9p/ublox
+
+//Value Computed by CMake
+ublox_gps_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/ublox_f9p/ublox_gps
+
+//Value Computed by CMake
+ublox_gps_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+ublox_gps_LIB_DEPENDS:STATIC=general;boost_system;general;boost_regex;general;boost_thread;general;ublox_msgs;general;/opt/ros/noetic/lib/libdiagnostic_updater.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+ublox_gps_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/ublox_f9p/ublox_gps
+
+//Value Computed by CMake
+ublox_msgs_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/ublox_f9p/ublox_msgs
+
+//The directory containing a CMake configuration file for ublox_msgs.
+ublox_msgs_DIR:PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/ublox_msgs/cmake
+
+//Value Computed by CMake
+ublox_msgs_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+ublox_msgs_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+ublox_msgs_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/ublox_f9p/ublox_msgs
+
+//Value Computed by CMake
+ublox_serialization_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/ublox_f9p/ublox_serialization
+
+//The directory containing a CMake configuration file for ublox_serialization.
+ublox_serialization_DIR:PATH=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/ublox_serialization/cmake
+
+//Value Computed by CMake
+ublox_serialization_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ublox_serialization_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/ublox_f9p/ublox_serialization
+
+//Value Computed by CMake
+usb_cam_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/usb_cam
+
+//Value Computed by CMake
+usb_cam_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+usb_cam_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libcamera_info_manager.so;general;/opt/ros/noetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;v4l_driver;
+
+//Value Computed by CMake
+usb_cam_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/usb_cam
+
+//Value Computed by CMake
+uvc_camera_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/camera_umd/uvc_camera
+
+//Value Computed by CMake
+uvc_camera_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+uvc_camera_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/camera_umd/uvc_camera
+
+//Dependencies for the target
+v4l_driver_LIB_DEPENDS:STATIC=general;v4l2;general;avcodec;general;avutil;general;swscale;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dnn_objdetect;general;opencv_dnn_superres;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_hfs;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_quality;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_shape;general;opencv_stereo;general;opencv_structured_light;general;opencv_superres;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_videostab;general;opencv_viz;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
+
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
 
 //Value Computed by CMake
-yolov5_pytorch_ros_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_pytorch_ros
+yolodetect_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolodetect
 
 //Value Computed by CMake
-yolov5_pytorch_ros_IS_TOP_LEVEL:STATIC=OFF
+yolodetect_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-yolov5_pytorch_ros_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/yolov5_pytorch_ros
+yolodetect_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/yolodetect
+
+//Value Computed by CMake
+yolov5_ros_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/yolov5_ros
+
+//Value Computed by CMake
+yolov5_ros_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+yolov5_ros_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/yolov5_ros
 
 
 ########################
@@ -883,7 +1096,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=29
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -927,9 +1140,13 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake][cfound components: system thread ][v1.71.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake][cfound components: system regex thread ][v1.71.0()]
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.2.0()]
 //Details about finding PY_em
 FIND_PACKAGE_MESSAGE_DETAILS_PY_em:INTERNAL=[/usr/lib/python3/dist-packages/em.py][v()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.8.10()]
 //Details about finding PythonLibs
@@ -964,6 +1181,10 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_INCLUDE_DIR
@@ -980,10 +1201,90 @@ PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/home/leo/Documents/GitHub/mando_2023/ws_mando/install
+__pkg_config_arguments_avcodec:INTERNAL=libavcodec;REQUIRED
+__pkg_config_arguments_avutil:INTERNAL=libavutil;REQUIRED
+__pkg_config_arguments_swscale:INTERNAL=libswscale;REQUIRED
+__pkg_config_arguments_video4linux:INTERNAL=libv4l2;REQUIRED
+__pkg_config_checked_avcodec:INTERNAL=1
+__pkg_config_checked_avutil:INTERNAL=1
+__pkg_config_checked_swscale:INTERNAL=1
+__pkg_config_checked_video4linux:INTERNAL=1
+avcodec_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+avcodec_CFLAGS_I:INTERNAL=
+avcodec_CFLAGS_OTHER:INTERNAL=
+avcodec_FOUND:INTERNAL=1
+avcodec_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
+avcodec_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+avcodec_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lavcodec
+avcodec_LDFLAGS_OTHER:INTERNAL=
+avcodec_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+avcodec_LIBRARIES:INTERNAL=avcodec
+avcodec_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+avcodec_LIBS:INTERNAL=
+avcodec_LIBS_L:INTERNAL=
+avcodec_LIBS_OTHER:INTERNAL=
+avcodec_LIBS_PATHS:INTERNAL=
+avcodec_MODULE_NAME:INTERNAL=libavcodec
+avcodec_PREFIX:INTERNAL=/usr
+avcodec_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+avcodec_STATIC_CFLAGS_I:INTERNAL=
+avcodec_STATIC_CFLAGS_OTHER:INTERNAL=
+avcodec_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+avcodec_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lwebp;-lm;-llzma;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lm;-lpthread;-lm;-lpng;-lz;-lsnappy;-lstdc++;-lz;-laom;-lm;-lpthread;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwavpack;-lwebp;-lx264;-lx265;-lxvidcore;-pthread;-lva;-ldl;-lswresample;-lm;-lsoxr;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-lXv;-lX11;-lXext;-ldl
+avcodec_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
+avcodec_STATIC_LIBDIR:INTERNAL=
+avcodec_STATIC_LIBRARIES:INTERNAL=avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;webp;m;lzma;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;m;pthread;m;png;z;snappy;stdc++;z;aom;m;pthread;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;wavpack;webp;x264;x265;xvidcore;va;dl;swresample;m;soxr;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;Xv;X11;Xext;dl
+avcodec_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+avcodec_STATIC_LIBS:INTERNAL=
+avcodec_STATIC_LIBS_L:INTERNAL=
+avcodec_STATIC_LIBS_OTHER:INTERNAL=
+avcodec_STATIC_LIBS_PATHS:INTERNAL=
+avcodec_VERSION:INTERNAL=58.54.100
+avcodec_libavcodec_INCLUDEDIR:INTERNAL=
+avcodec_libavcodec_LIBDIR:INTERNAL=
+avcodec_libavcodec_PREFIX:INTERNAL=
+avcodec_libavcodec_VERSION:INTERNAL=
+avutil_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+avutil_CFLAGS_I:INTERNAL=
+avutil_CFLAGS_OTHER:INTERNAL=
+avutil_FOUND:INTERNAL=1
+avutil_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
+avutil_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+avutil_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lavutil
+avutil_LDFLAGS_OTHER:INTERNAL=
+avutil_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+avutil_LIBRARIES:INTERNAL=avutil
+avutil_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+avutil_LIBS:INTERNAL=
+avutil_LIBS_L:INTERNAL=
+avutil_LIBS_OTHER:INTERNAL=
+avutil_LIBS_PATHS:INTERNAL=
+avutil_MODULE_NAME:INTERNAL=libavutil
+avutil_PREFIX:INTERNAL=/usr
+avutil_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+avutil_STATIC_CFLAGS_I:INTERNAL=
+avutil_STATIC_CFLAGS_OTHER:INTERNAL=
+avutil_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+avutil_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-lXv;-lX11;-lXext;-ldl
+avutil_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
+avutil_STATIC_LIBDIR:INTERNAL=
+avutil_STATIC_LIBRARIES:INTERNAL=avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;Xv;X11;Xext;dl
+avutil_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+avutil_STATIC_LIBS:INTERNAL=
+avutil_STATIC_LIBS_L:INTERNAL=
+avutil_STATIC_LIBS_OTHER:INTERNAL=
+avutil_STATIC_LIBS_PATHS:INTERNAL=
+avutil_VERSION:INTERNAL=56.31.100
+avutil_libavutil_INCLUDEDIR:INTERNAL=
+avutil_libavutil_LIBDIR:INTERNAL=
+avutil_libavutil_PREFIX:INTERNAL=
+avutil_libavutil_VERSION:INTERNAL=
 //ADVANCED property for variable: boost_atomic_DIR
 boost_atomic_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_headers_DIR
 boost_headers_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_regex_DIR
+boost_regex_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_system_DIR
 boost_system_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_thread_DIR
@@ -1000,4 +1301,83 @@ gtest_disable_pthreads-ADVANCED:INTERNAL=1
 gtest_force_shared_crt-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_hide_internal_symbols
 gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_avcodec_avcodec
+pkgcfg_lib_avcodec_avcodec-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_avutil_avutil
+pkgcfg_lib_avutil_avutil-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_swscale_swscale
+pkgcfg_lib_swscale_swscale-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_video4linux_v4l2
+pkgcfg_lib_video4linux_v4l2-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
+swscale_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+swscale_CFLAGS_I:INTERNAL=
+swscale_CFLAGS_OTHER:INTERNAL=
+swscale_FOUND:INTERNAL=1
+swscale_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
+swscale_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+swscale_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lswscale
+swscale_LDFLAGS_OTHER:INTERNAL=
+swscale_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+swscale_LIBRARIES:INTERNAL=swscale
+swscale_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+swscale_LIBS:INTERNAL=
+swscale_LIBS_L:INTERNAL=
+swscale_LIBS_OTHER:INTERNAL=
+swscale_LIBS_PATHS:INTERNAL=
+swscale_MODULE_NAME:INTERNAL=libswscale
+swscale_PREFIX:INTERNAL=/usr
+swscale_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+swscale_STATIC_CFLAGS_I:INTERNAL=
+swscale_STATIC_CFLAGS_OTHER:INTERNAL=
+swscale_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+swscale_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lswscale;-lm;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-lXv;-lX11;-lXext;-ldl
+swscale_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
+swscale_STATIC_LIBDIR:INTERNAL=
+swscale_STATIC_LIBRARIES:INTERNAL=swscale;m;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;Xv;X11;Xext;dl
+swscale_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+swscale_STATIC_LIBS:INTERNAL=
+swscale_STATIC_LIBS_L:INTERNAL=
+swscale_STATIC_LIBS_OTHER:INTERNAL=
+swscale_STATIC_LIBS_PATHS:INTERNAL=
+swscale_VERSION:INTERNAL=5.5.100
+swscale_libswscale_INCLUDEDIR:INTERNAL=
+swscale_libswscale_LIBDIR:INTERNAL=
+swscale_libswscale_PREFIX:INTERNAL=
+swscale_libswscale_VERSION:INTERNAL=
+video4linux_CFLAGS:INTERNAL=
+video4linux_CFLAGS_I:INTERNAL=
+video4linux_CFLAGS_OTHER:INTERNAL=
+video4linux_FOUND:INTERNAL=1
+video4linux_INCLUDEDIR:INTERNAL=/usr/include
+video4linux_INCLUDE_DIRS:INTERNAL=
+video4linux_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lv4l2
+video4linux_LDFLAGS_OTHER:INTERNAL=
+video4linux_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+video4linux_LIBRARIES:INTERNAL=v4l2
+video4linux_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+video4linux_LIBS:INTERNAL=
+video4linux_LIBS_L:INTERNAL=
+video4linux_LIBS_OTHER:INTERNAL=
+video4linux_LIBS_PATHS:INTERNAL=
+video4linux_MODULE_NAME:INTERNAL=libv4l2
+video4linux_PREFIX:INTERNAL=/usr
+video4linux_STATIC_CFLAGS:INTERNAL=
+video4linux_STATIC_CFLAGS_I:INTERNAL=
+video4linux_STATIC_CFLAGS_OTHER:INTERNAL=
+video4linux_STATIC_INCLUDE_DIRS:INTERNAL=
+video4linux_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lv4l2;-lpthread;-lv4lconvert;-lrt;-lm;-ljpeg
+video4linux_STATIC_LDFLAGS_OTHER:INTERNAL=
+video4linux_STATIC_LIBDIR:INTERNAL=
+video4linux_STATIC_LIBRARIES:INTERNAL=v4l2;pthread;v4lconvert;rt;m;jpeg
+video4linux_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+video4linux_STATIC_LIBS:INTERNAL=
+video4linux_STATIC_LIBS_L:INTERNAL=
+video4linux_STATIC_LIBS_OTHER:INTERNAL=
+video4linux_STATIC_LIBS_PATHS:INTERNAL=
+video4linux_VERSION:INTERNAL=1.18.0
+video4linux_libv4l2_INCLUDEDIR:INTERNAL=
+video4linux_libv4l2_LIBDIR:INTERNAL=
+video4linux_libv4l2_PREFIX:INTERNAL=
+video4linux_libv4l2_VERSION:INTERNAL=
 
