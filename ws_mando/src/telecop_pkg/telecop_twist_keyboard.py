@@ -30,9 +30,9 @@ b : down (-z)
 
 anything else : stop
 
-q/z : increase/decrease max speeds by 10%
-w/x : increase/decrease only linear speed by 10%
-e/c : increase/decrease only angular speed by 10%
+q/z : increase/decrease max speeds by 20%
+w/x : increase/decrease only linear speed by 20%
+e/c : increase/decrease only angular speed by 20%
 
 CTRL-C to quit
 """
@@ -59,12 +59,12 @@ moveBindings = {
     }
 
 speedBindings={
-        'q':(1.1,1.1),
+        'q':(1.2,1.2),
         'z':(.9,.9),
-        'w':(1.1,1),
-        'x':(.9,1),
-        'e':(1,1.1),
-        'c':(1,.9),
+        'w':(1.2,1),
+        'x':(.8,1),
+        'e':(1,2.1),
+        'c':(1,.8),
     }
 
 class PublishThread(threading.Thread):
