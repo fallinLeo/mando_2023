@@ -1,0 +1,257 @@
+#include <MsTimer2.h>
+#include "FrontMotorPIDController.h"
+#include "MotorPIDController.h"
+#include "Arduino.h"
+
+
+float target_velocity = 0.1;
+
+//========================= ROS 관련 ==============================================
+#include <ros.h>
+#include <geometry_msgs/Twist.h>
+#include <std_msgs/Int32.h>
+#include <std_msgs/Float32.h>
+
+ros::NodeHandle nh;
+std_msgs::Float32 data_y_r;
+std_msgs::Float32 drive_y_m;
+std_msgs::Int32 drive_pwm;
+
+std_msgs::Float32 steer_y_m;
+std_msgs::Int32 data_pwm;
+std_msgs::Float32 error_msg;
+std_msgs::Float32 r_msg;
+
+ros::Publisher drive_y_m_pub("/drive_data_time_plot",&drive_y_m);
+ros::Publisher drive_pwm_pub("/front_pwm",&drive_pwm);
+
+ros::Publisher steer_y_m_pub("/steer_data_time_plot",&steer_y_m);
+ros::Publisher steer_pwm_pub("/check_pwm",&data_pwm);
+ros::Publisher error_pub("/error",&error_msg);
+ros::Publisher r_pub("/r",&r_msg);
+
+void y_r_Callback(const std_msgs::Float32& msg) {
+  target_velocity = msg.data;
+}
+
+ros::Subscriber<std_msgs::Float32> y_r_sub("/data_y_r", y_r_Callback); // 수정된 부분
+
+
+//==================================================================================
+
+// 1m 당 pulse 수
+#define m_2_pulse    349      
+#define pulse_2_m  1./349.
+#define vel_2_pulse   m_2_pulse/50. // 20Hz 제어 주기에서 속도와 Δpulse 변환 값
+
+// Front motor pin number
+#define MOTOR1_PWM 6  //6
+#define MOTOR1_ENA 7  //7
+
+// Rear motor pin number
+#define MOTOR2_PWM 4  //8
+#define MOTOR2_ENA 5  //9
+
+// Encoder pin
+#define encoderPinA 2
+#define encoderPinB 3
+
+// Steering motor pin
+#define MOTOR3_PWM 8  //4
+#define MOTOR3_ENA 9  //5
+
+#define STEERPOT A2
+
+int encoderPos = 0;
+
+//==================================================================================
+
+
+static float Kp_front = 2;
+static float Kd_front = 0;
+static float Ki_front = 0;
+
+FrontMotorPIDController front_PID_controller(MOTOR1_PWM, MOTOR1_ENA,
+                                          MOTOR2_PWM, MOTOR2_ENA);
+
+//==================================================================================
+
+//float steer_r = map(steer_r_deg,0,980,-20,20) << steer_r_deg를 subscribe해서 변환해서 사용함 추후에 추가해야함
+
+float steer_r = 600.0; // target pot_value 
+float neural_angle = 0.0; // degree
+float min_angle = -20.0; // degree
+float max_angle = 20.0; // degree
+float ad_min = 50.0; // analog data
+float ad_max = 920.0; // analog data
+
+//PID 상수 설정
+static float Kp = 0.4;
+static float Ki = 0.21;
+static float Kd = 1.0;
+
+static float alpha = 0.3;
+
+bool do_once = true;
+
+
+MotorPIDController steer_PID_controller(MOTOR3_PWM, MOTOR3_ENA);
+
+//==================================================================================
+
+float linear_x;
+float linear_y;
+float linear_z;
+float angular_x;
+float angular_y;
+float angular_z;
+void cmd_vel_callback(const geometry_msgs::Twist& msg);
+
+//ros subsrciber and publisher
+ros::Subscriber<geometry_msgs::Twist> cmd_sub("teleop_cmd_vel", cmd_vel_callback);
+//ros::Publisher cmd_pub("cmd_vel2", &cmd_vel);
+
+
+int input_velocity=0, vel_gap = 0;
+int velocity = 0;
+int steer_angle = 0, input_steer = 0, steer_gap = 0;
+int brake = 0;
+int f_speed = 0, r_speed = 0;
+
+void cmd_vel_callback(const geometry_msgs::Twist& msg) {
+  input_velocity = (int)msg.linear.x;
+  input_steer = (int)msg.angular.z;
+  target_velocity += input_velocity;
+  steer_r += input_steer;
+  //brake = (int)msg.linear.z;
+  target_velocity = constrain(target_velocity,-255,255);
+  steer_r = constrain(steer_r,100,900);
+  //steer_motor_control(steer);
+  //front_PID_controller.front_motor_control(velocity);
+  //front_PID_controller.rear_motor_control(velocity);
+  //vel_gap = velocity - input_velocity;
+  //steer_gap = steer - input_steer;
+  delay(10);
+}
+
+//===================teleop
+void setup() {
+  // put your setup code here, to run once:
+  // For checking motor control
+  pinMode(13, OUTPUT);
+  Serial.begin(57600);
+  // Set gain for front motor control
+  front_PID_controller.set_gain(Kp_front, Kd_front, Ki_front);
+
+  // steer PID 게인 및 저주파필터 alpha 설정
+  steer_PID_controller.set_alpha(alpha); 
+  steer_PID_controller.set_gain(Kp, Ki, Kd);
+  steer_PID_controller.set_maxNmin(ad_max, ad_min);
+
+  // Initialize encoder
+  pinMode(encoderPinA, INPUT_PULLUP);
+  attachInterrupt(0, doEncoderA, CHANGE);
+ 
+  pinMode(encoderPinB, INPUT_PULLUP);
+  attachInterrupt(1, doEncoderB, CHANGE);
+
+  // ROS
+  nh.initNode();
+  nh.subscribe(cmd_sub);
+  nh.subscribe(y_r_sub);
+  nh.advertise(drive_y_m_pub);
+  nh.advertise(drive_pwm_pub);
+
+  nh.advertise(steer_y_m_pub);
+  nh.advertise(steer_pwm_pub);
+  nh.advertise(error_pub);
+  nh.advertise(r_pub);
+  
+  MsTimer2::set(10, control_callback); // 10ms period
+  MsTimer2::start();
+}
+
+
+void doEncoderA(){ // 빨녹일 때
+  encoderPos += (digitalRead(encoderPinA)==digitalRead(encoderPinB))?1:-1;
+}
+
+void doEncoderB(){ // 보파일 때
+  encoderPos += (digitalRead(encoderPinA)==digitalRead(encoderPinB))?-1:1;
+}
+
+//이게 사실상 메인 함수 
+void control_callback()
+{
+  static boolean led_output = HIGH;
+  digitalWrite(13, led_output);
+
+  float pot_y_m = float(analogRead(STEERPOT));
+  int motor_pwm;
+  float error;
+  float r;
+  int start_time;
+  //steer_y_m = map(steer_y_m, ad_min, ad_max, min_angle + neural_angle, max_angle + neural_angle); // y_m 범위를 설정 , map함수는 정수형만 가
+  
+  
+// 20Hz, 50msec마다 증가해야 하는 encoder값 // 속도를 50msec마다 가야하는 거리(pulse)값으로 환산
+  float pulse_r = target_velocity * vel_2_pulse; 
+  float pulse_y = (float)encoderPos;
+  int front_motor_pwm;
+  float steer_motor_pwm;
+
+//조향모터 컨트롤
+  Serial.print("control_callback");
+  Serial.println(error);
+  if(do_once == true){
+    start_time = millis();
+    do_once=false;
+    Serial.print("DO_ONCE");
+    Serial.print(start_time);
+    }
+  if (millis()-start_time > 1400){
+  steer_PID_controller.control(pot_y_m, steer_r); 
+    Serial.print("CONTROLLER");
+    }
+  pot_y_m = steer_PID_controller.y_m;
+  steer_motor_pwm = steer_PID_controller.motor_pwm;
+
+  error = steer_PID_controller.error;
+  r = steer_r;
+
+
+//구동모터 컨트롤
+  front_PID_controller.control(pulse_y, pulse_r);
+
+  pulse_y = front_PID_controller.y_m;
+  front_motor_pwm = front_PID_controller.motor_pwm;
+
+// ROS
+  drive_y_m.data = pulse_y;
+  drive_pwm.data = front_motor_pwm;
+  steer_y_m.data = pot_y_m;
+  data_pwm.data = steer_motor_pwm;
+  error_msg.data = error;
+  r_msg.data = r;
+  
+  drive_y_m_pub.publish(&drive_y_m);
+  drive_pwm_pub.publish(&drive_pwm);
+
+  steer_y_m_pub.publish(&steer_y_m);
+  steer_pwm_pub.publish(&data_pwm);
+  error_pub.publish(&error_msg);
+  r_pub.publish(&r_msg);
+  
+  
+
+  led_output = LOW;
+  digitalWrite(13, led_output);
+  //clearEncoderCount(1);
+  encoderPos = 0;
+}
+
+void loop(){
+  nh.spinOnce();
+}
+
+//====================================================================
