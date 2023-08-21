@@ -172,76 +172,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-detection_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 detection_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : detection_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: detection_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f detection_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make detection_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-detection_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 detection_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : detection_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: detection_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f detection_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make detection_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-detection_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 detection_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : detection_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: detection_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f detection_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make detection_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-detection_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 detection_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : detection_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: detection_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f detection_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make detection_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-detection_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 detection_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : detection_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: detection_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f detection_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/build.make detection_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 detection_msgs/CMakeFiles/detection_msgs_generate_messages.dir/rule:
 	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 detection_msgs/CMakeFiles/detection_msgs_generate_messages.dir/rule
 .PHONY : detection_msgs/CMakeFiles/detection_msgs_generate_messages.dir/rule
@@ -449,11 +379,6 @@ help:
 	@echo "... detection_msgs_genlisp"
 	@echo "... detection_msgs_gennodejs"
 	@echo "... detection_msgs_genpy"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_py"
 .PHONY : help
 
 
