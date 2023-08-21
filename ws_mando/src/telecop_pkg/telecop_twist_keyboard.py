@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 from __future__ import print_function
-
 import threading
 
 import roslib; roslib.load_manifest('teleop_twist_keyboard')
 import rospy
 
 from geometry_msgs.msg import Twist
+from std_msgs.msg import Float32
 
 import sys, select, termios, tty
 
@@ -166,9 +166,9 @@ if __name__=="__main__":
 
     rospy.init_node('teleop_twist_keyboard')
 
-    speed = rospy.get_param("~speed", 1)
-    turn = rospy.get_param("~turn", 600)
-    repeat = rospy.get_param("~repeat_rate", 0.0)
+    speed = rospy.get_param("~speed", 1.5)
+    turn = rospy.get_param("~turn", 20)
+    repeat =  rospy.get_param("~repeat_rate", 43.0)
     key_timeout = rospy.get_param("~key_timeout", 0.0)
     if key_timeout == 0.0:
         key_timeout = None
