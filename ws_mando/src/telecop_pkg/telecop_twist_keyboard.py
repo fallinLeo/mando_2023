@@ -32,7 +32,7 @@ anything else : stop
 
 q/z : increase/decrease max speeds by 20%
 w/x : increase/decrease only linear speed by 20%
-e/c : increase/decrease only angular speed by 20%
+e/c : increase/decrease only angular speed by 10%
 
 CTRL-C to quit
 """
@@ -63,8 +63,8 @@ speedBindings={
         'z':(.9,.9),
         'w':(1.2,1),
         'x':(.8,1),
-        'e':(1,2.1),
-        'c':(1,.8),
+        'e':(1,1.1),
+        'c':(1,.9),
     }
 
 class PublishThread(threading.Thread):
@@ -130,7 +130,7 @@ class PublishThread(threading.Thread):
             twist.linear.z = self.z * self.speed
             twist.angular.x = 0
             twist.angular.y = 0
-            twist.angular.z = self.th * self.turn
+            twist.angular.z = max(100, min(900, self.th * self.turn))
 
             self.condition.release()
 
@@ -167,7 +167,7 @@ if __name__=="__main__":
     rospy.init_node('teleop_twist_keyboard')
 
     speed = rospy.get_param("~speed", 1.5)
-    turn = rospy.get_param("~turn", 20)
+    turn = rospy.get_param("~turn", 500)
     repeat =  rospy.get_param("~repeat_rate", 43.0)
     key_timeout = rospy.get_param("~key_timeout", 0.0)
     if key_timeout == 0.0:
