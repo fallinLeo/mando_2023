@@ -9,6 +9,7 @@ from rostopic import get_topic_type
 
 def bounding_box_callback(msg):
     # Initialize variables to keep track of most frequent class and its count
+    #checked_pub.publish("subscribed")
     class_count = {}
     most_frequent_class = None
     max_count =13
@@ -29,7 +30,7 @@ def bounding_box_callback(msg):
             if class_count[bbox.Class] > max_count:
                 max_count = class_count[bbox.Class]
                 most_frequent_class = bbox.Class
-                checked_pub.publish("checked")
+                
     
     # Check if a most frequent class is found
     if most_frequent_class is not None:

@@ -31,8 +31,8 @@ b : down (-z)
 anything else : stop
 
 q/z : increase/decrease max speeds by 20%
-w/x : increase/decrease only linear speed by 20%
-e/c : increase/decrease only angular speed by 10%
+w/x : increase/decrease only linear speed by +=1
+e/c : increase/decrease only angular speed by +=50
 
 CTRL-C to quit
 """
@@ -59,12 +59,12 @@ moveBindings = {
     }
 
 speedBindings={
-        'q':(1.2,1.2),
-        'z':(.9,.9),
-        'w':(1.2,1),
-        'x':(.8,1),
-        'e':(1,50),
-        'c':(1,-50),
+         'q':(1,1),
+         'z':(1,1),
+        'w':(1,0),
+        'x':(-1,0),
+        'e':(0,50),
+        'c':(0,-50),
     }
 
 class PublishThread(threading.Thread):
@@ -130,7 +130,7 @@ class PublishThread(threading.Thread):
             twist.linear.z = self.z * self.speed
             twist.angular.x = 0
             twist.angular.y = 0
-            twist.angular.z = max(100, min(900, self.th * self.turn))
+            twist.angular.z = self.th * self.turn
 
             self.condition.release()
 
@@ -165,10 +165,6 @@ if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
 
     rospy.init_node('teleop_twist_keyboard')
-
-    speed = rospy.get_param("~speed", 0.9)
-    
-    repeat = rospy.get_param("~repeat_rate", 0.0)
     speed = rospy.get_param("~speed", 1.5)
     turn = rospy.get_param("~turn", 500)
     repeat =  rospy.get_param("~repeat_rate", 43.0)
@@ -198,8 +194,9 @@ if __name__=="__main__":
                 z = moveBindings[key][2]
                 th = moveBindings[key][3]
             elif key in speedBindings.keys():
-                speed = speed * speedBindings[key][0]
+                speed = speed + speedBindings[key][0]
                 turn = turn + speedBindings[key][1]
+                turn = max(150,min(850,turn))
 
                 print(vels(speed,turn))
                 if (status == 14):
