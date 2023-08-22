@@ -1,6 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 from __future__ import print_function
+from math import fabs
+
 import threading
 
 import roslib; roslib.load_manifest('teleop_twist_keyboard')
@@ -8,9 +10,18 @@ import rospy
 
 from geometry_msgs.msg import Twist
 from geometry_msgs.msg import TwistStamped
-from std_msgs.msg import Float32
 
-import sys, select, termios, tty
+import sys
+from select import select
+
+if sys.platform == 'win32':
+    import msvcrt
+else:
+    import termios
+    import tty
+
+
+TwistMsg = Twist
 
 msg = """
 Reading from the keyboard  and Publishing to Twist!
@@ -20,64 +31,47 @@ Moving around:
    j    k    l
    m    ,    .
 
-For Holonomic mode (strafing), hold down the shift key:
----------------------------
-   U    I    O
-   J    K    L
-   M    <    >
-
-t : up (+z)
-b : down (-z)
-
 anything else : stop
 
-q/z : increase/decrease max speeds by 20%
-w/x : increase/decrease only linear speed by +=1
-e/c : increase/decrease only angular speed by +=50
+q/z : increase/decrease only linear speed +10/-10
+w/x : increase/decrease only steer angle +5/-5
+
+e/c : auto-drive mode / controller mode
 
 CTRL-C to quit
 """
 
 moveBindings = {
+        'u':(1,0,0,1),
         'i':(1,0,0,0),
         'o':(1,0,0,-1),
         'j':(0,0,0,1),
         'l':(0,0,0,-1),
-        'u':(1,0,0,1),
+        'm':(-1,0,0,-1),
         ',':(-1,0,0,0),
         '.':(-1,0,0,1),
-        'm':(-1,0,0,-1),
-        'O':(1,-1,0,0),
-        'I':(1,0,0,0),
-        'J':(0,1,0,0),
-        'L':(0,-1,0,0),
-        'U':(1,1,0,0),
-        '<':(-1,0,0,0),
-        '>':(-1,-1,0,0),
-        'M':(-1,1,0,0),
-        't':(0,0,1,0),
-        'b':(0,0,-1,0),
+        'e':(0,0,1,0),
+        'c':(0,1,0,0),
     }
 
 speedBindings={
-         'q':(1,1),
-         'z':(1,1),
-        'w':(1,0),
-        'x':(-1,0),
-        'e':(0,50),
-        'c':(0,-50),
+        'q':(10,0),
+        'z':(-10,0),
+        'w':(0,5),
+        'x':(0,-5),
     }
 
 class PublishThread(threading.Thread):
     def __init__(self, rate):
         super(PublishThread, self).__init__()
-        self.publisher = rospy.Publisher('teleop_cmd_vel', Twist, queue_size = 1)
+        self.publisher = rospy.Publisher('teleop_cmd_vel', TwistMsg, queue_size = 1)
         self.x = 0.0
         self.y = 0.0
         self.z = 0.0
         self.th = 0.0
         self.speed = 0.0
         self.turn = 0.0
+        self.steer_input = 0.0
         self.condition = threading.Condition()
         self.done = False
 
@@ -89,6 +83,7 @@ class PublishThread(threading.Thread):
             self.timeout = None
 
         self.start()
+	
 
     def wait_for_subscribers(self):
         i = 0
@@ -114,29 +109,47 @@ class PublishThread(threading.Thread):
         self.condition.release()
 
     def stop(self):
-        self.done = True
+        # self.done = True
         self.update(0, 0, 0, 0, 0, 0)
         self.join()
 
     def run(self):
-        twist = Twist()
+
+        if stamped:
+            twist = twist_msg.twist
+            twist_msg.header.stamp = rospy.Time.now()
+            twist_msg.header.frame_id = twist_frame
+        else:
+            twist = twist_msg
         while not self.done:
+            if stamped:
+                twist_msg.header.stamp = rospy.Time.now()
             self.condition.acquire()
             # Wait for a new message or timeout.
             self.condition.wait(self.timeout)
 
+            steer_gap = self.th*self.turn - twist.angular.z
+            if   (steer_gap > 0): self.steer_input += 1
+            elif (steer_gap < 0): self.steer_input -= 1
+
             # Copy state into twist message.
             twist.linear.x = self.x * self.speed
-            twist.linear.y = self.y * self.speed
-            twist.linear.z = self.z * self.speed
+            if   twist.linear.x >=  255: twist.linear.x =  255
+            elif twist.linear.x <= -255: twist.linear.x = -255
+            twist.linear.y = self.y
+            twist.linear.z = self.z
             twist.angular.x = 0
             twist.angular.y = 0
-            twist.angular.z = self.th * self.turn
+            twist.angular.z = self.th*self.turn
+            #if self.th != 0: twist.angular.z = self.steer_input
+            #else:            twist.angular.z = 0; self.turn =0
+            if   twist.angular.z >=  25: twist.angular.z =  25
+            elif twist.angular.z <= -25: twist.angular.z = -25
 
             self.condition.release()
 
             # Publish.
-            self.publisher.publish(twist)
+            self.publisher.publish(twist_msg)
 
         # Publish stop message when thread exits.
         twist.linear.x = 0
@@ -145,33 +158,53 @@ class PublishThread(threading.Thread):
         twist.angular.x = 0
         twist.angular.y = 0
         twist.angular.z = 0
-        self.publisher.publish(twist)
+        self.publisher.publish(twist_msg)
 
 
-def getKey(key_timeout):
-    tty.setraw(sys.stdin.fileno())
-    rlist, _, _ = select.select([sys.stdin], [], [], key_timeout)
-    if rlist:
-        key = sys.stdin.read(1)
+def getKey(settings, timeout):
+    if sys.platform == 'win32':
+        # getwch() returns a string on Windows
+        key = msvcrt.getwch()
     else:
-        key = ''
-    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+        tty.setraw(sys.stdin.fileno())
+        # sys.stdin.read() returns a string on Linux
+        rlist, _, _ = select([sys.stdin], [], [], timeout)
+        if rlist:
+            key = sys.stdin.read(1)
+        else:
+            key = ''
+        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
     return key
 
+def saveTerminalSettings():
+    if sys.platform == 'win32':
+        return None
+    return termios.tcgetattr(sys.stdin)
+
+def restoreTerminalSettings(old_settings):
+    if sys.platform == 'win32':
+        return
+    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
 
 def vels(speed, turn):
     return "currently:\tspeed %s\tturn %s " % (speed,turn)
 
 if __name__=="__main__":
-    settings = termios.tcgetattr(sys.stdin)
+    global twist_msg
+    twist_msg = TwistMsg()
+
+    settings = saveTerminalSettings()
 
     rospy.init_node('teleop_twist_keyboard')
-    speed = rospy.get_param("~speed", 1.5)
-    turn = rospy.get_param("~turn", 500)
-    repeat =  rospy.get_param("~repeat_rate", 43.0)
+
+    speed = rospy.get_param("~speed", 30)
+    turn = rospy.get_param("~turn", 20)
+    repeat = rospy.get_param("~repeat_rate", 0.0)
     key_timeout = rospy.get_param("~key_timeout", 0.5)
-    if key_timeout == 0.0:
-        key_timeout = None
+    stamped = rospy.get_param("~stamped", False)
+    twist_frame = rospy.get_param("~frame_id", '')
+    if stamped:
+        TwistMsg = TwistStamped
 
     pub_thread = PublishThread(repeat)
 
@@ -188,7 +221,7 @@ if __name__=="__main__":
         print(msg)
         print(vels(speed,turn))
         while(1):
-            key = getKey(key_timeout)
+            key = getKey(settings, key_timeout)
             if key in moveBindings.keys():
                 x = moveBindings[key][0]
                 y = moveBindings[key][1]
@@ -196,8 +229,11 @@ if __name__=="__main__":
                 th = moveBindings[key][3]
             elif key in speedBindings.keys():
                 speed = speed + speedBindings[key][0]
+                if speed <= 0: speed = 0
+                elif speed >= 255: speed = 255
                 turn = turn + speedBindings[key][1]
-                turn = max(150,min(850,turn))
+                if   turn >=  25: turn =  25
+                elif turn <= 5: turn = 5
 
                 print(vels(speed,turn))
                 if (status == 14):
@@ -214,7 +250,7 @@ if __name__=="__main__":
                 th = 0
                 if (key == '\x03'):
                     break
- 
+
             pub_thread.update(x, y, z, th, speed, turn)
 
     except Exception as e:
@@ -222,5 +258,4 @@ if __name__=="__main__":
 
     finally:
         pub_thread.stop()
-
-        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+        restoreTerminalSettings(settings)
