@@ -1,49 +1,54 @@
 #include <MsTimer2.h>
+#include <ros.h>
+#include <geometry_msgs/Twist.h>
 #include "FrontMotorPIDController.h"
 #include "MotorPIDController.h"
 #include "Arduino.h"
-
-
-float target_velocity = 0.1;
-
-//========================= ROS 관련 ==============================================
 #include <ros.h>
 #include <std_msgs/Int32.h>
 #include <std_msgs/Float32.h>
-#include <geometry_msgs/Twist.h>
-
 ros::NodeHandle nh;
-std_msgs::Float32 data_y_r;
-std_msgs::Float32 drive_y_m;
-std_msgs::Int32 drive_pwm;
 
-std_msgs::Float32 steer_y_m;
-std_msgs::Int32 data_pwm;
-std_msgs::Float32 error_msg;
-std_msgs::Float32 r_msg;
 
-ros::Publisher drive_y_m_pub("/drive_data_time_plot",&drive_y_m);
-ros::Publisher drive_pwm_pub("/front_pwm",&drive_pwm);
+//========================= ROS 관련 ==============================================
+geometry_msgs::Twist cmd_vel;
+ros::Publisher cmd_pub("cmd_vel2", &cmd_vel);
 
-ros::Publisher steer_y_m_pub("/steer_data_time_plot",&steer_y_m);
-ros::Publisher steer_pwm_pub("/check_pwm",&data_pwm);
-ros::Publisher error_pub("/error",&error_msg);
-ros::Publisher r_pub("/r",&r_msg);
 
-void y_r_Callback(const geometry_msgs::Twist& msg) {
-  target_velocity = msg.linear.x;
-  //steer_r = msg.angular.z;
-  
-  delay(10);
+//std_msgs::Float32 data_y_r;
+//std_msgs::Float32 drive_y_m;
+//std_msgs::Int32 drive_pwm;
+//
+//std_msgs::Float32 steer_y_m;
+//std_msgs::Int32 data_pwm;
+//std_msgs::Float32 error_msg;
+//std_msgs::Float32 r_msg;
+//
+//ros::Publisher drive_y_m_pub("/drive_data_time_plot",&drive_y_m);
+//ros::Publisher drive_pwm_pub("/front_pwm",&drive_pwm);
+//
+//ros::Publisher steer_y_m_pub("/steer_data_time_plot",&steer_y_m);
+//ros::Publisher steer_pwm_pub("/check_pwm",&data_pwm);
+//ros::Publisher error_pub("/error",&error_msg);
+//ros::Publisher r_pub("/r",&r_msg);
+
+//void y_r_Callback(const std_msgs::Float32& msg) {
+//  target_velocity = msg.data;
+//}
+
+float target_velocity = 0;
+float steer_r = 600;
+//float input_velocity=0;
+//float input_steer=0;
+
+void cmd_vel_callback(const geometry_msgs::Twist& msg) {
+  target_velocity = (int)msg.linear.x;
+  steer_r = (int)msg.angular.z;
+  nh.spinOnce();
 }
 
-<<<<<<<< HEAD:ws_mando/Arduino/IntegratedMotorController.ino/IntegratedMoterController_tele/IntegratedMoterController_tele.ino
-ros::Subscriber<geometry_msgs::Twist> y_r_sub("/teleop_cmd_vel", &y_r_Callback); // 수정된 부분
-========
-ros::Subscriber<std_msgs::Float32> y_r_sub("/data_y_r", y_r_Callback); // 수정된 부분
-ros::Subscriber<std_msgs::Float32> y_r_sub("/data_y_r", y_r_Callback); // 수정된 부분
-
->>>>>>>> f233981c4b571e73f9fdc10f54bf76ae092de995:ws_mando/Arduino/tar
+//ros::Subscriber<std_msgs::Float32> y_r_sub("/data_y_r", y_r_Callback); // 수정된 부분
+ros::Subscriber<geometry_msgs::Twist> cmd_sub("teleop_cmd_vel", &cmd_vel_callback);
 
 
 //==================================================================================
@@ -68,7 +73,7 @@ ros::Subscriber<std_msgs::Float32> y_r_sub("/data_y_r", y_r_Callback); // 수정
 // Steering motor pin
 #define MOTOR3_PWM 8  //4
 #define MOTOR3_ENA 9  //5
--
+
 #define STEERPOT A2
 
 int encoderPos = 0;
@@ -87,7 +92,7 @@ FrontMotorPIDController front_PID_controller(MOTOR1_PWM, MOTOR1_ENA,
 
 //float steer_r = map(steer_r_deg,0,980,-20,20) << steer_r_deg를 subscribe해서 변환해서 사용함 추후에 추가해야함
 
-float steer_r = 600.0; // target pot_value 
+// float steer_r = 600.0; // target pot_value 
 float neural_angle = 0.0; // degree
 float min_angle = -20.0; // degree
 float max_angle = 20.0; // degree
@@ -107,12 +112,13 @@ bool do_once = true;
 MotorPIDController steer_PID_controller(MOTOR3_PWM, MOTOR3_ENA);
 
 //==================================================================================
+
 void setup() {
   // put your setup code here, to run once:
   // For checking motor control
-  
   pinMode(13, OUTPUT);
-
+  Serial.begin(57600);
+  //mySerial.begin(57600);
   // Set gain for front motor control
   front_PID_controller.set_gain(Kp_front, Kd_front, Ki_front);
 
@@ -130,15 +136,16 @@ void setup() {
 
   // ROS
   nh.initNode();
-  nh.subscribe(y_r_sub);
-  nh.advertise(drive_y_m_pub);
-  nh.advertise(drive_pwm_pub);
-
-  nh.advertise(steer_y_m_pub);
-  nh.advertise(steer_pwm_pub);
-  nh.advertise(error_pub);
-  nh.advertise(r_pub);
-  
+//  nh.subscribe(y_r_sub);
+  nh.subscribe(cmd_sub);
+  nh.advertise(cmd_pub);
+//  nh.advertise(drive_y_m_pub);
+//  nh.advertise(drive_pwm_pub);
+//
+//  nh.advertise(steer_y_m_pub);
+//  nh.advertise(steer_pwm_pub);
+//  nh.advertise(error_pub);
+//  nh.advertise(r_pub);
   MsTimer2::set(10, control_callback); // 10ms period
   MsTimer2::start();
 }
@@ -199,20 +206,23 @@ void control_callback()
   front_motor_pwm = front_PID_controller.motor_pwm;
 
 // ROS
-  drive_y_m.data = pulse_y;
-  drive_pwm.data = front_motor_pwm;
-  steer_y_m.data = pot_y_m;
-  data_pwm.data = steer_motor_pwm;
-  error_msg.data = error;
-  r_msg.data = r;
+//  drive_y_m.data = pulse_y;
+//  drive_pwm.data = front_motor_pwm;
+//  steer_y_m.data = pot_y_m;
+//  data_pwm.data = steer_motor_pwm;
+//  error_msg.data = error;
+//  r_msg.data = r;
   
-  drive_y_m_pub.publish(&drive_y_m);
-  drive_pwm_pub.publish(&drive_pwm);
-
-  steer_y_m_pub.publish(&steer_y_m);
-  steer_pwm_pub.publish(&data_pwm);
-  error_pub.publish(&error_msg);
-  r_pub.publish(&r_msg);
+//  drive_y_m_pub.publish(&drive_y_m);
+//  drive_pwm_pub.publish(&drive_pwm);
+//
+//  steer_y_m_pub.publish(&steer_y_m);
+//  steer_pwm_pub.publish(&data_pwm);
+//  error_pub.publish(&error_msg);
+//  r_pub.publish(&r_msg);
+  cmd_vel.linear.x = target_velocity;
+  cmd_vel.angular.z = steer_r;
+  cmd_pub.publish(&cmd_vel);
   
   nh.spinOnce();
 
@@ -223,6 +233,9 @@ void control_callback()
 }
 
 void loop(){
+  
+  
+  delay(1);
 }
 
 //====================================================================
