@@ -1,40 +1,54 @@
 #include <MsTimer2.h>
+#include <ros.h>
+#include <geometry_msgs/Twist.h>
 #include "FrontMotorPIDController.h"
 #include "MotorPIDController.h"
 #include "Arduino.h"
-
-
-float target_velocity = 0.1;
-
-//========================= ROS 관련 ==============================================
 #include <ros.h>
-#include <geometry_msgs/Twist.h>
 #include <std_msgs/Int32.h>
 #include <std_msgs/Float32.h>
-
 ros::NodeHandle nh;
-std_msgs::Float32 data_y_r;
-std_msgs::Float32 drive_y_m;
-std_msgs::Int32 drive_pwm;
 
-std_msgs::Float32 steer_y_m;
-std_msgs::Int32 data_pwm;
-std_msgs::Float32 error_msg;
-std_msgs::Float32 r_msg;
 
-ros::Publisher drive_y_m_pub("/drive_data_time_plot",&drive_y_m);
-ros::Publisher drive_pwm_pub("/front_pwm",&drive_pwm);
+//========================= ROS 관련 ==============================================
+geometry_msgs::Twist cmd_vel;
+ros::Publisher cmd_pub("cmd_vel2", &cmd_vel);
 
-ros::Publisher steer_y_m_pub("/steer_data_time_plot",&steer_y_m);
-ros::Publisher steer_pwm_pub("/check_pwm",&data_pwm);
-ros::Publisher error_pub("/error",&error_msg);
-ros::Publisher r_pub("/r",&r_msg);
 
-void y_r_Callback(const std_msgs::Float32& msg) {
-  target_velocity = msg.data;
+//std_msgs::Float32 data_y_r;
+//std_msgs::Float32 drive_y_m;
+//std_msgs::Int32 drive_pwm;
+//
+//std_msgs::Float32 steer_y_m;
+//std_msgs::Int32 data_pwm;
+//std_msgs::Float32 error_msg;
+//std_msgs::Float32 r_msg;
+//
+//ros::Publisher drive_y_m_pub("/drive_data_time_plot",&drive_y_m);
+//ros::Publisher drive_pwm_pub("/front_pwm",&drive_pwm);
+//
+//ros::Publisher steer_y_m_pub("/steer_data_time_plot",&steer_y_m);
+//ros::Publisher steer_pwm_pub("/check_pwm",&data_pwm);
+//ros::Publisher error_pub("/error",&error_msg);
+//ros::Publisher r_pub("/r",&r_msg);
+
+//void y_r_Callback(const std_msgs::Float32& msg) {
+//  target_velocity = msg.data;
+//}
+
+float target_velocity = 0;
+float steer_r = 600;
+//float input_velocity=0;
+//float input_steer=0;
+
+void cmd_vel_callback(const geometry_msgs::Twist& msg) {
+  target_velocity = (int)msg.linear.x;
+  steer_r = (int)msg.angular.z;
+  nh.spinOnce();
 }
 
-ros::Subscriber<std_msgs::Float32> y_r_sub("/data_y_r", y_r_Callback); // 수정된 부분
+//ros::Subscriber<std_msgs::Float32> y_r_sub("/data_y_r", y_r_Callback); // 수정된 부분
+ros::Subscriber<geometry_msgs::Twist> cmd_sub("teleop_cmd_vel", &cmd_vel_callback);
 
 
 //==================================================================================
@@ -78,7 +92,7 @@ FrontMotorPIDController front_PID_controller(MOTOR1_PWM, MOTOR1_ENA,
 
 //float steer_r = map(steer_r_deg,0,980,-20,20) << steer_r_deg를 subscribe해서 변환해서 사용함 추후에 추가해야함
 
-float steer_r = 600.0; // target pot_value 
+// float steer_r = 600.0; // target pot_value 
 float neural_angle = 0.0; // degree
 float min_angle = -20.0; // degree
 float max_angle = 20.0; // degree
@@ -99,47 +113,12 @@ MotorPIDController steer_PID_controller(MOTOR3_PWM, MOTOR3_ENA);
 
 //==================================================================================
 
-float linear_x;
-float linear_y;
-float linear_z;
-float angular_x;
-float angular_y;
-float angular_z;
-void cmd_vel_callback(const geometry_msgs::Twist& msg);
-
-//ros subsrciber and publisher
-ros::Subscriber<geometry_msgs::Twist> cmd_sub("teleop_cmd_vel", cmd_vel_callback);
-//ros::Publisher cmd_pub("cmd_vel2", &cmd_vel);
-
-
-int input_velocity=0, vel_gap = 0;
-int velocity = 0;
-int steer_angle = 0, input_steer = 0, steer_gap = 0;
-int brake = 0;
-int f_speed = 0, r_speed = 0;
-
-void cmd_vel_callback(const geometry_msgs::Twist& msg) {
-  input_velocity = (int)msg.linear.x;
-  input_steer = (int)msg.angular.z;
-  target_velocity += input_velocity;
-  steer_r += input_steer;
-  //brake = (int)msg.linear.z;
-  target_velocity = constrain(target_velocity,-255,255);
-  steer_r = constrain(steer_r,100,900);
-  //steer_motor_control(steer);
-  //front_PID_controller.front_motor_control(velocity);
-  //front_PID_controller.rear_motor_control(velocity);
-  //vel_gap = velocity - input_velocity;
-  //steer_gap = steer - input_steer;
-  delay(10);
-}
-
-//===================teleop
 void setup() {
   // put your setup code here, to run once:
   // For checking motor control
   pinMode(13, OUTPUT);
   Serial.begin(57600);
+  //mySerial.begin(57600);
   // Set gain for front motor control
   front_PID_controller.set_gain(Kp_front, Kd_front, Ki_front);
 
@@ -157,16 +136,16 @@ void setup() {
 
   // ROS
   nh.initNode();
+//  nh.subscribe(y_r_sub);
   nh.subscribe(cmd_sub);
-  nh.subscribe(y_r_sub);
-  nh.advertise(drive_y_m_pub);
-  nh.advertise(drive_pwm_pub);
-
-  nh.advertise(steer_y_m_pub);
-  nh.advertise(steer_pwm_pub);
-  nh.advertise(error_pub);
-  nh.advertise(r_pub);
-  
+  nh.advertise(cmd_pub);
+//  nh.advertise(drive_y_m_pub);
+//  nh.advertise(drive_pwm_pub);
+//
+//  nh.advertise(steer_y_m_pub);
+//  nh.advertise(steer_pwm_pub);
+//  nh.advertise(error_pub);
+//  nh.advertise(r_pub);
   MsTimer2::set(10, control_callback); // 10ms period
   MsTimer2::start();
 }
@@ -227,22 +206,25 @@ void control_callback()
   front_motor_pwm = front_PID_controller.motor_pwm;
 
 // ROS
-  drive_y_m.data = pulse_y;
-  drive_pwm.data = front_motor_pwm;
-  steer_y_m.data = pot_y_m;
-  data_pwm.data = steer_motor_pwm;
-  error_msg.data = error;
-  r_msg.data = r;
+//  drive_y_m.data = pulse_y;
+//  drive_pwm.data = front_motor_pwm;
+//  steer_y_m.data = pot_y_m;
+//  data_pwm.data = steer_motor_pwm;
+//  error_msg.data = error;
+//  r_msg.data = r;
   
-  drive_y_m_pub.publish(&drive_y_m);
-  drive_pwm_pub.publish(&drive_pwm);
-
-  steer_y_m_pub.publish(&steer_y_m);
-  steer_pwm_pub.publish(&data_pwm);
-  error_pub.publish(&error_msg);
-  r_pub.publish(&r_msg);
+//  drive_y_m_pub.publish(&drive_y_m);
+//  drive_pwm_pub.publish(&drive_pwm);
+//
+//  steer_y_m_pub.publish(&steer_y_m);
+//  steer_pwm_pub.publish(&data_pwm);
+//  error_pub.publish(&error_msg);
+//  r_pub.publish(&r_msg);
+  cmd_vel.linear.x = target_velocity;
+  cmd_vel.angular.z = steer_r;
+  cmd_pub.publish(&cmd_vel);
   
-  
+  nh.spinOnce();
 
   led_output = LOW;
   digitalWrite(13, led_output);
@@ -251,7 +233,9 @@ void control_callback()
 }
 
 void loop(){
-  nh.spinOnce();
+  
+  
+  delay(1);
 }
 
 //====================================================================
