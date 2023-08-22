@@ -63,8 +63,8 @@ speedBindings={
         'z':(.9,.9),
         'w':(1.2,1),
         'x':(.8,1),
-        'e':(1,1.1),
-        'c':(1,.9),
+        'e':(1,50),
+        'c':(1,-50),
     }
 
 class PublishThread(threading.Thread):
@@ -166,15 +166,12 @@ if __name__=="__main__":
 
     rospy.init_node('teleop_twist_keyboard')
 
-<<<<<<< HEAD
     speed = rospy.get_param("~speed", 0.9)
-    turn = rospy.get_param("~turn", 100)
+    
     repeat = rospy.get_param("~repeat_rate", 0.0)
-=======
     speed = rospy.get_param("~speed", 1.5)
     turn = rospy.get_param("~turn", 500)
     repeat =  rospy.get_param("~repeat_rate", 43.0)
->>>>>>> f233981c4b571e73f9fdc10f54bf76ae092de995
     key_timeout = rospy.get_param("~key_timeout", 0.0)
     if key_timeout == 0.0:
         key_timeout = None
@@ -202,7 +199,7 @@ if __name__=="__main__":
                 th = moveBindings[key][3]
             elif key in speedBindings.keys():
                 speed = speed * speedBindings[key][0]
-                turn = turn * speedBindings[key][1]
+                turn = turn + speedBindings[key][1]
 
                 print(vels(speed,turn))
                 if (status == 14):
