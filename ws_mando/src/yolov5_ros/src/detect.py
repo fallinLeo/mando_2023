@@ -12,9 +12,10 @@ import sys
 from rostopic import get_topic_type
 
 from std_msgs.msg import Int32
-from std_msgs.msg import String
+from std_msgs.msg import Int32MultiArray
 from sensor_msgs.msg import Image, CompressedImage
 from detection_msgs.msg import BoundingBox, BoundingBoxes
+
 
 
 # add yolov5 submodule to path
@@ -36,43 +37,33 @@ from utils.plots import Annotator, colors
 from utils.torch_utils import select_device
 from utils.augmentations import letterbox
 
-# def class_check(msg):
-#     # Initialize variables to keep track of most frequent class and its count
-#     checked_pub = rospy.Publisher('/frequent_check!',String ,queue_size=10)
-    
-#     class_count = {}
-#     most_frequent_class = None
-#     max_count =0
-    
-#     # Iterate through bounding boxes in the message
-#     for bbox in msg.bounding_boxes:
-#         # Check if probability is greater than 70%
-#         if bbox.probability > 0.7:
-#             # Update class count
-#             if bbox.Class in class_count:
-#                 class_count[bbox.Class] += 1
-#             else:
-#                 class_count[bbox.Class] = 1
-            
-#             # Update most frequent class and max count
-#             if class_count[bbox.Class] > max_count:
-#                 max_count = class_count[bbox.Class]
-#                 most_frequent_class = bbox.Class
-#                 checked_pub.publish("checked!")
-    
-#     # Check if a most frequent class is found
-#     if most_frequent_class is not None:
-#         # Create a new BoundingBoxes message with only the most frequent class
-#         filtered_msg = Int32()
-#         for bbox in msg.bounding_boxes:
-#             if bbox.Class == most_frequent_class:
-#                 filtered_msg.data = bbox.Class
-#                 return filtered_msg
-#     else :
-#         return 100
-        
-        
-    
+from collections import deque, Counter
+ 
+class IntQueue:
+    def __init__(self, size=13):
+        self.queue = deque(maxlen=size)
+        self.counter = Counter()
+
+    def enqueue(self, value):
+        self.queue.append(value)
+        self.counter = Counter(self.queue)
+
+    def get_most_common(self):
+        if not self.queue:
+            return None
+
+        most_common = self.counter.most_common(1)[0]
+        return most_common[0]
+
+    def process_int_values(self, values):
+        for value in values:
+            self.enqueue(value)
+
+        most_common_value = self.get_most_common()
+        return most_common_value
+
+
+
 
 
 @torch.no_grad()
@@ -136,7 +127,7 @@ class Yolov5Detector:
         )
         
         #class_publish 영욱
-        #self.class_pub = rospy.Publisher('/filtered_class',Int32, queue_size=10)
+        self.class_pub = rospy.Publisher('/filtered_class',Int32, queue_size=10)
 
         # Initialize image publisher
         self.publish_image = rospy.get_param("~publish_image")
@@ -149,6 +140,8 @@ class Yolov5Detector:
         
         # Initialize CV_Bridge
         self.bridge = CvBridge()
+    
+    
 
     def callback(self, data):
         """adapted from yolov5/detect.py"""
@@ -188,7 +181,9 @@ class Yolov5Detector:
         if len(det):
             # Rescale boxes from img_size to im0 size
             det[:, :4] = scale_coords(im.shape[2:], det[:, :4], im0.shape).round()
+            #most_fre_class = IntQueue()
 
+            
             # Write results
             for *xyxy, conf, cls in reversed(det):
                 bounding_box = BoundingBox()
@@ -203,10 +198,10 @@ class Yolov5Detector:
                 
                 
                 #class name publish
-                # pub=Int32()
-                # pub.data = c
-                # self.class_pub.publish(pub)
-
+                pub=Int32()
+                pub.data = c #most_fre_class.process_int_values(c)
+                self.class_pub.publish(pub)
+                
                 # bounding_boxes.bounding_boxes.append(bounding_box)
 
                 # Annotate the image

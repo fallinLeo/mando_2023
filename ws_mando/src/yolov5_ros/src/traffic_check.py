@@ -1,61 +1,103 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-import rospy
-from detection_msgs.msg import BoundingBox, BoundingBoxes
-import os
-import sys
-from std_msgs.msg import String
-from std_msgs.msg import Int32
-from rostopic import get_topic_type
+from scipy.stats import mode
+import rclpy
 
-def bounding_box_callback(msg):
-    # Initialize variables to keep track of most frequent class and its count
-    #checked_pub.publish("subscribed")
-    class_count = {}
-    most_frequent_class = None
-    max_count =13
-    checked_pub = rospy.Publisher('/frequent_check!',String,queue_size=10)
-    filtered_pub = rospy.Publisher("/filtered_class", Int32, queue_size=10)
-    
-    # Iterate through bounding boxes in the message
-    for bbox in msg.bounding_boxes:
-        # Check if probability is greater than 70%
-        if bbox.probability > 0.7:
-            # Update class count
-            if bbox.Class in class_count:
-                class_count[bbox.Class] += 1
+from std_msgs.msg import Int32MultiArray
+from webcam_ros2 import Int32MultiArray
+
+
+class YoloPub:
+    def __init__(self, class_map, queue_size, thresh):
+        self.queue_size = queue_size
+        self.threshold = thresh
+        self.callback_flag = False
+
+        self.queue_list = [[-1 for _ in range(self.queue_size)] for _ in range(len(class_map))]
+
+        self.id_to_queue_list = [self.queue_list[i] for i in range(len(class_map)) for _ in range(len(class_map[i]))]
+
+        self.node = rclpy.create_node('yolo_pub')
+
+        self.forward_pub = self.node.create_publisher(Int32MultiArray, '/forward_sign', 15)
+        self.bounding_boxes_sub = self.node.create_subscription(
+            Int32MultiArray,
+            '/bounding_boxes',
+            self.bounding_boxes_callback,
+            15
+        )
+
+    def hard_vote(self, queue):   # hard vote: 최빈값 찾기
+        return int(mode(queue)[0])
+
+    def majority_vote(self, queue):
+        candidate = -1
+        votes = 0
+
+        for i in range(self.queue_size):
+            if votes == 0:
+                candidate = queue[i]
+                votes = 1
             else:
-                class_count[bbox.Class] = 1
-            
-            # Update most frequent class and max count
-            if class_count[bbox.Class] > max_count:
-                max_count = class_count[bbox.Class]
-                most_frequent_class = bbox.Class
-                
-    
-    # Check if a most frequent class is found
-    if most_frequent_class is not None:
-        # Create a new BoundingBoxes message with only the most frequent class
-        filtered_msg = Int32()
-        for bbox in msg.bounding_boxes:
-            if bbox.Class == most_frequent_class:
-                filtered_msg.data = bbox.Class
-        
-        # Publish the filtered message
-        filtered_pub.publish(filtered_msg)
-    else :
-        filtered_pub.publish(100)
+                votes = votes + 1 if queue[i] == candidate else votes - 1
+
+        count = 0
+        for i in range(self.queue_size):
+            if queue[i] == candidate:
+                count += 1
+
+        return candidate if count > self.queue_size // 2 else -1
+
+    def msg_pub(self):
+        final_check = Int32MultiArray()
+        queue_list = self.queue_list
+
+        for idx in range(len(queue_list)):
+            final_check.data.append(self.hard_vote(queue_list[idx]))
+
+        self.forward_pub.publish(final_check)
+        self.callback_flag = False
+
+    def bounding_boxes_callback(self, data):
+        queue_size = self.queue_size
+
+        # Process the received bounding boxes data here
+        # You can access the data using data.data
+
+        for bounding_box in data.data:
+            if bounding_box >= self.threshold:
+              if bounding_box < len(self.id_to_queue_list):
+                self.id_to_queue_list[bounding_box.id].append(bounding_box.id)
+
+        for queue in self.queue_list:
+            if len(queue) == queue_size:
+                queue.append(-1)
+            while len(queue) != queue_size:
+                del queue[0]
+        self.callback_flag = True
 
 
-if __name__ == "__main__":
+def main(args=None):
+    rclpy.init(args=args)
 
-    rospy.init_node("traffic_check")
-       
-    # BoundingBoxes 메시지 타입으로 topic 구독
-    rospy.Subscriber("/yolov5_detections", BoundingBoxes, bounding_box_callback)
-    
-    rospy.spin()
+    CLASS_MAP = (
+        ("green", "left", "red", "straightleft", "yellow",),
+        ("traffic",)
+    )
+    QUEUE_SIZE = 13
+    ACCURACY_THRESHOLD = 0.7
+
+    node = YoloPub(CLASS_MAP, QUEUE_SIZE, ACCURACY_THRESHOLD)
+
+    while rclpy.ok():
+        rclpy.spin_once(node.node)
+        if node.callback_flag:
+            node.msg_pub()
+
+    node.node.destroy_node()
+    rclpy.shutdown()
 
 
-
-
-
+if __name__ == '__main__':
+    main()
