@@ -38,14 +38,14 @@ CTRL-C to quit
 """
 
 moveBindings = {
-        'i':(1,0,0,0),
-        'o':(1,0,0,-1),
-        'j':(0,0,0,1),
-        'l':(0,0,0,-1),
-        'u':(1,0,0,1),
-        ',':(-1,0,0,0),
-        '.':(-1,0,0,1),
-        'm':(-1,0,0,-1),
+        'i':(1,0,0,500),
+        'o':(1,0,0,850),
+        'j':(0,0,0,150),
+        'l':(0,0,0,850),#(0,0,0,-1)
+        'u':(1,0,0,150),
+        ',':(-1,0,0,500),
+        '.':(-1,0,0,850),
+        'm':(-1,0,0,150),
         'O':(1,-1,0,0),
         'I':(1,0,0,0),
         'J':(0,1,0,0),
@@ -76,7 +76,7 @@ class PublishThread(threading.Thread):
         self.z = 0.0
         self.th = 0.0
         self.speed = 0.0
-        self.turn = 0.0
+        self.turn = 500.0
         self.condition = threading.Condition()
         self.done = False
 
@@ -111,6 +111,7 @@ class PublishThread(threading.Thread):
         # Notify publish thread that we have a new message.
         self.condition.notify()
         self.condition.release()
+        
 
     def stop(self):
         self.done = True
@@ -118,8 +119,8 @@ class PublishThread(threading.Thread):
         self.join()
 
     def run(self):
-        twist = Twist()
         while not self.done:
+            twist = Twist()
             self.condition.acquire()
             # Wait for a new message or timeout.
             self.condition.wait(self.timeout)
@@ -130,7 +131,7 @@ class PublishThread(threading.Thread):
             twist.linear.z = self.z * self.speed
             twist.angular.x = 0
             twist.angular.y = 0
-            twist.angular.z = self.th * self.turn
+            twist.angular.z = self.turn #self.th * self.turn
 
             self.condition.release()
 
@@ -143,7 +144,7 @@ class PublishThread(threading.Thread):
         twist.linear.z = 0
         twist.angular.x = 0
         twist.angular.y = 0
-        twist.angular.z = 0
+        twist.angular.z = 500
         self.publisher.publish(twist)
 
 
@@ -169,6 +170,10 @@ if __name__=="__main__":
     turn = rospy.get_param("~turn", 500)
     repeat =  rospy.get_param("~repeat_rate", 25.0)
     key_timeout = rospy.get_param("~key_timeout", 0.0)
+
+    repeat =  rospy.get_param("~repeat_rate", 62.0)
+    key_timeout = rospy.get_param("~key_timeout", 0.5)
+
     if key_timeout == 0.0:
         key_timeout = None
 
@@ -192,7 +197,7 @@ if __name__=="__main__":
                 x = moveBindings[key][0]
                 y = moveBindings[key][1]
                 z = moveBindings[key][2]
-                th = moveBindings[key][3]
+                turn = moveBindings[key][3] #th = moveBindings[key][3]
             elif key in speedBindings.keys():
                 speed = speed + speedBindings[key][0]
                 turn = turn + speedBindings[key][1]
