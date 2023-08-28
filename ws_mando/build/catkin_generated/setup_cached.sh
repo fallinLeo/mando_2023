@@ -12,5 +12,5 @@ export LD_LIBRARY_PATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib
 export PKG_CONFIG_PATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/leo/Documents/GitHub/mando_2023/ws_mando/build'
 export PYTHONPATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib/python3/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/common-lisp'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/src:$ROS_PACKAGE_PATH"
