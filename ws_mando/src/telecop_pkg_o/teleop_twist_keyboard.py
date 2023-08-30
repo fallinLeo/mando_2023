@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from __future__ import print_function
-from operator import ne
 import threading
 
 import roslib; roslib.load_manifest('teleop_twist_keyboard')
@@ -37,37 +36,33 @@ e/c : increase/decrease only angular speed by +=50
 
 CTRL-C to quit
 """
-netural = 540
-leftMax =  (30+50) + 50
-rightMax = (1040-50)- 50
 
 moveBindings = {
-        'i':(1,0,0,netural),
-        'o':(1,0,0,rightMax),
-        'j':(0,0,0,leftMax),
-        'l':(0,0,0,rightMax),#(0,0,0,-1)
-        'u':(1,0,0,leftMax),
-        ',':(-1,0,0,netural),
-        '.':(-1,0,0,rightMax),
-        'm':(-1,0,0,leftMax),
-        'k':(0,0,0,netural)
-        # 'O':(1,-1,0,0),
-        # 'I':(1,0,0,0),
-        # 'J':(0,1,0,0),
-        # 'L':(0,-1,0,0),
-        # 'U':(1,1,0,0),
-        # '<':(-1,0,0,0),
-        # '>':(-1,-1,0,0),
-        # 'M':(-1,1,0,0),
-        # 't':(0,0,1,0),
-        # 'b':(0,0,-1,0),
+        'i':(1,0,0,500),
+        'o':(1,0,0,850),
+        'j':(0,0,0,150),
+        'l':(0,0,0,850),#(0,0,0,-1)
+        'u':(1,0,0,150),
+        ',':(-1,0,0,500),
+        '.':(-1,0,0,850),
+        'm':(-1,0,0,150),
+        'O':(1,-1,0,0),
+        'I':(1,0,0,0),
+        'J':(0,1,0,0),
+        'L':(0,-1,0,0),
+        'U':(1,1,0,0),
+        '<':(-1,0,0,0),
+        '>':(-1,-1,0,0),
+        'M':(-1,1,0,0),
+        't':(0,0,1,0),
+        'b':(0,0,-1,0),
     }
 
 speedBindings={
-        #  'q':(1,1),
-        #  'z':(1,1),
-        'w':(0.1,0),
-        'x':(-0.1,0),
+         'q':(1,1),
+         'z':(1,1),
+        'w':(1,0),
+        'x':(-1,0),
         'e':(0,50),
         'c':(0,-50),
     }
@@ -81,7 +76,7 @@ class PublishThread(threading.Thread):
         self.z = 0.0
         self.th = 0.0
         self.speed = 0.0
-        self.turn = netural
+        self.turn = 500.0
         self.condition = threading.Condition()
         self.done = False
 
@@ -149,7 +144,7 @@ class PublishThread(threading.Thread):
         twist.linear.z = 0
         twist.angular.x = 0
         twist.angular.y = 0
-        twist.angular.z = netural
+        twist.angular.z = 500
         self.publisher.publish(twist)
 
 
@@ -167,22 +162,17 @@ def getKey(key_timeout):
 def vels(speed, turn):
     return "currently:\tspeed %s\tturn %s " % (speed,turn)
 
-# Add a timer to control the message publishing rate
-def publish_callback(event):
-    pub_thread.update(x, y, z, th, speed, turn)
-
 if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
 
     rospy.init_node('teleop_twist_keyboard')
-    speed = rospy.get_param("~speed", 0.5)
-    turn = rospy.get_param("~turn", netural)
-    # repeat =  rospy.get_param("~repeat_rate", 10.0)
-    repeat = 10
+    speed = rospy.get_param("~speed", 1.5)
+    turn = rospy.get_param("~turn", 500)
+    repeat =  rospy.get_param("~repeat_rate", 25.0)
     key_timeout = rospy.get_param("~key_timeout", 0.0)
 
-    # repeat =  rospy.get_param("~repeat_rate", 10.0)
-    # key_timeout = rospy.get_param("~key_timeout", 0.5)
+    repeat =  rospy.get_param("~repeat_rate", 62.0)
+    key_timeout = rospy.get_param("~key_timeout", 0.5)
 
     if key_timeout == 0.0:
         key_timeout = None
@@ -195,12 +185,9 @@ if __name__=="__main__":
     th = 0
     status = 0
 
-    rospy.Timer(rospy.Duration(0.1), publish_callback)  # 10 Hz
-
-
     try:
         pub_thread.wait_for_subscribers()
-        # pub_thread.update(x, y, z, th, speed, turn)
+        pub_thread.update(x, y, z, th, speed, turn)
 
         print(msg)
         print(vels(speed,turn))
@@ -231,8 +218,8 @@ if __name__=="__main__":
                 th = 0
                 if (key == '\x03'):
                     break
-
-            # pub_thread.update(x, y, z, th, speed, turn)
+ 
+            pub_thread.update(x, y, z, th, speed, turn)
 
     except Exception as e:
         print(e)
