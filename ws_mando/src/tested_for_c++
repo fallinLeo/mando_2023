@@ -1,0 +1,23 @@
+#include <iostream>
+#include <deque>
+
+const int max_queue_size = 13;
+std::deque<int> values_queue(max_queue_size, 0);
+
+// 큐에서 값들의 평균을 추출
+double calculate_average(const std::deque<int>& values_queue) {
+    int sum = 0;
+    for (int value : values_queue) {
+        sum += value;
+    }
+    return static_cast<double>(sum) / values_queue.size();
+}
+
+int main() {
+    for (int i = 1; i <= 12; i++) {
+        values_queue.push_back(i);
+        std::cout << "Average: " << calculate_average(values_queue) << std::endl;
+    }
+
+    return 0;
+}
