@@ -1,0 +1,32 @@
+[0.010s] Invoking command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg/build/telecop_pkg': /home/leo/.local/bin/cmake /home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg/install/telecop_pkg
+[0.257s] -- The C compiler identification is GNU 9.4.0
+[0.458s] -- The CXX compiler identification is GNU 9.4.0
+[0.476s] -- Detecting C compiler ABI info
+[0.534s] -- Detecting C compiler ABI info - done
+[0.545s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.545s] -- Detecting C compile features
+[0.546s] -- Detecting C compile features - done
+[0.553s] -- Detecting CXX compiler ABI info
+[0.606s] -- Detecting CXX compiler ABI info - done
+[0.616s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.617s] -- Detecting CXX compile features
+[0.617s] -- Detecting CXX compile features - done
+[0.628s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[0.628s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[0.629s]   asked CMake to find a package configuration file provided by "catkin", but
+[0.629s]   CMake did not find one.
+[0.629s] 
+[0.629s]   Could not find a package configuration file provided by "catkin" with any
+[0.629s]   of the following names:
+[0.629s] 
+[0.629s]     catkinConfig.cmake
+[0.629s]     catkin-config.cmake
+[0.629s] 
+[0.629s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[0.629s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[0.629s]   provides a separate development package or SDK, be sure it has been
+[0.629s]   installed.
+[0.629s] 
+[0.629s] [0m
+[0.629s] -- Configuring incomplete, errors occurred!
+[0.635s] Invoked command in '/home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg/build/telecop_pkg' returned '1': /home/leo/.local/bin/cmake /home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg/install/telecop_pkg
