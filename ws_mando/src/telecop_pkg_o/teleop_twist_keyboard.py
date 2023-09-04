@@ -171,8 +171,8 @@ if __name__=="__main__":
     repeat =  rospy.get_param("~repeat_rate", 25.0)
     key_timeout = rospy.get_param("~key_timeout", 0.0)
 
-    repeat =  rospy.get_param("~repeat_rate", 62.0)
-    key_timeout = rospy.get_param("~key_timeout", 0.5)
+    #repeat =  rospy.get_param("~repeat_rate", 62.0)
+    #key_timeout = rospy.get_param("~key_timeout", 0.5)
 
     if key_timeout == 0.0:
         key_timeout = None

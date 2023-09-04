@@ -10,7 +10,7 @@
 export CMAKE_PREFIX_PATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD='/home/leo/ws_mando/build'
+export PWD='/home/leo/Documents/GitHub/mando_2023/ws_mando/build'
 export PYTHONPATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES='/home/leo/Documents/GitHub/mando_2023/ws_mando/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/leo/Documents/GitHub/mando_2023/ws_mando/src:$ROS_PACKAGE_PATH"

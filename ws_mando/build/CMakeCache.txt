@@ -844,13 +844,13 @@ std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
 std_srvs_DIR:PATH=/opt/ros/noetic/share/std_srvs/cmake
 
 //Value Computed by CMake
-telecop_pkg_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/telecop_pkg
+telecop_pkg_BINARY_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/build/telecop_pkg_o
 
 //Value Computed by CMake
 telecop_pkg_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-telecop_pkg_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg
+telecop_pkg_SOURCE_DIR:STATIC=/home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg_o
 
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/noetic/share/topic_tools/cmake
