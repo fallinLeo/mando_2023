@@ -172,76 +172,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-# Convenience name for target.
-usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
 usb_cam/CMakeFiles/v4l_driver.dir/rule:
 	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/v4l_driver.dir/rule
 .PHONY : usb_cam/CMakeFiles/v4l_driver.dir/rule
@@ -416,11 +346,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_py"
 	@echo "... usb_cam"
 	@echo "... usb_cam_node"
 	@echo "... v4l_driver"

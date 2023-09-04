@@ -67,7 +67,7 @@ set(telecop_pkg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(telecop_pkg_SOURCE_PREFIX /home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg_o)
+  set(telecop_pkg_SOURCE_PREFIX /home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg)
   set(telecop_pkg_DEVEL_PREFIX /home/leo/Documents/GitHub/mando_2023/ws_mando/devel)
   set(telecop_pkg_INSTALL_PREFIX "")
   set(telecop_pkg_PREFIX ${telecop_pkg_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT " " STREQUAL " ")
         message(FATAL_ERROR "Project 'telecop_pkg' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'telecop_pkg' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg_o/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'telecop_pkg' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/leo/Documents/GitHub/mando_2023/ws_mando/src/telecop_pkg/${idir}'.  ${_report}")
     endif()
     _list_append_unique(telecop_pkg_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/leo/Documents/GitHub/mando_2023/ws_mando/devel/lib;/home/leo/ws_mando/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

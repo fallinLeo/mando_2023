@@ -172,76 +172,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-.PHONY : ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_cpp: ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-.PHONY : diagnostic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_cpp/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-.PHONY : ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_eus: ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-.PHONY : diagnostic_msgs_generate_messages_eus
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_eus/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
-.PHONY : diagnostic_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-.PHONY : ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_lisp: ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-.PHONY : diagnostic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_nodejs: ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : diagnostic_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_nodejs/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
-.PHONY : diagnostic_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_py: ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : diagnostic_msgs_generate_messages_py
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make ublox_f9p/ublox_gps/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 ublox_f9p/ublox_gps/CMakeFiles/ublox_gps.dir/rule:
 	cd /home/leo/Documents/GitHub/mando_2023/ws_mando/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ublox_f9p/ublox_gps/CMakeFiles/ublox_gps.dir/rule
 .PHONY : ublox_f9p/ublox_gps/CMakeFiles/ublox_gps.dir/rule
@@ -354,11 +284,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... diagnostic_msgs_generate_messages_cpp"
-	@echo "... diagnostic_msgs_generate_messages_eus"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
-	@echo "... diagnostic_msgs_generate_messages_nodejs"
-	@echo "... diagnostic_msgs_generate_messages_py"
 	@echo "... ublox_gps"
 	@echo "... ublox_gps_node"
 	@echo "... src/gps.o"
