@@ -26,8 +26,8 @@ For Holonomic mode (strafing), hold down the shift key:
    J    K    L
    M    <    >
 
-t : up (+z)
-b : down (-z)
+
+b : Emergy_Stop!! (linear_y->1)
 
 anything else : stop
 
@@ -50,7 +50,8 @@ moveBindings = {
         ',':(-1,0,0,netural),
         '.':(-1,0,0,rightMax),
         'm':(-1,0,0,leftMax),
-        'k':(0,0,0,netural)
+        'k':(0,0,0,netural),
+        'b':(0,1,0,netural) # brake key
         # 'O':(1,-1,0,0),
         # 'I':(1,0,0,0),
         # 'J':(0,1,0,0),
@@ -132,7 +133,7 @@ class PublishThread(threading.Thread):
 
             # Copy state into twist message.
             twist.linear.x = self.x * self.speed
-            twist.linear.y = self.y * self.speed
+            twist.linear.y = self.y
             twist.linear.z = self.z * self.speed
             twist.angular.x = 0
             twist.angular.y = 0

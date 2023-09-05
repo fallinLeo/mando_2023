@@ -44,7 +44,7 @@ ros::Publisher steer_y_m_pub("/steer_data_time_plot",&steer_y_m);
 
 float target_velocity = 0;
 int steer_r = 700;
-
+int brake=0;
 
 void cmd_vel_callback(const geometry_msgs::Twist& msg) {
   
@@ -64,7 +64,7 @@ void cmd_vel_callback(const geometry_msgs::Twist& msg) {
   else if(steer_r <= ad_min){
     steer_r = ad_min;
   }
-  
+  brake= (int)msg.linear.y;
   control_callback();
 }
 
@@ -203,6 +203,12 @@ void control_callback()
   int r;
   int start_time;
   int steer_motor_pwm;
+
+  if(brake!=0)
+  {
+    target_velocity=0;
+    steer_r = neutral;
+  }
 
 //조향모터 컨트롤
   steer_PID_controller.control(pot_y_m, steer_r); 
