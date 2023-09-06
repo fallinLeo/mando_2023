@@ -28,6 +28,7 @@ For Holonomic mode (strafing), hold down the shift key:
 
 
 b : Emergy_Stop!! (linear_y->1)
+t : auto_drive_start(linear_y->0)
 
 anything else : stop
 
@@ -51,7 +52,8 @@ moveBindings = {
         '.':(-1,0,0,rightMax),
         'm':(-1,0,0,leftMax),
         'k':(0,0,0,netural),
-        'b':(0,1,0,netural) # brake key
+        'b':(0,1,0,netural), # brake key
+        't' : (0,0,0,netural)
         # 'O':(1,-1,0,0),
         # 'I':(1,0,0,0),
         # 'J':(0,1,0,0),

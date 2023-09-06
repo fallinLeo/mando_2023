@@ -49,22 +49,27 @@ int brake=0;
 void cmd_vel_callback(const geometry_msgs::Twist& msg) {
   
 //teleop_keyboard에서 값 받아오고 최대최소값 제한하는부분
-  target_velocity = (float)msg.linear.x;
-  if(target_velocity >= 15){
-    target_velocity = 15;
-  }
-  else if(target_velocity <= -15){
-    target_velocity = -15;
+  brake= (int)msg.linear.y; //if press b(E-STop) -> brake = 1
+  if(brake==0)
+  {
+    target_velocity = (float)msg.linear.x;
+    if(target_velocity >= 15){
+      target_velocity = 15;
+    }
+    else if(target_velocity <= -15){
+      target_velocity = -15;
+    }
+  
+    steer_r = (int)msg.angular.z;
+    if(steer_r >= ad_max){
+      steer_r = ad_max;
+    }
+    else if(steer_r <= ad_min){
+      steer_r = ad_min;
+    }
   }
   
-  steer_r = (int)msg.angular.z;
-  if(steer_r >= ad_max){
-    steer_r = ad_max;
-  }
-  else if(steer_r <= ad_min){
-    steer_r = ad_min;
-  }
-  brake= (int)msg.linear.y;
+  
   control_callback();
 }
 
@@ -207,7 +212,7 @@ void control_callback()
   if(brake!=0)
   {
     target_velocity=0;
-    steer_r = neutral;
+    steer_r = netural;
   }
 
 //조향모터 컨트롤
@@ -238,6 +243,7 @@ void control_callback()
 //  r_pub.publish(&r_msg);
   cmd_vel.linear.x = target_velocity;
   cmd_vel.angular.z = steer_r;
+  cmd_vel.linear.y = brake;
   cmd_pub.publish(&cmd_vel);
 
 }
