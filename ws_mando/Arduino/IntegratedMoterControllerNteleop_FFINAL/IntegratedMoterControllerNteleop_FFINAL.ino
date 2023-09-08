@@ -50,7 +50,7 @@ void cmd_vel_callback(const geometry_msgs::Twist& msg) {
   
 //teleop_keyboard에서 값 받아오고 최대최소값 제한하는부분
   brake= (int)msg.linear.y; //if press b(E-STop) -> brake = 1
-  if(brake==0)
+  if(brake==0) //non-auto-drive
   {
     target_velocity = (float)msg.linear.x;
     if(target_velocity >= 5){
@@ -67,6 +67,10 @@ void cmd_vel_callback(const geometry_msgs::Twist& msg) {
     else if(steer_r <= ad_min){
       steer_r = ad_min;
     }
+  }
+  else //auto_drive
+  {
+    return;
   }
   
   
