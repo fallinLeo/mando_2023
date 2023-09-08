@@ -7,6 +7,14 @@ from nav_msgs.msg import Odometry
 
 steer_data = 0.0  # 초기값 설정
 
+alpha = 0.2
+
+# def lowpass_filter(data, alpha):
+#     filtered_data = [data[0]]
+#     for i in range(1, len(data)):
+#         filtered_value = alpha * data[i] + (1 - alpha) * filtered_data[i - 1]
+#         filtered_data.append(filtered_value)
+#     return filtered_data
 
 def callback_drive(data):
     odom = Odometry()
@@ -19,13 +27,17 @@ def callback_drive(data):
     odom.twist.twist = Twist()
 
     # Set the linear velocity using the received drive data
-    speed = data.data /16.0
+    speed = data.data /34.89
     odom.twist.twist.linear.x = speed
     # odom.twist.twist.linear.x = data.data
-    print(speed)
+
+    # filtered_data = lowpass_filter(data, alpha)
+
+    
     # Set the angular velocity using the received steer data
     pot_value = steer_data
-    steer_angle = 0.0382 * pot_value -20.1832
+    # steer_angle = 0.0382 * pot_value -20.1832
+    steer_angle = 0.0382 * pot_value + -21.1832
     odom.twist.twist.angular.z = steer_angle
 
 
@@ -37,6 +49,12 @@ def callback_drive(data):
 def callback_steer(data):
     global steer_data
     steer_data = data.data
+
+def callback_teledrive(data):
+    global teledrive
+    tele_drive = data.data
+
+
 
 rospy.init_node('combine_and_publish', anonymous=True)
 
