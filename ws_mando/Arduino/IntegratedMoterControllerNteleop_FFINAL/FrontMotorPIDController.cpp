@@ -45,6 +45,7 @@ void FrontMotorPIDController::control(float y_m, float r){
   rear_motor_control(motor_pwm);
 }
 
+
 // Set Gain
 void FrontMotorPIDController::set_gain(float Kp, float Ki, float Kd){
   this->Kp = Kp;

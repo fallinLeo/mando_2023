@@ -23,7 +23,7 @@ ros::Publisher cmd_pub("cmd_vel2", &cmd_vel);
 
 //std_msgs::Float32 data_y_r;
 std_msgs::Float32 drive_y_m;
-//std_msgs::Int32 drive_pwm;
+std_msgs::Int32 drive_pwm;
 
 std_msgs::Float32 steer_y_m;
 //std_msgs::Int32 data_pwm;
@@ -31,7 +31,7 @@ std_msgs::Float32 steer_y_m;
 //std_msgs::Float32 r_msg;
 
 ros::Publisher drive_y_m_pub("/drive_data_time_plot",&drive_y_m);
-//ros::Publisher drive_pwm_pub("/front_pwm",&drive_pwm);
+ros::Publisher drive_pwm_pub("/front_pwm",&drive_pwm);
 
 ros::Publisher steer_y_m_pub("/steer_data_time_plot",&steer_y_m);
 //ros::Publisher steer_pwm_pub("/check_pwm",&data_pwm);
@@ -53,11 +53,11 @@ void cmd_vel_callback(const geometry_msgs::Twist& msg) {
   if(brake==0)
   {
     target_velocity = (float)msg.linear.x;
-    if(target_velocity >= 15){
-      target_velocity = 15;
+    if(target_velocity >= 5){
+      target_velocity = 5;
     }
-    else if(target_velocity <= -15){
-      target_velocity = -15;
+    else if(target_velocity <= -5){
+      target_velocity = -5;
     }
   
     steer_r = (int)msg.angular.z;
@@ -109,8 +109,9 @@ int encoderPos = 0;
 
 
 static float Kp_front = 2.5;
-static float Kd_front = 0.0;  //0.5
-static float Ki_front = 0.5;
+static float Ki_front = 1.7;
+static float Kd_front = 0.1;  //0.5
+
 
 FrontMotorPIDController front_PID_controller(MOTOR1_PWM, MOTOR1_ENA,
                                           MOTOR2_PWM, MOTOR2_ENA);
@@ -139,7 +140,7 @@ void setup() {
   // For checking motor control
   //mySerial.begin(57600);
   // Set gain for front motor control
-  front_PID_controller.set_gain(Kp_front, Kd_front, Ki_front);
+  front_PID_controller.set_gain(Kp_front, Ki_front, Kd_front);
 
   // steer PID 게인 및 저주파필터 alpha 설정
   steer_PID_controller.set_alpha(alpha); 
@@ -163,7 +164,7 @@ void setup() {
   nh.subscribe(cmd_sub);
   nh.advertise(cmd_pub);
   nh.advertise(drive_y_m_pub);
-//  nh.advertise(drive_pwm_pub);
+  nh.advertise(drive_pwm_pub);
 //
   nh.advertise(steer_y_m_pub);
 //  nh.advertise(steer_pwm_pub);
@@ -182,10 +183,12 @@ void doEncoderB(){ // 보파일 때
   encoderPos += (digitalRead(encoderPinA)==digitalRead(encoderPinB))?-1:1;
 }
 
+int front_motor_pwm;
+
 void clear_encoderPos()
 {
   // 10Hz, 100msec마다 증가해야 하는 encoder값 // 속도를 100msec마다 가야하는 거리(pulse)값으로 환산
-  int front_motor_pwm;
+
   float encoderALPHA = 0.1;
   
   float pulse_r = target_velocity * pulsePer100millis; 
@@ -194,6 +197,63 @@ void clear_encoderPos()
   float pulse_y = (int)encoderPos;
   //구동모터 컨트롤
   front_PID_controller.control(pulse_y, pulse_r);
+
+  if (target_velocity <= 0.5)
+    Ki_front = 0.1;
+  else if (target_velocity <= 0.6)
+    Ki_front = 0.2;
+  else if (target_velocity <= 0.7)
+    Ki_front = 0.3;
+  else if (target_velocity <= 0.8)
+    Ki_front = 0.4;
+  else if (target_velocity <= 0.9)
+    Ki_front = 0.5;
+  else if (target_velocity <= 1.0)
+    Ki_front = 0.6;
+  else if (target_velocity <= 1.1)
+    Ki_front = 0.7;
+  else if (target_velocity <= 1.2)
+    Ki_front = 0.8;
+  else if (target_velocity <= 1.3)
+    Ki_front = 0.9;
+  else if (target_velocity <= 1.4)
+    Ki_front = 1.0;
+  else if (target_velocity <= 1.6)
+    Ki_front = 1.1;
+  else if (target_velocity <= 1.7)
+    Ki_front = 1.2;
+  else if (target_velocity <= 1.8)
+    Ki_front = 1.3;
+  else if (target_velocity <= 2.0)
+    Ki_front = 1.4;
+  else if (target_velocity <= 2.1)
+    Ki_front = 1.5;
+  else if (target_velocity <= 2.3)
+    Ki_front = 1.6;
+  else if (target_velocity <= 2.4)
+    Ki_front = 1.7;
+  else if (target_velocity <= 2.6)
+    Ki_front = 1.8;
+  else if (target_velocity <= 2.8)
+    Ki_front = 1.9;
+  else if (target_velocity <= 2.9)
+    Ki_front = 2.0;
+  else if (target_velocity <= 3.1)
+    Ki_front = 2.1;
+  else if (target_velocity <= 3.2)
+    Ki_front = 2.2;
+  else if (target_velocity <= 3.3)
+    Ki_front = 2.3;
+  else if (target_velocity <= 3.4)
+    Ki_front = 2.4;
+  else
+    Ki_front = 2.5;
+
+
+  
+
+  
+  front_PID_controller.set_gain(Kp_front, Ki_front, Kd_front);
 
   front_motor_pwm = front_PID_controller.motor_pwm;
   encoderPos = 0;
@@ -228,14 +288,14 @@ void control_callback()
 
 // ROS
   drive_y_m.data = front_PID_controller.y_m;
-//  drive_pwm.data = front_motor_pwm;
+  drive_pwm.data = front_motor_pwm;
   steer_y_m.data = pot_y_m;
 //  data_pwm.data = steer_motor_pwm;
 //  error_msg.data = error;
 //  r_msg.data = steer_r;
   
   drive_y_m_pub.publish(&drive_y_m);
-//  drive_pwm_pub.publish(&drive_pwm);
+  drive_pwm_pub.publish(&drive_pwm);
 //
   steer_y_m_pub.publish(&steer_y_m);
 //  steer_pwm_pub.publish(&data_pwm);

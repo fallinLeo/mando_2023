@@ -14,6 +14,9 @@ class FrontMotorPIDController
     void set_gain(float Kp, float Ki, float Kd);
     void control(float y_m, float r);
     int get_pwm_by_PID(float y_m, float r);
+
+    float error;
+
     
   private:
     uint8_t front_motor_pin_PWM;
@@ -28,7 +31,6 @@ class FrontMotorPIDController
   
     bool enable_gain_setting;
 
-    float error;
     float error_s;
     float error_d;
     float error_old;
