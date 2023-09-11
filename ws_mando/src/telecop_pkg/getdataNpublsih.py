@@ -6,6 +6,8 @@ from geometry_msgs.msg import Quaternion, Pose, Point, Twist
 from nav_msgs.msg import Odometry
 
 steer_data = 0.0  # 초기값 설정
+tele_drive = 0.0
+encoder_val = 0.0
 
 alpha = 0.2
 
@@ -15,6 +17,17 @@ alpha = 0.2
 #         filtered_value = alpha * data[i] + (1 - alpha) * filtered_data[i - 1]
 #         filtered_data.append(filtered_value)
 #     return filtered_data
+
+# def callback_teledrive(data):
+#     global tele_drive
+#     tele_drive = data.data
+
+def callback_steer(data):
+    global steer_data
+    steer_data = data.data
+
+
+
 
 def callback_drive(data):
     odom = Odometry()
@@ -27,7 +40,9 @@ def callback_drive(data):
     odom.twist.twist = Twist()
 
     # Set the linear velocity using the received drive data
-    speed = data.data /34.89
+    tele_drive = data.data
+    encoder_val = tele_drive
+    speed = encoder_val/34.89
     odom.twist.twist.linear.x = speed
     # odom.twist.twist.linear.x = data.data
 
@@ -46,13 +61,6 @@ def callback_drive(data):
 
 
 
-def callback_steer(data):
-    global steer_data
-    steer_data = data.data
-
-def callback_teledrive(data):
-    global teledrive
-    tele_drive = data.data
 
 
 

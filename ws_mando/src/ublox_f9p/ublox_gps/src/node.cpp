@@ -42,6 +42,9 @@ ros::Subscriber subRTCM;
 
 using namespace ublox_node;
 
+//! How long to wait during I/O reset [s]
+constexpr static int kResetWait = 10;
+  
 //
 // ublox_node namespace
 //
@@ -1858,7 +1861,7 @@ int main(int argc, char** argv) {
 
   ros::NodeHandle param_nh("~");
   std::string rtcm_topic;
-  param_nh.param("rtcm_topic", rtcm_topic, std::string("rtcm"));
+  param_nh.param("/ublox_gps/rtcm", rtcm_topic, std::string("rtcm"));
   subRTCM = nh->subscribe(rtcm_topic, 10, rtcmCallback);
   
 

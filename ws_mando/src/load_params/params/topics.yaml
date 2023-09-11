@@ -1,0 +1,1 @@
+topics: [{topic: /ublox_gps/fix, type: sensor_msgs/msg/NavSatFix, queue_size: 100}, {topic: /ublox_gps/fix_velocity, type: geometry_msgs/msg/TwistWithCovarianceStamped, queue_size: 100}, {topic: /first_lap_path, type: nav_msgs/msg/Path.msg, queue_size: 100}]

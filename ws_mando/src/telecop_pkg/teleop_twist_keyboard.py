@@ -38,7 +38,7 @@ e/c : increase/decrease only angular speed by +=50
 
 CTRL-C to quit
 """
-netural = 540
+netural = 550
 leftMax =  (30+50) + 50
 rightMax = (1040-50)- 50
 

@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="path_follower" type="location_check.py" name="location_check"/>
+  <node pkg="path_follower" type="path_follower_visualize.py" name="path_follower_visualization"/>
+  
+  <!-- <node pkg="path_follower" type="car_control.py" name="car_control"/> -->
+</launch>

@@ -1,0 +1,3 @@
+# WaypointArray.msg
+
+Waypoint[] waypoints

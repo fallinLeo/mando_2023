@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <rosparam file="/home/sjkim/catkin_ws/src/load_params/params/topics.yaml" command="load"/>
+</launch>

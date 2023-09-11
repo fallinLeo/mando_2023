@@ -18,7 +18,7 @@ from detection_msgs.msg import BoundingBox, BoundingBoxes
 #값안정성코드
 from collections import deque
 from collections import Counter
-max_queue_size = 13
+max_queue_size = 20
 values_queue = deque(maxlen=max_queue_size)
 initial_values = [0,0,0,0,0,0,0,0,0,0,0,0,0]
 values_queue.extend(initial_values)

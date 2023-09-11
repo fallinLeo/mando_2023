@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="waypoint_server" type="waypoint_csv_to_utm.py" name="waypoint_csv_to_utm_node"/>
+
+</launch>
