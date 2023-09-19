@@ -42,6 +42,10 @@ ros::Publisher steer_y_m_pub("/steer_data_time_plot",&steer_y_m);
 //  target_velocity = msg.data;
 //}
 
+const int frontLED = A3; // "frontLED"로 핀 이름 변경
+const int rearLED = A4; // "rearLED"로 핀 이름 변경
+
+
 float target_velocity = 0;
 int steer_r = 700;
 int brake=0;
@@ -50,9 +54,16 @@ void cmd_vel_callback(const geometry_msgs::Twist& msg) {
   
 //teleop_keyboard에서 값 받아오고 최대최소값 제한하는부분
   brake= (int)msg.linear.y; //if press b(E-STop) -> brake = 1
-  if(brake==0) //non-auto-drive
+  if(brake==0)
   {
-    target_velocity = (float)msg.linear.x;
+    if (msg.linear.x >= 0.5)
+    {
+      target_velocity = (float)msg.linear.x+ 0.25; //0.25더한 이유는 줄어들지 않는 S-S error때문에 입력값을 크게줘서 S-S error를 줄
+      }
+    else
+    {
+      target_velocity = (float)msg.linear.x;
+      }
     if(target_velocity >= 5){
       target_velocity = 5;
     }
@@ -68,10 +79,6 @@ void cmd_vel_callback(const geometry_msgs::Twist& msg) {
       steer_r = ad_min;
     }
   }
-  else //auto_drive
-  {
-    return;
-  }
   
   
   control_callback();
@@ -84,10 +91,10 @@ ros::Subscriber<geometry_msgs::Twist> cmd_sub("teleop_cmd_vel", &cmd_vel_callbac
 //==================================================================================
 
 // 1m 당 pulse 수
-#define m_2_pulse    349      
-#define pulse_2_m  1./349.
+#define m_2_pulse    348.9      
+#define pulse_2_m  1./348.9.
 #define vel_2_pulse   m_2_pulse/100. // 10Hz 제어 주기에서 속도와 Δpulse 변환 값
-#define pulsePer100millis 34.9
+#define pulsePer100millis 34.89
 
 // Front motor pin number
 #define MOTOR1_PWM 8  //6
@@ -98,8 +105,8 @@ ros::Subscriber<geometry_msgs::Twist> cmd_sub("teleop_cmd_vel", &cmd_vel_callbac
 #define MOTOR2_ENA 7  //9
 
 // Encoder pin
-#define encoderPinA 2
-#define encoderPinB 3
+#define encoderPinA 3
+#define encoderPinB 2
 
 // Steering motor pin
 #define MOTOR3_PWM 4  //4
@@ -140,6 +147,10 @@ MotorPIDController steer_PID_controller(MOTOR3_PWM, MOTOR3_ENA);
 //==================================================================================
 
 void setup() {
+  pinMode(frontLED, OUTPUT); // "frontLED" 핀을 출력으로 설정
+  pinMode(rearLED, OUTPUT); // "rearLED" 핀을 출력으로 설정
+
+  
   // put your setup code here, to run once:
   // For checking motor control
   //mySerial.begin(57600);
@@ -253,6 +264,9 @@ void clear_encoderPos()
   else
     Ki_front = 2.5;
 
+  Ki_front = Ki_front-0.1;
+
+
 
   
 
@@ -287,9 +301,6 @@ void control_callback()
   error = steer_PID_controller.error;
   r = steer_r;
 
-
-
-
 // ROS
   drive_y_m.data = front_PID_controller.y_m;
   drive_pwm.data = front_motor_pwm;
@@ -313,6 +324,9 @@ void control_callback()
 }
 
 void loop(){
+  // PWM 값을 "frontLED" 핀으로 출력
+  analogWrite(frontLED, 140);
+  analogWrite(rearLED, 140);
   nh.spinOnce();
   delay(10);
 }

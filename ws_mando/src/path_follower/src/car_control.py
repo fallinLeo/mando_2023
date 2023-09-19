@@ -14,7 +14,7 @@ from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Vector3Stamped, PoseStamped
 from nav_msgs.msg import Path
 from geometry_msgs.msg import Twist
-from std_msgs.msg import Float64, String, Float32
+from std_msgs.msg import Float64, String, Float32, Int32
 from nav_msgs.msg import Odometry
 
 
@@ -23,12 +23,18 @@ class CarControl(object):
     def __init__(self):
         self.waypoints_local = [] 
 
+        self.mode_num = 0 #0 brake 1 normal 2 creep 3 ssp
+
         # target_speed 이전값
         self.target_steer_old = 0
         self.cte_old = 0
 
         self.location_available = False
         self.waypoints_available = False
+
+        self.max_speed = 2.5    #1.8
+        self.min_speed = 1.5    # 1.2
+        self.scaling_factor = np.deg2rad(90) 
 
         self.sigma = 0
 
@@ -39,12 +45,20 @@ class CarControl(object):
 
         #steer angle subscribe
         self.steer_sub = rospy.Subscriber('/odom',Odometry,self.callback_steer)
-        
+
+        #aeb subscrube
+        self.mode_sub = rospy.Subscriber('custom_control',Int32,self.callback_mode)
+
         # target speed와 target steer publish
         self.control_pub = rospy.Publisher('teleop_cmd_vel', Twist, queue_size = 10)
-        self.cte_error_pub = rospy.Publisher('cte_error', Float32, queue_size = 10)        
+        self.cte_error_pub = rospy.Publisher('cte_error', Float32, queue_size = 10)      
+
+         
         pass
         
+    def callback_mode(self,mode_data):
+        self.mode_num = mode_data.data
+
     def callback_steer(self,msg):
         steer_angle = msg.twist.twist.angular.z
         self.sigma = steer_angle
@@ -64,24 +78,22 @@ class CarControl(object):
             # 인하 성대 컨트롤 변수
             self.d_inha = current_speed*0.5    
             self.d_sung = 1 #self.present_speed*3 인식거리 4 > x > 3m 이상 
-            self.max_speed = 1.0    #1.8
-            self.min_speed = 0.5    # 1.2
-            self.scaling_factor = np.deg2rad(90)
 
             # local path x,y,yaw값
             path_x, path_y, path_yaw = self.get_path_info(self.local_path_msg)
 
-            target_steer, cte = self.stanley_control(0,0,0, current_speed, path_x, path_y, path_yaw, L=0.5)
-            print(target_steer)
-            target_speed = 1.3
-
-            #steer 값을 최대 15도와 최소 -15도로 제한
-            max_steer = 15.0  # 최대 허용 스티어 각도 (15도)
-            min_steer = -15.0  # 최소 허용 스티어 각도 (-15도)
-            target_steer = max(min_steer, min(max_steer, target_steer))
-            target_steer = (target_steer + 21.1832) / 0.0382  #degree2pot_value
+            target_steer, target_speed, cte = self.stanley_control(0,0,0, current_speed, path_x, path_y, path_yaw, L=0.5)
             # target_steer, target_speed, cte = self.inha_stanley_control(0,0,0, current_speed, path_x, path_y, path_yaw, L=0.5)
+            
+            if self.mode_num == 0:
+                target_speed = 0
+            elif self.mode_num == 2:
+                target_speed = 0.5
+            
 
+            print("목표 조향각 : ", target_steer)
+            print("목표 속도값 : ", target_speed)
+            print("#" * 30)
             CTE = Float32() # stanley 성능 비교 
             CTE.data = np.round(cte, 2) 
             self.cte_error_pub.publish(CTE)
@@ -94,13 +106,22 @@ class CarControl(object):
         
     def stanley_control(self, x, y, yaw, v, map_xs, map_ys, map_yaws, L) : 
         # ct error
-        k = 0.05
+        k = 0.5
         min_dist = 1e9
+        min_dist_sung = 1e9
+
         min_index = 0
+        min_index_sung = 0
+
         n_points = len(map_xs)
 
         front_x = x + L * np.cos(yaw)
         front_y = y + L * np.sin(yaw)
+        
+        # yaw_sung = yaw + self.d_sung * np.tan(self.sigma) / 1.06
+        yaw_sung = yaw
+        front_x_sung = front_x + self.d_sung * np.cos(yaw_sung) 
+        front_y_sung = front_y + self.d_sung * np.sin(yaw_sung) 
 
         for i in range(n_points):
             dx = front_x - map_xs[i]
@@ -110,6 +131,13 @@ class CarControl(object):
             if dist < min_dist:
                 min_dist = dist
                 min_index = i
+            
+            sung_dx = front_x_sung - map_xs[i]
+            sung_dy = front_y_sung - map_ys[i]
+            sung_dist = np.sqrt(sung_dx  * sung_dx  + sung_dy * sung_dy )
+            if sung_dist < min_dist_sung :
+                min_dist_sung  = sung_dist 
+                min_index_sung = i   
 
         # compute cte at front axle
         map_x = map_xs[min_index]
@@ -127,18 +155,22 @@ class CarControl(object):
         yaw_term = self.normalize_angle(map_yaw - yaw)
         cte_term = np.arctan2(k*cte, max(1.0, v))
 
-        w_yaw = 1
+        w_yaw = 0.5
         w_cte = 1
 
         # steering
         steer = w_yaw * yaw_term + w_cte * cte_term
         # print("cte_term : ", math.degrees(cte_term))
         # print("yaw term : ", math.degrees(yaw_term))
-        # print("최종 steer : ", math.degrees(steer)) 
-        return -math.degrees(steer), cte
+        # print("최종 steer : ", math.degrees(steer))
+        sung_yaw_term = self.normalize_angle(map_yaws[min_index_sung] - yaw)
+
+        speed = self.max_speed - abs(sung_yaw_term)/self.scaling_factor*(self.max_speed-self.min_speed)
+
+        return -math.degrees(steer), speed, cte
     
     def inha_stanley_control(self, x, y, yaw, v, map_xs, map_ys, map_yaws, L) :
-        k = 0.1
+        k = 0.5
         # find nearest point
         # global k
 
@@ -212,6 +244,14 @@ class CarControl(object):
 
         steer = 180.0*steer/math.pi #rad2degree
 
+        #steer 값을 최대 15도와 최소 -15도로 제한
+        max_steer = 15.0  # 최대 허용 스티어 각도 (15도)
+        min_steer = -15.0  # 최소 허용 스티어 각도 (-15도)
+        steer = max(min_steer, min(max_steer, steer))
+        steer = (steer + 21.1832) / 0.0382  #degree2pot_value
+
+
+
 
         #CTE = Float32() # stanley 성능 비교 
         #CTE.data = np.round(cte, 2) 
@@ -220,7 +260,6 @@ class CarControl(object):
         sung_yaw_term = self.normalize_angle(map_yaws[min_index_sung] - yaw)
 
         speed = self.max_speed - abs(sung_yaw_term)/self.scaling_factor*(self.max_speed-self.min_speed)
-        print(steer)
 
         # deg_pub = Float32()
         # self.steer_deg_pub.data = deg_pub

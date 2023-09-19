@@ -45,18 +45,23 @@ class PathFollowingVisualization(object):
     def callback_waypoints(self, closest_waypoint_array):
         # 가장 가까운 웨이포인트만 저장하고 10Hz의 주기로 publish
         self.closest_waypoints = closest_waypoint_array
-
+    
     def callback_location(self, location_msg):
+        if not hasattr(self, 'transform'):
+            return
+        
         start_time = time.time()  # 함수 시작 시간 측정
 
         self.current_location = location_msg
         self.location_record.append((location_msg.pose.pose.position.x, location_msg.pose.pose.position.y))  # X와 Y 값을 튜플로 저장
         
+        self.__delete_all_markers__()
+
         try:
-            self.transform = self.tf_buffer.lookup_transform("base_link", "map", rospy.Time(0.0))
+            self.transform = self.tf_buffer.lookup_transform("base_link", "map", rospy.Time(0))
             if hasattr(self, 'closest_waypoints'):
                 self.visualize_closest_waypoints()
-        
+    
             if hasattr(self, 'current_location'):
                 self.visualize_current_location()
             
@@ -65,11 +70,10 @@ class PathFollowingVisualization(object):
 
             if hasattr(self, 'local_points'):
                 self.publish_local_path()
-
         except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException):
             rospy.logwarn("현재 map -> base_link 변환 불가")
             return
-        
+
         end_time = time.time()  # 함수 종료 시간 측정
         rospy.loginfo(f"update_transform_and_visualization processing time: {end_time - start_time:.4f} seconds")
         return
@@ -100,7 +104,7 @@ class PathFollowingVisualization(object):
             local_points.append((waypoint_base_link.point.x, waypoint_base_link.point.y))
 
             
-        self.__delete_close_waypoints_markers__()
+        # self.__delete_all_markers__()
 
         self.close_waypoints_global_pub.publish(close_waypoints_global)
         self.close_waypoints_local_pub.publish(close_waypoints_local)
@@ -133,17 +137,25 @@ class PathFollowingVisualization(object):
         car_position_map.point.x = map_x
         car_position_map.point.y = map_y
 
-        car_position_base_link = tf2_geometry_msgs.do_transform_point(car_position_map, self.transform)
+        # car_position_base_link = tf2_geometry_msgs.do_transform_point(car_position_map, self.transform)
+
+        # # base_link frame에서의 자동차 마커 생성 및 추가
+        # car_base_link = self.__make_car_marker__(car_position_base_link.point.x, car_position_base_link.point.y , (0,0,0,1), "base_link")
+        # car.markers.append(car_base_link)
+
+        # # base_link frame에서의 화살표 마커 생성 및 추가
+        # arrow_base_link = self.__make_arrow_marker__(car_position_base_link.point.x, car_position_base_link.point.y, (0,0,0,1), "base_link")
+        # car.markers.append(arrow_base_link)
 
         # base_link frame에서의 자동차 마커 생성 및 추가
-        car_base_link = self.__make_car_marker__(car_position_base_link.point.x, car_position_base_link.point.y, (0,0,0,1), "base_link")
+        car_base_link = self.__make_car_marker__(0, 0, (0,0,0,1), "base_link")
         car.markers.append(car_base_link)
 
         # base_link frame에서의 화살표 마커 생성 및 추가
-        arrow_base_link = self.__make_arrow_marker__(car_position_base_link.point.x, car_position_base_link.point.y, (0,0,0,1), "base_link")
+        arrow_base_link = self.__make_arrow_marker__(0, 0, (0,0,0,1), "base_link")
         car.markers.append(arrow_base_link)
 
-        self.__delete_car_markers__()
+        # self.__delete_car_markers__()
         self.car_pub.publish(car)
         return
     
@@ -282,19 +294,12 @@ class PathFollowingVisualization(object):
         self.car_arrow_id = self.car_arrow_id + 1
         return marker
 
-    def __delete_close_waypoints_markers__(self):
+    def __delete_all_markers__(self):
         marker_array = MarkerArray()  # MarkerArray 생성
         marker = Marker()
         marker.action = Marker.DELETEALL
         marker_array.markers.append(marker)  # Marker를 MarkerArray에 추가
         self.car_pub.publish(marker_array)   # MarkerArray 발행
-
-    def __delete_car_markers__(self):
-        marker_array = MarkerArray()  # MarkerArray 생성
-        marker = Marker()
-        marker.action = Marker.DELETEALL
-        marker_array.markers.append(marker)  # Marker를 MarkerArray에 추가
-        self.car_pub.publish(marker_array)
 
     @staticmethod
     def quaternion_from_euler(roll, pitch, yaw):

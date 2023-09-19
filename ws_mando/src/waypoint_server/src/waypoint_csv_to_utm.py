@@ -5,7 +5,7 @@ import rospkg
 import pandas as pd
 from custom_msg_pkg.msg import Waypoint, WaypointArray
 
-csv_file_name = "output_s.csv"
+csv_file_name = "hitech_line.csv"
 
 class UtmConverter(object):
     def __init__(self, file=None):
@@ -20,9 +20,9 @@ class UtmConverter(object):
 
         for index, row in csv_file.iterrows():
             data = row[0].split(',')
-            x = float(data[0].strip())
-            y = float(data[1].strip())
-            link = int(data[2].strip())
+            x = float(data[2].strip())
+            y = float(data[3].strip())
+            link = int(data[0].strip())
 
             waypoint = Waypoint()
             waypoint.x = x
