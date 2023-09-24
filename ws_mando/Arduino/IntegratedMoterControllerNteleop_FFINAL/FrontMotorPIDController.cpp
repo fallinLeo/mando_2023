@@ -68,10 +68,13 @@ int FrontMotorPIDController::get_pwm_by_PID(float y_m, float r){
   motor_pwm = (motor_pwm >=  255) ?  255 : motor_pwm;
   motor_pwm = (motor_pwm <= -255) ? -255 : motor_pwm;  
   
-  if(fabs(error) <= 2.0){   // 목표 값에 거의 도달 했을 때부터는 입력 x
+  if(fabs(error) <= 2.0){   // 목표 값에 거의 도달 했을 때부터는 아주 작은 PWM값을 넣어 갑작스런 브레이크를 방지(현재 사용하는 모터드라이버는 PWM 값에 0을 넣으면 브레이크가 걸린다)
     error_s = 0.0;
-    motor_pwm = 0;
+    motor_pwm = 2;
   }
+  if (error < -5){  //측정값이 목표값보다 훨씬 더 클 때 브레이크
+    motor_pwm = 0
+    }
   
   return motor_pwm;
 }

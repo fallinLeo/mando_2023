@@ -50,6 +50,7 @@ float target_velocity = 0;
 int steer_r = 700;
 int brake=0;
 
+
 void cmd_vel_callback(const geometry_msgs::Twist& msg) {
   
 //teleop_keyboard에서 값 받아오고 최대최소값 제한하는부분
@@ -79,7 +80,6 @@ void cmd_vel_callback(const geometry_msgs::Twist& msg) {
       steer_r = ad_min;
     }
   }
-  
   
   control_callback();
 }
@@ -198,7 +198,8 @@ void doEncoderB(){ // 보파일 때
   encoderPos += (digitalRead(encoderPinA)==digitalRead(encoderPinB))?-1:1;
 }
 
-int front_motor_pwm;
+int front_motor_pwm=0;
+int prev_motor_pwm = 0;
 
 void clear_encoderPos()
 {
@@ -277,6 +278,7 @@ void clear_encoderPos()
   encoderPos = 0;
 }
 
+
 //이게 사실상 메인 함수 
 void control_callback()
 {
@@ -300,6 +302,12 @@ void control_callback()
 
   error = steer_PID_controller.error;
   r = steer_r;
+//
+//  if (abs(prev_motor_pwm-front_motor_pwm)>150)  //갑작스런 큰입력 방지
+//  {
+//      front_motor_pwm = front_motor_pwm+prev_motor_pwm;
+//  }
+//      prev_motor_pwm = front_motor_pwm;
 
 // ROS
   drive_y_m.data = front_PID_controller.y_m;

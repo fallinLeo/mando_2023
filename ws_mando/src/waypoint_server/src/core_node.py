@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+from math import inf
+import time
 import rospy
 from custom_msg_pkg.msg import WaypointArray  # 사용자 지정 메시지를 임포트합니다.
-from std_msgs.msg import Int32  # std_msgs.msg 모듈에서 Int32 메시지를 가져옵니다.
+from std_msgs.msg import Int32,String  # std_msgs.msg 모듈에서 Int32 메시지를 가져옵니다.
 
 
 class WaypointProcessor(object):
@@ -11,6 +13,10 @@ class WaypointProcessor(object):
 
         self.control_command = 0
         self.aeb = 0
+
+        self.normal_driving_time = inf
+        self.parking_time = inf
+        self.traffic_sign_time = inf
 
         rospy.init_node('waypoint_processor_node', anonymous=True)
         self.waypoint_sub = rospy.Subscriber('waypoint_utm', WaypointArray, self.callback)
@@ -30,22 +36,29 @@ class WaypointProcessor(object):
     def link_callback(self, link_msg):
         link = link_msg.data
 
-        #Estop 0
-        #carcontrol 1
-        #creep_carcontrol 2
-        #ssp 3
+        #mode = {'forward' : 0, 'back' : 1, 'stop' : 2, 'slow' : 3}
+        mode = {'stop' : 0, 'forward' : 0, 'slow' : 1,  'back' : 3}
+        link = {'normal driving' : 0, 'parking' : 1, 'traffic sign' : 2}
+        
+        if link == ['normail driving']:
+            self.normal_driving_time = time.time()
+            self.control_command = mode['forward']
+            print("forward mode")
 
-        if link == 1:
-            self.control_command = 1
-            print("111")
-        elif link == 2:
-            if self.aeb == True:
-                self.control_command = 0
-                print("000")
+        elif link == ['parking']:
+            self.parking_time = time.time()
+            if(self.parking_time - self.normal_driving_time >= 1):
+                if self.aeb == True:
+                    self.control_command = mode['stop']
+                    print("stop mode")
+                else:
+                    self.control_command = mode['back']
+                    print("back mode")
             else:
-                self.control_command = 2
-                print("222")
-        elif link == 3:
+                self.control_command = mode['stop']
+                print("stop mode")
+                
+        elif link == 2:
             self.control_command = 3
             print("333")
         else:
@@ -53,6 +66,7 @@ class WaypointProcessor(object):
             print("444")
 
         # Create a custom control message and publish it
+
         control_msg = Int32()
         control_msg.data = self.control_command
         self.control_pub.publish(control_msg)
