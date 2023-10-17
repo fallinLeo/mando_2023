@@ -1,8 +1,0 @@
-prefix=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel
-
-Name: usb_cam
-Description: Description of usb_cam
-Version: 0.3.7
-Cflags: -I/home/leo/Documents/GitHub/mando_2023/ws_mando/src/usb_cam/include
-Libs: -L${prefix}/lib -lusb_cam
-Requires: 

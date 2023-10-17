@@ -1,8 +1,0 @@
-prefix=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel
-
-Name: ublox_gps
-Description: Description of ublox_gps
-Version: 1.1.2
-Cflags: -I/home/leo/Documents/GitHub/mando_2023/ws_mando/src/ublox_f9p/ublox_gps/include
-Libs: -L${prefix}/lib -lublox_gps
-Requires: roscpp ublox_msgs ublox_serialization

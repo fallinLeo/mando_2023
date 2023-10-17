@@ -1,8 +1,0 @@
-prefix=/home/leo/Documents/GitHub/mando_2023/ws_mando/devel
-
-Name: telecop_pkg
-Description: Description of telecop_pkg
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

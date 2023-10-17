@@ -1,0 +1,11 @@
+
+<launch>
+ 		<!-- lidar_a2m8 launch -->
+  <include file="$(find rplidar_ros)/launch/rplidar_a2m8.launch" />
+  <node name="lidar_visualization" pkg="rplidar_ros" type="lidar_visualization.py" output="screen">
+  </node>
+   		<!-- usb cam && yolov5 launch -->
+  <include file="$(find yolov5_ros)/launch/yolov5.launch" />
+     
+</launch>
+
