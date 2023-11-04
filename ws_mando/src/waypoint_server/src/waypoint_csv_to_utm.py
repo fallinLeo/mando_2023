@@ -5,7 +5,7 @@ import rospkg
 import pandas as pd
 from custom_msg_pkg.msg import Waypoint, WaypointArray
 
-csv_file_name = "hitech_line.csv"
+csv_file_name = "hitech_0921_final.csv"
 
 class UtmConverter(object):
     def __init__(self, file=None):

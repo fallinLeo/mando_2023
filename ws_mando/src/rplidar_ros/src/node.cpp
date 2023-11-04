@@ -247,7 +247,7 @@ int main(int argc, char * argv[]) {
     nh_private.param<std::string>("udp_ip", udp_ip, "192.168.11.2"); 
     nh_private.param<int>("udp_port", udp_port, 8089);
     nh_private.param<std::string>("serial_port", serial_port, "/dev/ttyUSB0"); 
-    nh_private.param<int>("serial_baudrate", serial_baudrate, 115200/*256000*/);//ros run for A1 A2, change to 256000 if A3
+    nh_private.param<int>("serial_baudrate", serial_baudrate, 256000/*115200*/);//ros run for A1 A2, change to 256000 if A3
     nh_private.param<std::string>("frame_id", frame_id, "laser_frame");
     nh_private.param<bool>("inverted", inverted, false);
     nh_private.param<bool>("initial_reset", initial_reset, false);

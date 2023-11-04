@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="path_follower" type="core_node.py" name="core_node"/>		
+  <node pkg="path_follower" type="car_control.py" name="car_control"/>
+</launch>

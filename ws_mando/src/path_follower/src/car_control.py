@@ -371,4 +371,4 @@ class CarControl(object):
 if __name__=='__main__':
     rospy.init_node('steer_control', anonymous=True)
     steer_control = CarControl()
-    rospy.spin()c
+    rospy.spin()
