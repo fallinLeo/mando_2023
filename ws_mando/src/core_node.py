@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 
 from math import inf
+from re import L
 import time
 import rospy
 from custom_msg_pkg.msg import WaypointArray  # 사용자 지정 메시지를 임포트합니다.
 from std_msgs.msg import Int32,Bool,Float32  # std_msgs.msg 모듈에서 Int32 메시지를 가져옵니다.
-
-
 
 class WaypointProcessor(object):
 
@@ -53,44 +52,58 @@ class WaypointProcessor(object):
 
         #mode = {'forward' : 0, 'back' : 1, 'stop' : 2, 'slow' : 3}
         mode = {'stop' : 0, 'forward' : 0, 'slow' : 1,  'back' : 3}
-        link = {'normal driving' : 0, 'parking' : 1, 'traffic sign' : 2}
+        link = {'normal driving' : 0, 'parking' : 1, 'normal driving' : 2, 'traffic_sign' : 3, 'obstracle_mode' : 4, 'Ltraffic_sign' : 5}
         
         if link == ['normal driving']:
             self.normal_driving_time = time.time()
             self.control_command = mode['forward']
-            print("forward mode")
+            print("normal forward mode")
 
         elif link == ['parking']:
             self.parking_time = time.time()
             if(self.parking_time - self.normal_driving_time >= 1):
-                if self.aeb == True:
-                    self.control_command = mode['stop']
-                    print("stop mode")
-                else:
                     self.control_command = mode['back']
-                    print("back mode")
+                    print("parking back mode")
             else:
                 self.control_command = mode['stop']
-                print("stop mode")
+                print("parking stop mode")
+
+        elif link == ['obstracle_mode']:
+            if(self.obstracle_check == True):
+                self.control_command = mode['stop']
+                print("obstracle stop mode")
+            else:
+                self.control_command = mode['forward']
+                print("obstracle slow mode")
+
+        elif link == ['traffic_sign']:
+            if(self.traffic == 0):
+                self.control_command = mode['forward']
+            elif(self.waypoint_num < 50):   #gps 포인트 찍고 waypoint 번호를 봐야 숫자를 결정할 수 있을듯
+                self.control_command = mode['slow']
+            else:
+                self.control_command = mode['stop']
                 
-        elif link == 2:
-            self.control_command = 3
-            print("333")
-        else:
-            self.control_command = 0
-            print("444")
-
+        elif link == ['Ltraffic_sign']:
+            if(self.traffic == 3):
+                self.control_command = mode['forward']
+            elif(self.waypoint_num < 50):   #gps 포인트 찍고 waypoint 번호를 봐야 숫자를 결정할 수 있을듯
+                self.control_command = mode['slow']
+            else:
+                self.control_command = mode['stop']
+         
         # Create a custom control message and publish it
-
         control_msg = Int32()
         control_msg.data = self.control_command
         self.control_pub.publish(control_msg)
         print(link)
 
     def callback(self, waypoint_msg):
+        self.waypoint_num = waypoint_msg.data
         # Handle waypoint data if needed
         pass
 
+    #lidar distance sensing and judgement go stop
     def lid_callback(self,msg):
         distance = msg.data
         if distance <=self.obstracle_min_det :
@@ -98,6 +111,7 @@ class WaypointProcessor(object):
             print('obstracle check!')
         else :
             self.obstracle_check = False
+
         lid_pub = Bool()
         lid_pub.data = self.obstracle_check
         self.lidar_pub.publish(lid_pub)     

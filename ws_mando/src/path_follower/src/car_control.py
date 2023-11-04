@@ -82,6 +82,10 @@ class CarControl(object):
                 target_steer, target_speed, cte = self.stanley_control(0,0,0, current_speed, path_x, path_y, path_yaw, L=0.5)
             # target_steer, target_speed, cte = self.inha_stanley_control(0,0,0, current_speed, path_x, path_y, path_yaw, L=0.5)
 
+            elif(mode[self.mode_num] == 'slow'):
+                target_steer, target_speed, cte = self.stanley_control(0,0,0, current_speed, path_x, path_y, path_yaw, L=0.5)
+                target_speed = 0.7
+
             elif(mode[self.mode_num] == 'back'):
                 target_steer, target_speed, cte = self.parking_control(0,0,0, current_speed, path_x, path_y, path_yaw, L=-0.25)
             
@@ -367,4 +371,4 @@ class CarControl(object):
 if __name__=='__main__':
     rospy.init_node('steer_control', anonymous=True)
     steer_control = CarControl()
-    rospy.spin()
+    rospy.spin()c
