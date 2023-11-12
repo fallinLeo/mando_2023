@@ -5,7 +5,7 @@ import rospkg
 import pandas as pd
 from custom_msg_pkg.msg import Waypoint, WaypointArray
 
-csv_file_name = "hitech_0921_final.csv"
+csv_file_name = "/home/leo/Documents/GitHub/mando_2023/ws_mando/src/waypoint_server/csv_files/hitech_0921_final.csv"
 
 class UtmConverter(object):
     def __init__(self, file=None):
