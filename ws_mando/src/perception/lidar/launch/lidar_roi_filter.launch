@@ -1,0 +1,7 @@
+<launch>
+  <rosparam command="load" file="$(find lidar)/params/roi_filter.yaml" />
+
+
+  <node pkg="lidar" type="lidar_roi_filter.py" name="lidar_roi_filter"/>
+ 
+</launch>
